@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::ev_EmpJobRelationships" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="ev_EmpJobRelationships.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="iprosis.config::EBV_EmpJobRelationships">
+    <resourceUri>iprosis.config::EBV_EmpJobRelationships</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="EBV_EmpJobRelationships">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="relationshipTypeCode"/>
+      <viewAttribute id="relationshipType"/>
+      <viewAttribute id="endDate"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="lastModifiedBy"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="relUserId"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.config::EBV_EmpJobRelationships"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="EBV_EmpJobRelationships">
+  <attributes>
+    <attribute id="userId" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="userId"/>
+      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="userId"/>
+    </attribute>
+    <attribute id="relationshipTypeCode" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="relationshipTypeCode"/>
+      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="relationshipTypeCode"/>
+    </attribute>
+    <attribute id="relationshipType" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="relationshipType"/>
+      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="relationshipType"/>
+    </attribute>
+    <attribute id="createdBy" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="createdBy"/>
+      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="createdBy"/>
+    </attribute>
+    <attribute id="lastModifiedBy" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="lastModifiedBy"/>
+      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="lastModifiedBy"/>
+    </attribute>
+    <attribute id="relUserId" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="relUserId"/>
+      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="relUserId"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="startDate" order="2" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="startDate"/>
+      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="startDate"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="endDate" order="5" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="endDate"/>
+      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="endDate"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="createdDateTime" order="7" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="createdDateTime"/>
+      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="createdDateTime"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="createdOn" order="8" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="createdOn"/>
+      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="createdOn"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="lastModifiedDateTime" order="10" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="lastModifiedDateTime"/>
+      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="lastModifiedDateTime"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="lastModifiedOn" order="11" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="lastModifiedOn"/>
+      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="lastModifiedOn"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="false" modelObjectName="EBV_EmpJobRelationships" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="207"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::cv_EmpJobEvents" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="cv_PerPerson"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="iprosis.config::EBV_EmpJob">
+    <resourceUri>iprosis.config::EBV_EmpJob</resourceUri>
+  </DataSource>
+  <DataSource id="iprosis.Data.EntityViews::cv_EmpEmployment">
+    <resourceUri>iprosis.Data.EntityViews::cv_EmpEmployment</resourceUri>
+  </DataSource>
+  <DataSource id="iprosis.config::FOBV_FOEventReason">
+    <resourceUri>iprosis.config::FOBV_FOEventReason</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="ev_EmpJob">
+    <viewAttributes>
+      <viewAttribute id="seqNumber"/>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="occupationalLevelsCode"/>
+      <viewAttribute id="occupationalLevels"/>
+      <viewAttribute id="workscheduleCode"/>
+      <viewAttribute id="timeEventTypeGroupId"/>
+      <viewAttribute id="effectiveLatestChange"/>
+      <viewAttribute id="endDate"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="validFrom"/>
+      <viewAttribute id="fgtsDate"/>
+      <viewAttribute id="payScaleLevel"/>
+      <viewAttribute id="timeTypeProfileCode"/>
+      <viewAttribute id="eeoClassCode"/>
+      <viewAttribute id="eeoClass"/>
+      <viewAttribute id="probationaryPeriodMeasureCode"/>
+      <viewAttribute id="probationaryPeriodMeasure"/>
+      <viewAttribute id="fromCurrencyCode"/>
+      <viewAttribute id="fromCurrency"/>
+      <viewAttribute id="eeo5JobCategory"/>
+      <viewAttribute id="flsaStatusCode"/>
+      <viewAttribute id="flsaStatus"/>
+      <viewAttribute id="costCenter"/>
+      <viewAttribute id="residentVote"/>
+      <viewAttribute id="timeRecordingProfileCode"/>
+      <viewAttribute id="laborProtection"/>
+      <viewAttribute id="sickPaySupplementMeasureCode"/>
+      <viewAttribute id="sickPaySupplementMeasure"/>
+      <viewAttribute id="exclExecutiveSector"/>
+      <viewAttribute id="isFulltimeEmployee"/>
+      <viewAttribute id="ineligibleStatutoryMinWage"/>
+      <viewAttribute id="guaranteedPayment"/>
+      <viewAttribute id="occupationGtmCode"/>
+      <viewAttribute id="occupationGtm"/>
+      <viewAttribute id="occupationPerCode"/>
+      <viewAttribute id="occupationPer"/>
+      <viewAttribute id="payScaleType"/>
+      <viewAttribute id="countryOfCompanyCode"/>
+      <viewAttribute id="countryOfCompany"/>
+      <viewAttribute id="eeo6JobCategory"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="municipalInseeCode"/>
+      <viewAttribute id="creditForPreviousService"/>
+      <viewAttribute id="localJobTitle"/>
+      <viewAttribute id="healthRisk"/>
+      <viewAttribute id="dismissalsNoticePeriodForEmployerCode"/>
+      <viewAttribute id="dismissalsNoticePeriodForEmployer"/>
+      <viewAttribute id="timeRecordingAdmissibilityCode"/>
+      <viewAttribute id="payGrade"/>
+      <viewAttribute id="travelDistance"/>
+      <viewAttribute id="eventCode"/>
+      <viewAttribute id="event"/>
+      <viewAttribute id="timeRecordingVariant"/>
+      <viewAttribute id="calculationBase"/>
+      <viewAttribute id="assedicCertObjectNum"/>
+      <viewAttribute id="degreeOfProductivity"/>
+      <viewAttribute id="ASSESSMENTSTATUSCODE"/>
+      <viewAttribute id="ASSESSMENTSTATUS"/>
+      <viewAttribute id="spclRuleNonManualWorker"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="dynamicBreakConfigCode"/>
+      <viewAttribute id="workerCategoryCode"/>
+      <viewAttribute id="workerCategory"/>
+      <viewAttribute id="defaultOvertimeCompensationVariant"/>
+      <viewAttribute id="contractDate"/>
+      <viewAttribute id="businessUnit"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="NOTES"/>
+      <viewAttribute id="harmfulAgentExposureCode"/>
+      <viewAttribute id="harmfulAgentExposure"/>
+      <viewAttribute id="probationaryPeriod"/>
+      <viewAttribute id="sickPaySupplementCode"/>
+      <viewAttribute id="sickPaySupplement"/>
+      <viewAttribute id="electoralCollegeForWorksCouncil"/>
+      <viewAttribute id="codeOfJobForEldpCode"/>
+      <viewAttribute id="codeOfJobForEldp"/>
+      <viewAttribute id="familyRelationshipWithEmployerCode"/>
+      <viewAttribute id="familyRelationshipWithEmployer"/>
+      <viewAttribute id="exchangeRate"/>
+      <viewAttribute id="workPermitExpiry"/>
+      <viewAttribute id="currentWageLevel"/>
+      <viewAttribute id="holidayCalendarCode"/>
+      <viewAttribute id="empRelationshipCode"/>
+      <viewAttribute id="empRelationship"/>
+      <viewAttribute id="standardHours"/>
+      <viewAttribute id="contractNumber"/>
+      <viewAttribute id="electoralCollegeForWorkersRepresentativesCode"/>
+      <viewAttribute id="electoralCollegeForWorkersRepresentatives"/>
+      <viewAttribute id="jobGroupCode"/>
+      <viewAttribute id="jobGroup"/>
+      <viewAttribute id="eeo4JobCategory"/>
+      <viewAttribute id="isCompetitionClauseActive"/>
+      <viewAttribute id="assedicCertInitialStateNum"/>
+      <viewAttribute id="fgtsPercent"/>
+      <viewAttribute id="toCurrencyCode"/>
+      <viewAttribute id="toCurrency"/>
+      <viewAttribute id="POSITION"/>
+      <viewAttribute id="payScaleArea"/>
+      <viewAttribute id="probationPeriodEndDate"/>
+      <viewAttribute id="TIMEZONE"/>
+      <viewAttribute id="workingDaysPerWeek"/>
+      <viewAttribute id="regularTempCode"/>
+      <viewAttribute id="regularTemp"/>
+      <viewAttribute id="workLocation"/>
+      <viewAttribute id="contractReferenceForAed"/>
+      <viewAttribute id="isSideLineJobAllowed"/>
+      <viewAttribute id="eeo1JobCategoryCode"/>
+      <viewAttribute id="eeo1JobCategory"/>
+      <viewAttribute id="periodIndicatorCode"/>
+      <viewAttribute id="periodIndicator"/>
+      <viewAttribute id="employmentTypeCode"/>
+      <viewAttribute id="employmentType"/>
+      <viewAttribute id="payScaleGroup"/>
+      <viewAttribute id="employeeWorkgroupMembershipCode"/>
+      <viewAttribute id="employeeWorkgroupMembership"/>
+      <viewAttribute id="positionEntryDate"/>
+      <viewAttribute id="sickPaySupplementPeriod"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="contractId"/>
+      <viewAttribute id="LOCATION"/>
+      <viewAttribute id="paymentInLieuOfNotice"/>
+    
+      <viewAttribute id="EVENT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.config::EBV_EmpJob">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ASSESSMENTSTATUSCODE" source="assessmentStatusCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ASSESSMENTSTATUS" source="assessmentStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOTES" source="notes"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSITION" source="position"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMEZONE" source="timezone"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION" source="location"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVENT" source="event"/>
+    </input></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="endDate"/>
+      <viewAttribute id="StockEndDate"/>
+      <viewAttribute id="assignmentClass"/>
+      <viewAttribute id="assignmentIdExternal"/>
+      <viewAttribute id="benefitsEligibilityStartDate"/>
+      <viewAttribute id="benefitsEndDate"/>
+      <viewAttribute id="bonusPayExpirationDate"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="eligibleForSalContinuation"/>
+      <viewAttribute id="eligibleForStock"/>
+      <viewAttribute id="employeeFirstEmployment"/>
+      <viewAttribute id="employmentId"/>
+      <viewAttribute id="firstDateWorked"/>
+      <viewAttribute id="hiringNotCompleted"/>
+      <viewAttribute id="initialOptionGrant"/>
+      <viewAttribute id="initialStockGrant"/>
+      <viewAttribute id="isContingentWorker"/>
+      <viewAttribute id="isECRecord"/>
+      <viewAttribute id="lastDateWorked"/>
+      <viewAttribute id="lastModifiedBy"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="okToRehire"/>
+      <viewAttribute id="originalStartDate"/>
+      <viewAttribute id="payrollEndDate"/>
+      <viewAttribute id="prevEmployeeId"/>
+      <viewAttribute id="professionalServiceDate"/>
+      <viewAttribute id="regretTermination"/>
+      <viewAttribute id="salaryEndDate"/>
+      <viewAttribute id="seniorityDate"/>
+      <viewAttribute id="serviceDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.EntityViews::cv_EmpEmployment"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="externalCode"/>
+      <viewAttribute id="description"/>
+      <viewAttribute id="eventCode"/>
+      <viewAttribute id="event"/>
+      <viewAttribute id="name"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.config::FOBV_FOEventReason"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="EmplData" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="seqNumber"/>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="occupationalLevelsCode"/>
+      <viewAttribute id="occupationalLevels"/>
+      <viewAttribute id="workscheduleCode"/>
+      <viewAttribute id="timeEventTypeGroupId"/>
+      <viewAttribute id="effectiveLatestChange"/>
+      <viewAttribute id="endDate"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="validFrom"/>
+      <viewAttribute id="fgtsDate"/>
+      <viewAttribute id="payScaleLevel"/>
+      <viewAttribute id="timeTypeProfileCode"/>
+      <viewAttribute id="eeoClassCode"/>
+      <viewAttribute id="eeoClass"/>
+      <viewAttribute id="probationaryPeriodMeasureCode"/>
+      <viewAttribute id="probationaryPeriodMeasure"/>
+      <viewAttribute id="fromCurrencyCode"/>
+      <viewAttribute id="fromCurrency"/>
+      <viewAttribute id="eeo5JobCategory"/>
+      <viewAttribute id="flsaStatusCode"/>
+      <viewAttribute id="flsaStatus"/>
+      <viewAttribute id="costCenter"/>
+      <viewAttribute id="residentVote"/>
+      <viewAttribute id="timeRecordingProfileCode"/>
+      <viewAttribute id="laborProtection"/>
+      <viewAttribute id="sickPaySupplementMeasureCode"/>
+      <viewAttribute id="sickPaySupplementMeasure"/>
+      <viewAttribute id="exclExecutiveSector"/>
+      <viewAttribute id="isFulltimeEmployee"/>
+      <viewAttribute id="ineligibleStatutoryMinWage"/>
+      <viewAttribute id="guaranteedPayment"/>
+      <viewAttribute id="occupationGtmCode"/>
+      <viewAttribute id="occupationGtm"/>
+      <viewAttribute id="occupationPerCode"/>
+      <viewAttribute id="occupationPer"/>
+      <viewAttribute id="payScaleType"/>
+      <viewAttribute id="countryOfCompanyCode"/>
+      <viewAttribute id="countryOfCompany"/>
+      <viewAttribute id="eeo6JobCategory"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="municipalInseeCode"/>
+      <viewAttribute id="creditForPreviousService"/>
+      <viewAttribute id="localJobTitle"/>
+      <viewAttribute id="healthRisk"/>
+      <viewAttribute id="dismissalsNoticePeriodForEmployerCode"/>
+      <viewAttribute id="dismissalsNoticePeriodForEmployer"/>
+      <viewAttribute id="timeRecordingAdmissibilityCode"/>
+      <viewAttribute id="payGrade"/>
+      <viewAttribute id="travelDistance"/>
+      <viewAttribute id="eventCode"/>
+      <viewAttribute id="event"/>
+      <viewAttribute id="timeRecordingVariant"/>
+      <viewAttribute id="calculationBase"/>
+      <viewAttribute id="assedicCertObjectNum"/>
+      <viewAttribute id="degreeOfProductivity"/>
+      <viewAttribute id="ASSESSMENTSTATUSCODE"/>
+      <viewAttribute id="ASSESSMENTSTATUS"/>
+      <viewAttribute id="spclRuleNonManualWorker"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="dynamicBreakConfigCode"/>
+      <viewAttribute id="workerCategoryCode"/>
+      <viewAttribute id="workerCategory"/>
+      <viewAttribute id="defaultOvertimeCompensationVariant"/>
+      <viewAttribute id="contractDate"/>
+      <viewAttribute id="businessUnit"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="NOTES"/>
+      <viewAttribute id="harmfulAgentExposureCode"/>
+      <viewAttribute id="harmfulAgentExposure"/>
+      <viewAttribute id="probationaryPeriod"/>
+      <viewAttribute id="sickPaySupplementCode"/>
+      <viewAttribute id="sickPaySupplement"/>
+      <viewAttribute id="electoralCollegeForWorksCouncil"/>
+      <viewAttribute id="codeOfJobForEldpCode"/>
+      <viewAttribute id="codeOfJobForEldp"/>
+      <viewAttribute id="familyRelationshipWithEmployerCode"/>
+      <viewAttribute id="familyRelationshipWithEmployer"/>
+      <viewAttribute id="exchangeRate"/>
+      <viewAttribute id="workPermitExpiry"/>
+      <viewAttribute id="currentWageLevel"/>
+      <viewAttribute id="holidayCalendarCode"/>
+      <viewAttribute id="empRelationshipCode"/>
+      <viewAttribute id="empRelationship"/>
+      <viewAttribute id="standardHours"/>
+      <viewAttribute id="contractNumber"/>
+      <viewAttribute id="electoralCollegeForWorkersRepresentativesCode"/>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="electoralCollegeForWorkersRepresentatives"/>
+      <viewAttribute id="jobGroupCode"/>
+      <viewAttribute id="jobGroup"/>
+      <viewAttribute id="eeo4JobCategory"/>
+      <viewAttribute id="isCompetitionClauseActive"/>
+      <viewAttribute id="assedicCertInitialStateNum"/>
+      <viewAttribute id="fgtsPercent"/>
+      <viewAttribute id="toCurrencyCode"/>
+      <viewAttribute id="toCurrency"/>
+      <viewAttribute id="POSITION"/>
+      <viewAttribute id="payScaleArea"/>
+      <viewAttribute id="probationPeriodEndDate"/>
+      <viewAttribute id="TIMEZONE"/>
+      <viewAttribute id="workingDaysPerWeek"/>
+      <viewAttribute id="regularTempCode"/>
+      <viewAttribute id="regularTemp"/>
+      <viewAttribute id="workLocation"/>
+      <viewAttribute id="contractReferenceForAed"/>
+      <viewAttribute id="isSideLineJobAllowed"/>
+      <viewAttribute id="eeo1JobCategoryCode"/>
+      <viewAttribute id="eeo1JobCategory"/>
+      <viewAttribute id="periodIndicatorCode"/>
+      <viewAttribute id="periodIndicator"/>
+      <viewAttribute id="employmentTypeCode"/>
+      <viewAttribute id="employmentType"/>
+      <viewAttribute id="payScaleGroup"/>
+      <viewAttribute id="employeeWorkgroupMembershipCode"/>
+      <viewAttribute id="employeeWorkgroupMembership"/>
+      <viewAttribute id="positionEntryDate"/>
+      <viewAttribute id="sickPaySupplementPeriod"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="contractId"/>
+      <viewAttribute id="LOCATION"/>
+      <viewAttribute id="paymentInLieuOfNotice"/>
+      <viewAttribute id="employmentId"/>
+      <viewAttribute id="isContingentWorker"/>
+      <viewAttribute id="employeeFirstEmployment"/>
+      <viewAttribute id="eligibleForStock"/>
+      <viewAttribute id="eligibleForSalContinuation"/>
+      <viewAttribute id="okToRehire"/>
+      <viewAttribute id="assignmentIdExternal"/>
+      <viewAttribute id="hiringNotCompleted"/>
+      <viewAttribute id="prevEmployeeId"/>
+      <viewAttribute id="regretTermination"/>
+      <viewAttribute id="assignmentClass"/>
+      <viewAttribute id="EVENT"/>
+      <viewAttribute hidden="true" id="JOIN$userId$userId"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="ev_EmpJob">
+      <mapping xsi:type="Calculation:AttributeMapping" target="seqNumber" source="seqNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate" source="startDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationalLevelsCode" source="occupationalLevelsCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationalLevels" source="occupationalLevels"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workscheduleCode" source="workscheduleCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeEventTypeGroupId" source="timeEventTypeGroupId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="effectiveLatestChange" source="effectiveLatestChange"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="endDate" source="endDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="createdDateTime" source="createdDateTime"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="validFrom" source="validFrom"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="fgtsDate" source="fgtsDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payScaleLevel" source="payScaleLevel"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeTypeProfileCode" source="timeTypeProfileCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeoClassCode" source="eeoClassCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeoClass" source="eeoClass"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="probationaryPeriodMeasureCode" source="probationaryPeriodMeasureCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="probationaryPeriodMeasure" source="probationaryPeriodMeasure"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="fromCurrencyCode" source="fromCurrencyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="fromCurrency" source="fromCurrency"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo5JobCategory" source="eeo5JobCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="flsaStatusCode" source="flsaStatusCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="flsaStatus" source="flsaStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="costCenter" source="costCenter"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="residentVote" source="residentVote"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeRecordingProfileCode" source="timeRecordingProfileCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="laborProtection" source="laborProtection"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplementMeasureCode" source="sickPaySupplementMeasureCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplementMeasure" source="sickPaySupplementMeasure"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="exclExecutiveSector" source="exclExecutiveSector"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="isFulltimeEmployee" source="isFulltimeEmployee"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ineligibleStatutoryMinWage" source="ineligibleStatutoryMinWage"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="guaranteedPayment" source="guaranteedPayment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationGtmCode" source="occupationGtmCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationGtm" source="occupationGtm"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationPerCode" source="occupationPerCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationPer" source="occupationPer"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payScaleType" source="payScaleType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="countryOfCompanyCode" source="countryOfCompanyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="countryOfCompany" source="countryOfCompany"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo6JobCategory" source="eeo6JobCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="createdOn" source="createdOn"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="municipalInseeCode" source="municipalInseeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="creditForPreviousService" source="creditForPreviousService"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="localJobTitle" source="localJobTitle"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="healthRisk" source="healthRisk"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="dismissalsNoticePeriodForEmployerCode" source="dismissalsNoticePeriodForEmployerCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="dismissalsNoticePeriodForEmployer" source="dismissalsNoticePeriodForEmployer"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeRecordingAdmissibilityCode" source="timeRecordingAdmissibilityCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payGrade" source="payGrade"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="travelDistance" source="travelDistance"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eventCode" source="eventCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="event" source="event"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeRecordingVariant" source="timeRecordingVariant"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="calculationBase" source="calculationBase"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="assedicCertObjectNum" source="assedicCertObjectNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="degreeOfProductivity" source="degreeOfProductivity"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ASSESSMENTSTATUSCODE" source="ASSESSMENTSTATUSCODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ASSESSMENTSTATUS" source="ASSESSMENTSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="spclRuleNonManualWorker" source="spclRuleNonManualWorker"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="lastModifiedOn" source="lastModifiedOn"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="dynamicBreakConfigCode" source="dynamicBreakConfigCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workerCategoryCode" source="workerCategoryCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workerCategory" source="workerCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="defaultOvertimeCompensationVariant" source="defaultOvertimeCompensationVariant"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="contractDate" source="contractDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessUnit" source="businessUnit"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="lastModifiedDateTime" source="lastModifiedDateTime"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOTES" source="NOTES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="harmfulAgentExposureCode" source="harmfulAgentExposureCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="harmfulAgentExposure" source="harmfulAgentExposure"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="probationaryPeriod" source="probationaryPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplementCode" source="sickPaySupplementCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplement" source="sickPaySupplement"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="electoralCollegeForWorksCouncil" source="electoralCollegeForWorksCouncil"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="codeOfJobForEldpCode" source="codeOfJobForEldpCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="codeOfJobForEldp" source="codeOfJobForEldp"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="familyRelationshipWithEmployerCode" source="familyRelationshipWithEmployerCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="familyRelationshipWithEmployer" source="familyRelationshipWithEmployer"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="exchangeRate" source="exchangeRate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workPermitExpiry" source="workPermitExpiry"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="currentWageLevel" source="currentWageLevel"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="holidayCalendarCode" source="holidayCalendarCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="empRelationshipCode" source="empRelationshipCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="empRelationship" source="empRelationship"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="standardHours" source="standardHours"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="contractNumber" source="contractNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="electoralCollegeForWorkersRepresentativesCode" source="electoralCollegeForWorkersRepresentativesCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="electoralCollegeForWorkersRepresentatives" source="electoralCollegeForWorkersRepresentatives"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="jobGroupCode" source="jobGroupCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="jobGroup" source="jobGroup"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo4JobCategory" source="eeo4JobCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="isCompetitionClauseActive" source="isCompetitionClauseActive"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="assedicCertInitialStateNum" source="assedicCertInitialStateNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="fgtsPercent" source="fgtsPercent"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="toCurrencyCode" source="toCurrencyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="toCurrency" source="toCurrency"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSITION" source="POSITION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payScaleArea" source="payScaleArea"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="probationPeriodEndDate" source="probationPeriodEndDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMEZONE" source="TIMEZONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workingDaysPerWeek" source="workingDaysPerWeek"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="regularTempCode" source="regularTempCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="regularTemp" source="regularTemp"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workLocation" source="workLocation"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="contractReferenceForAed" source="contractReferenceForAed"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="isSideLineJobAllowed" source="isSideLineJobAllowed"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo1JobCategoryCode" source="eeo1JobCategoryCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo1JobCategory" source="eeo1JobCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="periodIndicatorCode" source="periodIndicatorCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="periodIndicator" source="periodIndicator"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employmentTypeCode" source="employmentTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employmentType" source="employmentType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payScaleGroup" source="payScaleGroup"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeWorkgroupMembershipCode" source="employeeWorkgroupMembershipCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeWorkgroupMembership" source="employeeWorkgroupMembership"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="positionEntryDate" source="positionEntryDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplementPeriod" source="sickPaySupplementPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="createdBy" source="createdBy"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="contractId" source="contractId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION" source="LOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="paymentInLieuOfNotice" source="paymentInLieuOfNotice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVENT" source="EVENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="employmentId" source="employmentId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="isContingentWorker" source="isContingentWorker"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeFirstEmployment" source="employeeFirstEmployment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eligibleForStock" source="eligibleForStock"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eligibleForSalContinuation" source="eligibleForSalContinuation"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="okToRehire" source="okToRehire"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="assignmentIdExternal" source="assignmentIdExternal"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="hiringNotCompleted" source="hiringNotCompleted"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="prevEmployeeId" source="prevEmployeeId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="regretTermination" source="regretTermination"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="assignmentClass" source="assignmentClass"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="personIdExternal" source="personIdExternal"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <joinAttribute name="JOIN$userId$userId"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="EmplEvnt" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="seqNumber"/>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="occupationalLevelsCode"/>
+      <viewAttribute id="occupationalLevels"/>
+      <viewAttribute id="workscheduleCode"/>
+      <viewAttribute id="timeEventTypeGroupId"/>
+      <viewAttribute id="effectiveLatestChange"/>
+      <viewAttribute id="endDate"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="validFrom"/>
+      <viewAttribute id="fgtsDate"/>
+      <viewAttribute id="payScaleLevel"/>
+      <viewAttribute id="timeTypeProfileCode"/>
+      <viewAttribute id="eeoClassCode"/>
+      <viewAttribute id="eeoClass"/>
+      <viewAttribute id="probationaryPeriodMeasureCode"/>
+      <viewAttribute id="probationaryPeriodMeasure"/>
+      <viewAttribute id="fromCurrencyCode"/>
+      <viewAttribute id="fromCurrency"/>
+      <viewAttribute id="eeo5JobCategory"/>
+      <viewAttribute id="flsaStatusCode"/>
+      <viewAttribute id="flsaStatus"/>
+      <viewAttribute id="costCenter"/>
+      <viewAttribute id="residentVote"/>
+      <viewAttribute id="timeRecordingProfileCode"/>
+      <viewAttribute id="laborProtection"/>
+      <viewAttribute id="sickPaySupplementMeasureCode"/>
+      <viewAttribute id="sickPaySupplementMeasure"/>
+      <viewAttribute id="exclExecutiveSector"/>
+      <viewAttribute id="isFulltimeEmployee"/>
+      <viewAttribute id="ineligibleStatutoryMinWage"/>
+      <viewAttribute id="guaranteedPayment"/>
+      <viewAttribute id="occupationGtmCode"/>
+      <viewAttribute id="occupationGtm"/>
+      <viewAttribute id="occupationPerCode"/>
+      <viewAttribute id="occupationPer"/>
+      <viewAttribute id="payScaleType"/>
+      <viewAttribute id="countryOfCompanyCode"/>
+      <viewAttribute id="countryOfCompany"/>
+      <viewAttribute id="eeo6JobCategory"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="municipalInseeCode"/>
+      <viewAttribute id="creditForPreviousService"/>
+      <viewAttribute id="localJobTitle"/>
+      <viewAttribute id="healthRisk"/>
+      <viewAttribute id="dismissalsNoticePeriodForEmployerCode"/>
+      <viewAttribute id="dismissalsNoticePeriodForEmployer"/>
+      <viewAttribute id="timeRecordingAdmissibilityCode"/>
+      <viewAttribute id="payGrade"/>
+      <viewAttribute id="travelDistance"/>
+      <viewAttribute id="eventCode"/>
+      <viewAttribute id="event"/>
+      <viewAttribute id="timeRecordingVariant"/>
+      <viewAttribute id="calculationBase"/>
+      <viewAttribute id="assedicCertObjectNum"/>
+      <viewAttribute id="degreeOfProductivity"/>
+      <viewAttribute id="ASSESSMENTSTATUSCODE"/>
+      <viewAttribute id="ASSESSMENTSTATUS"/>
+      <viewAttribute id="spclRuleNonManualWorker"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="dynamicBreakConfigCode"/>
+      <viewAttribute id="workerCategoryCode"/>
+      <viewAttribute id="workerCategory"/>
+      <viewAttribute id="defaultOvertimeCompensationVariant"/>
+      <viewAttribute id="contractDate"/>
+      <viewAttribute id="businessUnit"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="NOTES"/>
+      <viewAttribute id="harmfulAgentExposureCode"/>
+      <viewAttribute id="harmfulAgentExposure"/>
+      <viewAttribute id="probationaryPeriod"/>
+      <viewAttribute id="sickPaySupplementCode"/>
+      <viewAttribute id="sickPaySupplement"/>
+      <viewAttribute id="electoralCollegeForWorksCouncil"/>
+      <viewAttribute id="codeOfJobForEldpCode"/>
+      <viewAttribute id="codeOfJobForEldp"/>
+      <viewAttribute id="familyRelationshipWithEmployerCode"/>
+      <viewAttribute id="familyRelationshipWithEmployer"/>
+      <viewAttribute id="exchangeRate"/>
+      <viewAttribute id="workPermitExpiry"/>
+      <viewAttribute id="currentWageLevel"/>
+      <viewAttribute id="holidayCalendarCode"/>
+      <viewAttribute id="empRelationshipCode"/>
+      <viewAttribute id="empRelationship"/>
+      <viewAttribute id="standardHours"/>
+      <viewAttribute id="contractNumber"/>
+      <viewAttribute id="electoralCollegeForWorkersRepresentativesCode"/>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="electoralCollegeForWorkersRepresentatives"/>
+      <viewAttribute id="jobGroupCode"/>
+      <viewAttribute id="jobGroup"/>
+      <viewAttribute id="eeo4JobCategory"/>
+      <viewAttribute id="isCompetitionClauseActive"/>
+      <viewAttribute id="assedicCertInitialStateNum"/>
+      <viewAttribute id="fgtsPercent"/>
+      <viewAttribute id="toCurrencyCode"/>
+      <viewAttribute id="toCurrency"/>
+      <viewAttribute id="POSITION"/>
+      <viewAttribute id="payScaleArea"/>
+      <viewAttribute id="probationPeriodEndDate"/>
+      <viewAttribute id="TIMEZONE"/>
+      <viewAttribute id="workingDaysPerWeek"/>
+      <viewAttribute id="regularTempCode"/>
+      <viewAttribute id="regularTemp"/>
+      <viewAttribute id="workLocation"/>
+      <viewAttribute id="contractReferenceForAed"/>
+      <viewAttribute id="isSideLineJobAllowed"/>
+      <viewAttribute id="eeo1JobCategoryCode"/>
+      <viewAttribute id="eeo1JobCategory"/>
+      <viewAttribute id="periodIndicatorCode"/>
+      <viewAttribute id="periodIndicator"/>
+      <viewAttribute id="employmentTypeCode"/>
+      <viewAttribute id="employmentType"/>
+      <viewAttribute id="payScaleGroup"/>
+      <viewAttribute id="employeeWorkgroupMembershipCode"/>
+      <viewAttribute id="employeeWorkgroupMembership"/>
+      <viewAttribute id="positionEntryDate"/>
+      <viewAttribute id="sickPaySupplementPeriod"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="contractId"/>
+      <viewAttribute id="LOCATION"/>
+      <viewAttribute id="paymentInLieuOfNotice"/>
+      <viewAttribute id="employmentId"/>
+      <viewAttribute id="isContingentWorker"/>
+      <viewAttribute id="employeeFirstEmployment"/>
+      <viewAttribute id="eligibleForStock"/>
+      <viewAttribute id="eligibleForSalContinuation"/>
+      <viewAttribute id="okToRehire"/>
+      <viewAttribute id="assignmentIdExternal"/>
+      <viewAttribute id="hiringNotCompleted"/>
+      <viewAttribute id="prevEmployeeId"/>
+      <viewAttribute id="regretTermination"/>
+      <viewAttribute id="assignmentClass"/>
+    
+      <viewAttribute id="ReasonName"/>
+      <viewAttribute id="ReasonDescription"/>
+      <viewAttribute hidden="true" id="JOIN$EVENT$externalCode"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EmplData">
+      <mapping xsi:type="Calculation:AttributeMapping" target="seqNumber" source="seqNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate" source="startDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationalLevelsCode" source="occupationalLevelsCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationalLevels" source="occupationalLevels"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workscheduleCode" source="workscheduleCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeEventTypeGroupId" source="timeEventTypeGroupId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="effectiveLatestChange" source="effectiveLatestChange"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="endDate" source="endDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="createdDateTime" source="createdDateTime"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="validFrom" source="validFrom"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="fgtsDate" source="fgtsDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payScaleLevel" source="payScaleLevel"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeTypeProfileCode" source="timeTypeProfileCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeoClassCode" source="eeoClassCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeoClass" source="eeoClass"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="probationaryPeriodMeasureCode" source="probationaryPeriodMeasureCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="probationaryPeriodMeasure" source="probationaryPeriodMeasure"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="fromCurrencyCode" source="fromCurrencyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="fromCurrency" source="fromCurrency"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo5JobCategory" source="eeo5JobCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="flsaStatusCode" source="flsaStatusCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="flsaStatus" source="flsaStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="costCenter" source="costCenter"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="residentVote" source="residentVote"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeRecordingProfileCode" source="timeRecordingProfileCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="laborProtection" source="laborProtection"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplementMeasureCode" source="sickPaySupplementMeasureCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplementMeasure" source="sickPaySupplementMeasure"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="exclExecutiveSector" source="exclExecutiveSector"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="isFulltimeEmployee" source="isFulltimeEmployee"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ineligibleStatutoryMinWage" source="ineligibleStatutoryMinWage"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="guaranteedPayment" source="guaranteedPayment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationGtmCode" source="occupationGtmCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationGtm" source="occupationGtm"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationPerCode" source="occupationPerCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="occupationPer" source="occupationPer"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payScaleType" source="payScaleType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="countryOfCompanyCode" source="countryOfCompanyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="countryOfCompany" source="countryOfCompany"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo6JobCategory" source="eeo6JobCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="createdOn" source="createdOn"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="municipalInseeCode" source="municipalInseeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="creditForPreviousService" source="creditForPreviousService"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="localJobTitle" source="localJobTitle"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="healthRisk" source="healthRisk"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="dismissalsNoticePeriodForEmployerCode" source="dismissalsNoticePeriodForEmployerCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="dismissalsNoticePeriodForEmployer" source="dismissalsNoticePeriodForEmployer"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeRecordingAdmissibilityCode" source="timeRecordingAdmissibilityCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payGrade" source="payGrade"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="travelDistance" source="travelDistance"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eventCode" source="eventCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="event" source="event"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="timeRecordingVariant" source="timeRecordingVariant"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="calculationBase" source="calculationBase"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="assedicCertObjectNum" source="assedicCertObjectNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="degreeOfProductivity" source="degreeOfProductivity"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ASSESSMENTSTATUSCODE" source="ASSESSMENTSTATUSCODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ASSESSMENTSTATUS" source="ASSESSMENTSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="spclRuleNonManualWorker" source="spclRuleNonManualWorker"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="lastModifiedOn" source="lastModifiedOn"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="dynamicBreakConfigCode" source="dynamicBreakConfigCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workerCategoryCode" source="workerCategoryCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workerCategory" source="workerCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="defaultOvertimeCompensationVariant" source="defaultOvertimeCompensationVariant"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="contractDate" source="contractDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessUnit" source="businessUnit"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="lastModifiedDateTime" source="lastModifiedDateTime"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOTES" source="NOTES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="harmfulAgentExposureCode" source="harmfulAgentExposureCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="harmfulAgentExposure" source="harmfulAgentExposure"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="probationaryPeriod" source="probationaryPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplementCode" source="sickPaySupplementCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplement" source="sickPaySupplement"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="electoralCollegeForWorksCouncil" source="electoralCollegeForWorksCouncil"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="codeOfJobForEldpCode" source="codeOfJobForEldpCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="codeOfJobForEldp" source="codeOfJobForEldp"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="familyRelationshipWithEmployerCode" source="familyRelationshipWithEmployerCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="familyRelationshipWithEmployer" source="familyRelationshipWithEmployer"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="exchangeRate" source="exchangeRate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workPermitExpiry" source="workPermitExpiry"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="currentWageLevel" source="currentWageLevel"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="holidayCalendarCode" source="holidayCalendarCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="empRelationshipCode" source="empRelationshipCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="empRelationship" source="empRelationship"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="standardHours" source="standardHours"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="contractNumber" source="contractNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="electoralCollegeForWorkersRepresentativesCode" source="electoralCollegeForWorkersRepresentativesCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="personIdExternal" source="personIdExternal"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="electoralCollegeForWorkersRepresentatives" source="electoralCollegeForWorkersRepresentatives"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="jobGroupCode" source="jobGroupCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="jobGroup" source="jobGroup"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo4JobCategory" source="eeo4JobCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="isCompetitionClauseActive" source="isCompetitionClauseActive"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="assedicCertInitialStateNum" source="assedicCertInitialStateNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="fgtsPercent" source="fgtsPercent"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="toCurrencyCode" source="toCurrencyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="toCurrency" source="toCurrency"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSITION" source="POSITION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payScaleArea" source="payScaleArea"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="probationPeriodEndDate" source="probationPeriodEndDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMEZONE" source="TIMEZONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workingDaysPerWeek" source="workingDaysPerWeek"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="regularTempCode" source="regularTempCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="regularTemp" source="regularTemp"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="workLocation" source="workLocation"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="contractReferenceForAed" source="contractReferenceForAed"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="isSideLineJobAllowed" source="isSideLineJobAllowed"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo1JobCategoryCode" source="eeo1JobCategoryCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eeo1JobCategory" source="eeo1JobCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="periodIndicatorCode" source="periodIndicatorCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="periodIndicator" source="periodIndicator"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employmentTypeCode" source="employmentTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employmentType" source="employmentType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="payScaleGroup" source="payScaleGroup"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeWorkgroupMembershipCode" source="employeeWorkgroupMembershipCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeWorkgroupMembership" source="employeeWorkgroupMembership"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="positionEntryDate" source="positionEntryDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="sickPaySupplementPeriod" source="sickPaySupplementPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="createdBy" source="createdBy"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="contractId" source="contractId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION" source="LOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="paymentInLieuOfNotice" source="paymentInLieuOfNotice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employmentId" source="employmentId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="isContingentWorker" source="isContingentWorker"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeFirstEmployment" source="employeeFirstEmployment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eligibleForStock" source="eligibleForStock"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eligibleForSalContinuation" source="eligibleForSalContinuation"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="okToRehire" source="okToRehire"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="assignmentIdExternal" source="assignmentIdExternal"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="hiringNotCompleted" source="hiringNotCompleted"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="prevEmployeeId" source="prevEmployeeId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="regretTermination" source="regretTermination"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="assignmentClass" source="assignmentClass"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EVENT$externalCode" source="EVENT"/>
+    </input>
+  
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ReasonName" source="name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ReasonDescription" source="description"/>
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EVENT$externalCode" source="externalCode"/>
+  
+    </input>
+    <joinAttribute name="JOIN$EVENT$externalCode"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="EmplEvnt">
+  <attributes>
+    <attribute id="seqNumber" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="seqNumber"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="seqNumber"/>
+    </attribute>
+    <attribute id="userId" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="userId"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="userId"/>
+    </attribute>
+    <attribute id="startDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="startDate"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="startDate"/>
+    </attribute>
+    <attribute id="occupationalLevelsCode" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="occupationalLevelsCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="occupationalLevelsCode"/>
+    </attribute>
+    <attribute id="occupationalLevels" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="occupationalLevels"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="occupationalLevels"/>
+    </attribute>
+    <attribute id="workscheduleCode" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="workscheduleCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="workscheduleCode"/>
+    </attribute>
+    <attribute id="timeEventTypeGroupId" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="timeEventTypeGroupId"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="timeEventTypeGroupId"/>
+    </attribute>
+    <attribute id="effectiveLatestChange" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="effectiveLatestChange"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="effectiveLatestChange"/>
+    </attribute>
+    <attribute id="endDate" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="endDate"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="endDate"/>
+    </attribute>
+    <attribute id="createdDateTime" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="createdDateTime"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="createdDateTime"/>
+    </attribute>
+    <attribute id="validFrom" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="validFrom"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="validFrom"/>
+    </attribute>
+    <attribute id="fgtsDate" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="fgtsDate"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="fgtsDate"/>
+    </attribute>
+    <attribute id="payScaleLevel" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="payScaleLevel"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="payScaleLevel"/>
+    </attribute>
+    <attribute id="timeTypeProfileCode" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="timeTypeProfileCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="timeTypeProfileCode"/>
+    </attribute>
+    <attribute id="eeoClassCode" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eeoClassCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="eeoClassCode"/>
+    </attribute>
+    <attribute id="eeoClass" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eeoClass"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="eeoClass"/>
+    </attribute>
+    <attribute id="probationaryPeriodMeasureCode" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="probationaryPeriodMeasureCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="probationaryPeriodMeasureCode"/>
+    </attribute>
+    <attribute id="probationaryPeriodMeasure" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="probationaryPeriodMeasure"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="probationaryPeriodMeasure"/>
+    </attribute>
+    <attribute id="fromCurrencyCode" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="fromCurrencyCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="fromCurrencyCode"/>
+    </attribute>
+    <attribute id="fromCurrency" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="fromCurrency"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="fromCurrency"/>
+    </attribute>
+    <attribute id="eeo5JobCategory" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eeo5JobCategory"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="eeo5JobCategory"/>
+    </attribute>
+    <attribute id="flsaStatusCode" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="flsaStatusCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="flsaStatusCode"/>
+    </attribute>
+    <attribute id="flsaStatus" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="flsaStatus"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="flsaStatus"/>
+    </attribute>
+    <attribute id="costCenter" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="costCenter"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="costCenter"/>
+    </attribute>
+    <attribute id="residentVote" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="residentVote"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="residentVote"/>
+    </attribute>
+    <attribute id="timeRecordingProfileCode" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="timeRecordingProfileCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="timeRecordingProfileCode"/>
+    </attribute>
+    <attribute id="laborProtection" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="laborProtection"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="laborProtection"/>
+    </attribute>
+    <attribute id="sickPaySupplementMeasureCode" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="sickPaySupplementMeasureCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="sickPaySupplementMeasureCode"/>
+    </attribute>
+    <attribute id="sickPaySupplementMeasure" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="sickPaySupplementMeasure"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="sickPaySupplementMeasure"/>
+    </attribute>
+    <attribute id="exclExecutiveSector" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="exclExecutiveSector"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="exclExecutiveSector"/>
+    </attribute>
+    <attribute id="isFulltimeEmployee" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="isFulltimeEmployee"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="isFulltimeEmployee"/>
+    </attribute>
+    <attribute id="ineligibleStatutoryMinWage" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ineligibleStatutoryMinWage"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="ineligibleStatutoryMinWage"/>
+    </attribute>
+    <attribute id="guaranteedPayment" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="guaranteedPayment"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="guaranteedPayment"/>
+    </attribute>
+    <attribute id="occupationGtmCode" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="occupationGtmCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="occupationGtmCode"/>
+    </attribute>
+    <attribute id="occupationGtm" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="occupationGtm"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="occupationGtm"/>
+    </attribute>
+    <attribute id="occupationPerCode" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="occupationPerCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="occupationPerCode"/>
+    </attribute>
+    <attribute id="occupationPer" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="occupationPer"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="occupationPer"/>
+    </attribute>
+    <attribute id="payScaleType" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="payScaleType"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="payScaleType"/>
+    </attribute>
+    <attribute id="countryOfCompanyCode" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="countryOfCompanyCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="countryOfCompanyCode"/>
+    </attribute>
+    <attribute id="countryOfCompany" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="countryOfCompany"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="countryOfCompany"/>
+    </attribute>
+    <attribute id="eeo6JobCategory" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eeo6JobCategory"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="eeo6JobCategory"/>
+    </attribute>
+    <attribute id="createdOn" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="createdOn"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="createdOn"/>
+    </attribute>
+    <attribute id="municipalInseeCode" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="municipalInseeCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="municipalInseeCode"/>
+    </attribute>
+    <attribute id="creditForPreviousService" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="creditForPreviousService"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="creditForPreviousService"/>
+    </attribute>
+    <attribute id="localJobTitle" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="localJobTitle"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="localJobTitle"/>
+    </attribute>
+    <attribute id="healthRisk" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="healthRisk"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="healthRisk"/>
+    </attribute>
+    <attribute id="dismissalsNoticePeriodForEmployerCode" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="dismissalsNoticePeriodForEmployerCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="dismissalsNoticePeriodForEmployerCode"/>
+    </attribute>
+    <attribute id="dismissalsNoticePeriodForEmployer" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="dismissalsNoticePeriodForEmployer"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="dismissalsNoticePeriodForEmployer"/>
+    </attribute>
+    <attribute id="timeRecordingAdmissibilityCode" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="timeRecordingAdmissibilityCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="timeRecordingAdmissibilityCode"/>
+    </attribute>
+    <attribute id="payGrade" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="payGrade"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="payGrade"/>
+    </attribute>
+    <attribute id="travelDistance" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="travelDistance"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="travelDistance"/>
+    </attribute>
+    <attribute id="eventCode" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eventCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="eventCode"/>
+    </attribute>
+    <attribute id="event" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="event"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="event"/>
+    </attribute>
+    <attribute id="timeRecordingVariant" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="timeRecordingVariant"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="timeRecordingVariant"/>
+    </attribute>
+    <attribute id="calculationBase" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="calculationBase"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="calculationBase"/>
+    </attribute>
+    <attribute id="assedicCertObjectNum" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="assedicCertObjectNum"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="assedicCertObjectNum"/>
+    </attribute>
+    <attribute id="degreeOfProductivity" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="degreeOfProductivity"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="degreeOfProductivity"/>
+    </attribute>
+    <attribute id="ASSESSMENTSTATUSCODE" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ASSESSMENTSTATUSCODE"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="ASSESSMENTSTATUSCODE"/>
+    </attribute>
+    <attribute id="ASSESSMENTSTATUS" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ASSESSMENTSTATUS"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="ASSESSMENTSTATUS"/>
+    </attribute>
+    <attribute id="spclRuleNonManualWorker" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="spclRuleNonManualWorker"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="spclRuleNonManualWorker"/>
+    </attribute>
+    <attribute id="lastModifiedOn" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="lastModifiedOn"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="lastModifiedOn"/>
+    </attribute>
+    <attribute id="dynamicBreakConfigCode" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="dynamicBreakConfigCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="dynamicBreakConfigCode"/>
+    </attribute>
+    <attribute id="workerCategoryCode" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="workerCategoryCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="workerCategoryCode"/>
+    </attribute>
+    <attribute id="workerCategory" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="workerCategory"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="workerCategory"/>
+    </attribute>
+    <attribute id="defaultOvertimeCompensationVariant" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="defaultOvertimeCompensationVariant"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="defaultOvertimeCompensationVariant"/>
+    </attribute>
+    <attribute id="contractDate" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="contractDate"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="contractDate"/>
+    </attribute>
+    <attribute id="businessUnit" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="businessUnit"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="businessUnit"/>
+    </attribute>
+    <attribute id="lastModifiedDateTime" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="lastModifiedDateTime"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="lastModifiedDateTime"/>
+    </attribute>
+    <attribute id="NOTES" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NOTES"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="NOTES"/>
+    </attribute>
+    <attribute id="harmfulAgentExposureCode" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="harmfulAgentExposureCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="harmfulAgentExposureCode"/>
+    </attribute>
+    <attribute id="harmfulAgentExposure" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="harmfulAgentExposure"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="harmfulAgentExposure"/>
+    </attribute>
+    <attribute id="probationaryPeriod" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="probationaryPeriod"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="probationaryPeriod"/>
+    </attribute>
+    <attribute id="sickPaySupplementCode" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="sickPaySupplementCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="sickPaySupplementCode"/>
+    </attribute>
+    <attribute id="sickPaySupplement" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="sickPaySupplement"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="sickPaySupplement"/>
+    </attribute>
+    <attribute id="electoralCollegeForWorksCouncil" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="electoralCollegeForWorksCouncil"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="electoralCollegeForWorksCouncil"/>
+    </attribute>
+    <attribute id="codeOfJobForEldpCode" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="codeOfJobForEldpCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="codeOfJobForEldpCode"/>
+    </attribute>
+    <attribute id="codeOfJobForEldp" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="codeOfJobForEldp"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="codeOfJobForEldp"/>
+    </attribute>
+    <attribute id="familyRelationshipWithEmployerCode" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="familyRelationshipWithEmployerCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="familyRelationshipWithEmployerCode"/>
+    </attribute>
+    <attribute id="familyRelationshipWithEmployer" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="familyRelationshipWithEmployer"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="familyRelationshipWithEmployer"/>
+    </attribute>
+    <attribute id="exchangeRate" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="exchangeRate"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="exchangeRate"/>
+    </attribute>
+    <attribute id="workPermitExpiry" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="workPermitExpiry"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="workPermitExpiry"/>
+    </attribute>
+    <attribute id="currentWageLevel" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="currentWageLevel"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="currentWageLevel"/>
+    </attribute>
+    <attribute id="holidayCalendarCode" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="holidayCalendarCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="holidayCalendarCode"/>
+    </attribute>
+    <attribute id="empRelationshipCode" order="84" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="empRelationshipCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="empRelationshipCode"/>
+    </attribute>
+    <attribute id="empRelationship" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="empRelationship"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="empRelationship"/>
+    </attribute>
+    <attribute id="standardHours" order="86" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="standardHours"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="standardHours"/>
+    </attribute>
+    <attribute id="contractNumber" order="87" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="contractNumber"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="contractNumber"/>
+    </attribute>
+    <attribute id="electoralCollegeForWorkersRepresentativesCode" order="88" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="electoralCollegeForWorkersRepresentativesCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="electoralCollegeForWorkersRepresentativesCode"/>
+    </attribute>
+    <attribute id="electoralCollegeForWorkersRepresentatives" order="89" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="electoralCollegeForWorkersRepresentatives"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="electoralCollegeForWorkersRepresentatives"/>
+    </attribute>
+    <attribute id="jobGroupCode" order="90" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="jobGroupCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="jobGroupCode"/>
+    </attribute>
+    <attribute id="jobGroup" order="91" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="jobGroup"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="jobGroup"/>
+    </attribute>
+    <attribute id="eeo4JobCategory" order="92" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eeo4JobCategory"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="eeo4JobCategory"/>
+    </attribute>
+    <attribute id="isCompetitionClauseActive" order="93" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="isCompetitionClauseActive"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="isCompetitionClauseActive"/>
+    </attribute>
+    <attribute id="assedicCertInitialStateNum" order="94" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="assedicCertInitialStateNum"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="assedicCertInitialStateNum"/>
+    </attribute>
+    <attribute id="fgtsPercent" order="95" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="fgtsPercent"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="fgtsPercent"/>
+    </attribute>
+    <attribute id="toCurrencyCode" order="96" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="toCurrencyCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="toCurrencyCode"/>
+    </attribute>
+    <attribute id="toCurrency" order="97" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="toCurrency"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="toCurrency"/>
+    </attribute>
+    <attribute id="POSITION" order="98" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POSITION"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="POSITION"/>
+    </attribute>
+    <attribute id="payScaleArea" order="99" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="payScaleArea"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="payScaleArea"/>
+    </attribute>
+    <attribute id="probationPeriodEndDate" order="100" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="probationPeriodEndDate"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="probationPeriodEndDate"/>
+    </attribute>
+    <attribute id="TIMEZONE" order="101" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TIMEZONE"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="TIMEZONE"/>
+    </attribute>
+    <attribute id="workingDaysPerWeek" order="102" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="workingDaysPerWeek"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="workingDaysPerWeek"/>
+    </attribute>
+    <attribute id="regularTempCode" order="103" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="regularTempCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="regularTempCode"/>
+    </attribute>
+    <attribute id="regularTemp" order="104" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="regularTemp"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="regularTemp"/>
+    </attribute>
+    <attribute id="workLocation" order="105" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="workLocation"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="workLocation"/>
+    </attribute>
+    <attribute id="contractReferenceForAed" order="106" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="contractReferenceForAed"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="contractReferenceForAed"/>
+    </attribute>
+    <attribute id="isSideLineJobAllowed" order="107" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="isSideLineJobAllowed"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="isSideLineJobAllowed"/>
+    </attribute>
+    <attribute id="eeo1JobCategoryCode" order="108" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eeo1JobCategoryCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="eeo1JobCategoryCode"/>
+    </attribute>
+    <attribute id="eeo1JobCategory" order="109" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eeo1JobCategory"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="eeo1JobCategory"/>
+    </attribute>
+    <attribute id="periodIndicatorCode" order="110" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="periodIndicatorCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="periodIndicatorCode"/>
+    </attribute>
+    <attribute id="periodIndicator" order="111" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="periodIndicator"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="periodIndicator"/>
+    </attribute>
+    <attribute id="employmentTypeCode" order="112" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="employmentTypeCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="employmentTypeCode"/>
+    </attribute>
+    <attribute id="employmentType" order="113" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="employmentType"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="employmentType"/>
+    </attribute>
+    <attribute id="payScaleGroup" order="114" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="payScaleGroup"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="payScaleGroup"/>
+    </attribute>
+    <attribute id="employeeWorkgroupMembershipCode" order="115" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="employeeWorkgroupMembershipCode"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="employeeWorkgroupMembershipCode"/>
+    </attribute>
+    <attribute id="employeeWorkgroupMembership" order="116" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="employeeWorkgroupMembership"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="employeeWorkgroupMembership"/>
+    </attribute>
+    <attribute id="positionEntryDate" order="117" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="positionEntryDate"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="positionEntryDate"/>
+    </attribute>
+    <attribute id="sickPaySupplementPeriod" order="118" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="sickPaySupplementPeriod"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="sickPaySupplementPeriod"/>
+    </attribute>
+    <attribute id="createdBy" order="119" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="createdBy"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="createdBy"/>
+    </attribute>
+    <attribute id="contractId" order="120" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="contractId"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="contractId"/>
+    </attribute>
+    <attribute id="LOCATION" order="121" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOCATION"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="LOCATION"/>
+    </attribute>
+    <attribute id="paymentInLieuOfNotice" order="122" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="paymentInLieuOfNotice"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="paymentInLieuOfNotice"/>
+    </attribute>
+  
+    <attribute id="ReasonName" order="124" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME"/>
+  
+      <keyMapping columnObjectName="EmplEvnt" columnName="ReasonName"/>
+  
+    </attribute>
+    <attribute id="ReasonDescription" order="125" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESCRIPTION"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="ReasonDescription"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures>
+    <measure id="empJobCounter" order="123" aggregationType="none" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="empJobCounter"/>
+      <exceptionAggregation>
+        <attribute attributeName="userId"/>
+      </exceptionAggregation>
+      <formula>1</formula>
+      
+      
+      </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="ev_EmpJob" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="156" y="487"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-486" y="504"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-357" y="366"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+  
+  
+    <shape expanded="true" modelObjectName="EmplData" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="86" y="322"/>
+      <rectangleSize height="30" width="170"/>
+    </shape>
+    <shape modelObjectName="ev_EmpJob" modelObjectNameSpace="EmplData" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="EmplData" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="475" y="24"/>
+      <rectangleSize width="216"/>
+    </shape>
+    <shape expanded="true" modelObjectName="EmplEvnt" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="206"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="EmplData" modelObjectNameSpace="EmplEvnt" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="EmplEvnt" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="582" y="2302"/>
+      <rectangleSize width="151"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

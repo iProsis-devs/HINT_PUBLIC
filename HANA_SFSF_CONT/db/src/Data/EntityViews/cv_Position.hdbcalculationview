@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::cv_Position" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="cv_Position"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="iprosis.config::EBV_Position">
+    <resourceUri>iprosis.config::EBV_Position</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="ev_Position">
+    <viewAttributes>
+      <viewAttribute id="effectiveStartDate"/>
+      <viewAttribute id="businessUnit"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="jobTitle"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="jobCode"/>
+      <viewAttribute id="mdfSystemVersionId"/>
+      <viewAttribute id="mdfSystemEntityId"/>
+      <viewAttribute id="payRange"/>
+      <viewAttribute id="regularTemporaryCode"/>
+      <viewAttribute id="regularTemporary"/>
+      <viewAttribute id="costCenter"/>
+      <viewAttribute id="standardHours"/>
+      <viewAttribute id="legacyPositionId"/>
+      <viewAttribute id="externalName_localized"/>
+      <viewAttribute id="mdfSystemRecordStatus"/>
+      <viewAttribute id="effectiveStatus"/>
+      <viewAttribute id="technicalParameters"/>
+      <viewAttribute id="effectiveEndDate"/>
+      <viewAttribute id="positionCriticalityCode"/>
+      <viewAttribute id="positionCriticality"/>
+      <viewAttribute id="positionTitle"/>
+      <viewAttribute id="externalName_defaultValue"/>
+      <viewAttribute id="positionControlled"/>
+      <viewAttribute id="payGrade"/>
+      <viewAttribute id="employeeClassCode"/>
+      <viewAttribute id="employeeClass"/>
+      <viewAttribute id="mdfSystemObjectType"/>
+      <viewAttribute id="creationSource"/>
+      <viewAttribute id="changeReasonCode"/>
+      <viewAttribute id="changeReason"/>
+      <viewAttribute id="targetFTE"/>
+      <viewAttribute id="lastModifiedDate"/>
+      <viewAttribute id="lastModifiedBy"/>
+      <viewAttribute id="jobLevelCode"/>
+      <viewAttribute id="jobLevel"/>
+      <viewAttribute id="transactionSequence"/>
+      <viewAttribute id="createdDate"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="mdfSystemOptimisticLockUUID"/>
+      <viewAttribute id="mdfSystemRecordId"/>
+      <viewAttribute id="multipleIncumbentsAllowed"/>
+      <viewAttribute id="code"/>
+      <viewAttribute id="comment"/>
+      <viewAttribute id="company"/>
+      <viewAttribute id="criticality"/>
+      <viewAttribute id="cust_recruiter"/>
+      <viewAttribute id="department"/>
+      <viewAttribute id="description"/>
+      <viewAttribute id="division"/>
+      <viewAttribute id="incumbent"/>
+      <viewAttribute id="location"/>
+      <viewAttribute id="type"/>
+      <viewAttribute id="vacant"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.config::EBV_Position"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="ev_Position">
+  <attributes>
+    <attribute id="businessUnit" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="businessUnit"/>
+      <keyMapping columnObjectName="ev_Position" columnName="businessUnit"/>
+    </attribute>
+    <attribute id="jobTitle" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="jobTitle"/>
+      <keyMapping columnObjectName="ev_Position" columnName="jobTitle"/>
+    </attribute>
+    <attribute id="jobCode" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="jobCode"/>
+      <keyMapping columnObjectName="ev_Position" columnName="jobCode"/>
+    </attribute>
+    <attribute id="mdfSystemVersionId" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="mdfSystemVersionId"/>
+      <keyMapping columnObjectName="ev_Position" columnName="mdfSystemVersionId"/>
+    </attribute>
+    <attribute id="mdfSystemEntityId" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="mdfSystemEntityId"/>
+      <keyMapping columnObjectName="ev_Position" columnName="mdfSystemEntityId"/>
+    </attribute>
+    <attribute id="payRange" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="payRange"/>
+      <keyMapping columnObjectName="ev_Position" columnName="payRange"/>
+    </attribute>
+    <attribute id="regularTemporaryCode" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="regularTemporaryCode"/>
+      <keyMapping columnObjectName="ev_Position" columnName="regularTemporaryCode"/>
+    </attribute>
+    <attribute id="regularTemporary" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="regularTemporary"/>
+      <keyMapping columnObjectName="ev_Position" columnName="regularTemporary"/>
+    </attribute>
+    <attribute id="costCenter" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="costCenter"/>
+      <keyMapping columnObjectName="ev_Position" columnName="costCenter"/>
+    </attribute>
+    <attribute id="standardHours" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="standardHours"/>
+      <keyMapping columnObjectName="ev_Position" columnName="standardHours"/>
+    </attribute>
+    <attribute id="legacyPositionId" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="legacyPositionId"/>
+      <keyMapping columnObjectName="ev_Position" columnName="legacyPositionId"/>
+    </attribute>
+    <attribute id="externalName_localized" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="externalName_localized"/>
+      <keyMapping columnObjectName="ev_Position" columnName="externalName_localized"/>
+    </attribute>
+    <attribute id="mdfSystemRecordStatus" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="mdfSystemRecordStatus"/>
+      <keyMapping columnObjectName="ev_Position" columnName="mdfSystemRecordStatus"/>
+    </attribute>
+    <attribute id="effectiveStatus" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="effectiveStatus"/>
+      <keyMapping columnObjectName="ev_Position" columnName="effectiveStatus"/>
+    </attribute>
+    <attribute id="technicalParameters" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="technicalParameters"/>
+      <keyMapping columnObjectName="ev_Position" columnName="technicalParameters"/>
+    </attribute>
+    <attribute id="effectiveEndDate" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="effectiveEndDate"/>
+      <keyMapping columnObjectName="ev_Position" columnName="effectiveEndDate"/>
+    </attribute>
+    <attribute id="positionCriticalityCode" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="positionCriticalityCode"/>
+      <keyMapping columnObjectName="ev_Position" columnName="positionCriticalityCode"/>
+    </attribute>
+    <attribute id="positionCriticality" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="positionCriticality"/>
+      <keyMapping columnObjectName="ev_Position" columnName="positionCriticality"/>
+    </attribute>
+    <attribute id="positionTitle" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="positionTitle"/>
+      <keyMapping columnObjectName="ev_Position" columnName="positionTitle"/>
+    </attribute>
+    <attribute id="externalName_defaultValue" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="externalName_defaultValue"/>
+      <keyMapping columnObjectName="ev_Position" columnName="externalName_defaultValue"/>
+    </attribute>
+    <attribute id="positionControlled" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="positionControlled"/>
+      <keyMapping columnObjectName="ev_Position" columnName="positionControlled"/>
+    </attribute>
+    <attribute id="payGrade" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="payGrade"/>
+      <keyMapping columnObjectName="ev_Position" columnName="payGrade"/>
+    </attribute>
+    <attribute id="employeeClassCode" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="employeeClassCode"/>
+      <keyMapping columnObjectName="ev_Position" columnName="employeeClassCode"/>
+    </attribute>
+    <attribute id="employeeClass" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="employeeClass"/>
+      <keyMapping columnObjectName="ev_Position" columnName="employeeClass"/>
+    </attribute>
+    <attribute id="mdfSystemObjectType" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="mdfSystemObjectType"/>
+      <keyMapping columnObjectName="ev_Position" columnName="mdfSystemObjectType"/>
+    </attribute>
+    <attribute id="creationSource" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="creationSource"/>
+      <keyMapping columnObjectName="ev_Position" columnName="creationSource"/>
+    </attribute>
+    <attribute id="changeReasonCode" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="changeReasonCode"/>
+      <keyMapping columnObjectName="ev_Position" columnName="changeReasonCode"/>
+    </attribute>
+    <attribute id="changeReason" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="changeReason"/>
+      <keyMapping columnObjectName="ev_Position" columnName="changeReason"/>
+    </attribute>
+    <attribute id="targetFTE" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="targetFTE"/>
+      <keyMapping columnObjectName="ev_Position" columnName="targetFTE"/>
+    </attribute>
+    <attribute id="lastModifiedBy" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="lastModifiedBy"/>
+      <keyMapping columnObjectName="ev_Position" columnName="lastModifiedBy"/>
+    </attribute>
+    <attribute id="jobLevelCode" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="jobLevelCode"/>
+      <keyMapping columnObjectName="ev_Position" columnName="jobLevelCode"/>
+    </attribute>
+    <attribute id="jobLevel" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="jobLevel"/>
+      <keyMapping columnObjectName="ev_Position" columnName="jobLevel"/>
+    </attribute>
+    <attribute id="transactionSequence" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="transactionSequence"/>
+      <keyMapping columnObjectName="ev_Position" columnName="transactionSequence"/>
+    </attribute>
+    <attribute id="createdBy" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="createdBy"/>
+      <keyMapping columnObjectName="ev_Position" columnName="createdBy"/>
+    </attribute>
+    <attribute id="mdfSystemOptimisticLockUUID" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="mdfSystemOptimisticLockUUID"/>
+      <keyMapping columnObjectName="ev_Position" columnName="mdfSystemOptimisticLockUUID"/>
+    </attribute>
+    <attribute id="mdfSystemRecordId" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="mdfSystemRecordId"/>
+      <keyMapping columnObjectName="ev_Position" columnName="mdfSystemRecordId"/>
+    </attribute>
+    <attribute id="multipleIncumbentsAllowed" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="multipleIncumbentsAllowed"/>
+      <keyMapping columnObjectName="ev_Position" columnName="multipleIncumbentsAllowed"/>
+    </attribute>
+    <attribute id="code" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="code"/>
+      <keyMapping columnObjectName="ev_Position" columnName="code"/>
+    </attribute>
+    <attribute id="comment" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="comment"/>
+      <keyMapping columnObjectName="ev_Position" columnName="comment"/>
+    </attribute>
+    <attribute id="company" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="company"/>
+      <keyMapping columnObjectName="ev_Position" columnName="company"/>
+    </attribute>
+    <attribute id="cust_recruiter" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="cust_recruiter"/>
+      <keyMapping columnObjectName="ev_Position" columnName="cust_recruiter"/>
+    </attribute>
+    <attribute id="department" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="department"/>
+      <keyMapping columnObjectName="ev_Position" columnName="department"/>
+    </attribute>
+    <attribute id="description" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="description"/>
+      <keyMapping columnObjectName="ev_Position" columnName="description"/>
+    </attribute>
+    <attribute id="division" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="division"/>
+      <keyMapping columnObjectName="ev_Position" columnName="division"/>
+    </attribute>
+    <attribute id="incumbent" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="incumbent"/>
+      <keyMapping columnObjectName="ev_Position" columnName="incumbent"/>
+    </attribute>
+    <attribute id="location" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="location"/>
+      <keyMapping columnObjectName="ev_Position" columnName="location"/>
+    </attribute>
+    <attribute id="type" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="type"/>
+      <keyMapping columnObjectName="ev_Position" columnName="type"/>
+    </attribute>
+    <attribute id="vacant" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="vacant"/>
+      <keyMapping columnObjectName="ev_Position" columnName="vacant"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="effectiveStartDate" order="1" aggregationType="min" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="effectiveStartDate"/>
+      <measureMapping columnObjectName="ev_Position" columnName="effectiveStartDate"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="lastModifiedDateTime" order="3" aggregationType="min" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="lastModifiedDateTime"/>
+      <measureMapping columnObjectName="ev_Position" columnName="lastModifiedDateTime"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="createdDateTime" order="5" aggregationType="min" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="createdDateTime"/>
+      <measureMapping columnObjectName="ev_Position" columnName="createdDateTime"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="lastModifiedDate" order="33" aggregationType="min" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="lastModifiedDate"/>
+      <measureMapping columnObjectName="ev_Position" columnName="lastModifiedDate"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="createdDate" order="38" aggregationType="min" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="createdDate"/>
+      <measureMapping columnObjectName="ev_Position" columnName="createdDate"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  
+    <measure id="criticality" order="46" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="criticality"/>
+      <measureMapping columnObjectName="ev_Position" columnName="criticality"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="ev_Position" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="242"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

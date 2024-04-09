@@ -1,0 +1,32 @@
+_schema-version: "2.1"
+ID: sfsf-analytics
+version: 0.0.1
+modules:
+- name: db
+  type: hdb
+  path: db
+  requires:
+  - name: hdi_db
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+  - name: cross-container-service-3
+    group: SERVICE_REPLACEMENTS
+    properties:
+      key: ServiceName
+      service: ~{the-service-name}
+resources:
+- name: hdi_db
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      schema: sfsf
+  properties:
+    hdi-container-name: ${service-name}
+- name: sfsf-hdidb-sfsf-analytics
+  type: deleteme
+- name: cross-container-service-3
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: SFSF_AUTH
+  properties:
+    the-service-name: ${service-name}

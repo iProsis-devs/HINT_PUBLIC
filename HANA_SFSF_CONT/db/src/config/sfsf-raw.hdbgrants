@@ -1,0 +1,30 @@
+{
+    "SFSF_AUTH": {
+        "object_owner": {
+            "schema_privileges": [
+                {
+                    "privileges_with_grant_option": [
+                        "SELECT",
+                        "INSERT",
+                        "UPDATE",
+                        "DELETE",
+                        "EXECUTE"
+                    ]
+                }
+            ]
+        },
+        "application_user": {
+            "schema_privileges": [
+                {
+                    "privileges": [
+                        "SELECT",
+                        "INSERT",
+                        "UPDATE",
+                        "DELETE",
+                        "EXECUTE"
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.Utilities::Calendar" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="Calendar"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="iprosis.time_tables::M_TIME_DIMENSION">
+    <resourceUri>iprosis.time_tables::M_TIME_DIMENSION</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="DailyCalendar">
+    <viewAttributes>
+      <viewAttribute id="DATETIMESTAMP"/>
+      <viewAttribute id="DATE_SQL"/>
+      <viewAttribute id="DATETIME_SAP"/>
+      <viewAttribute id="DATE_SAP"/>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="QUARTER"/>
+      <viewAttribute id="MONTH"/>
+      <viewAttribute id="WEEK"/>
+      <viewAttribute id="WEEK_YEAR"/>
+      <viewAttribute id="DAY_OF_WEEK"/>
+      <viewAttribute id="DAY"/>
+      <viewAttribute id="HOUR"/>
+      <viewAttribute id="MINUTE"/>
+      <viewAttribute id="SECOND"/>
+      <viewAttribute id="CALQUARTER"/>
+      <viewAttribute id="CALMONTH"/>
+      <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="YEAR_INT"/>
+      <viewAttribute id="QUARTER_INT"/>
+      <viewAttribute id="MONTH_INT"/>
+      <viewAttribute id="WEEK_INT"/>
+      <viewAttribute id="WEEK_YEAR_INT"/>
+      <viewAttribute id="DAY_OF_WEEK_INT"/>
+      <viewAttribute id="DAY_INT"/>
+      <viewAttribute id="HOUR_INT"/>
+      <viewAttribute id="MINUTE_INT"/>
+      <viewAttribute id="SECOND_INT"/>
+      <viewAttribute id="MONTH_LAST_DAY"/>
+      <viewAttribute id="TZNTSTMPS"/>
+      <viewAttribute id="TZNTSTMPL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="calmon_desc" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>CASE &quot;MONTH&quot; 
+	 WHEN 1 then  CONCAT( 'JAN ', &quot;YEAR&quot;)
+	 WHEN 2 then  CONCAT( 'FEB ', &quot;YEAR&quot;)
+	 WHEN 3 then  CONCAT( 'MAR ', &quot;YEAR&quot;)
+	 WHEN 4 then  CONCAT( 'APR ', &quot;YEAR&quot;)
+	 WHEN 5 then  CONCAT( 'MAY ', &quot;YEAR&quot;)
+	 WHEN 6 then  CONCAT( 'JUN ', &quot;YEAR&quot;)
+	 WHEN 7 then  CONCAT( 'JUL ', &quot;YEAR&quot;)
+	 WHEN 8 then  CONCAT( 'AUG ', &quot;YEAR&quot;)
+	 WHEN 9 then  CONCAT( 'SEP' , &quot;YEAR&quot;)
+	 WHEN 10 then  CONCAT( 'OCT ', &quot;YEAR&quot;)
+	 WHEN 11 then  CONCAT( 'NOV ', &quot;YEAR&quot;)
+	 WHEN 12 then  CONCAT( 'DEC ', &quot;YEAR&quot;)
+	 ELSE ''
+ END
+</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="mon_desc" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+    
+        <formula>CASE &quot;MONTH&quot; 
+	 WHEN 1 then  'January'
+	 WHEN 2 then  'February'
+	 WHEN 3 then  'March'
+	 WHEN 4 then  'April'
+	 WHEN 5 then  'May'
+	 WHEN 6 then  'June'
+	 WHEN 7 then  'July'
+	 WHEN 8 then  'August'
+	 WHEN 9 then  'September'
+	 WHEN 10 then  'October'
+	 WHEN 11 then  'November'
+	 WHEN 12 then  'December'
+	 ELSE ''
+ END
+</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="iprosis.time_tables::M_TIME_DIMENSION"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="DailyCalendar">
+  <attributes>
+    <attribute id="DATE_SQL" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATE_SQL"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="DATE_SQL"/>
+    </attribute>
+    <attribute id="DATETIME_SAP" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATETIME_SAP"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="DATETIME_SAP"/>
+    </attribute>
+    <attribute id="DATE_SAP" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATE_SAP"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="DATE_SAP"/>
+    </attribute>
+    <attribute id="YEAR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEAR"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="YEAR"/>
+    </attribute>
+    <attribute id="QUARTER" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QUARTER"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="QUARTER"/>
+    </attribute>
+    <attribute id="MONTH" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MONTH"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="MONTH"/>
+    </attribute>
+    <attribute id="WEEK" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WEEK"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="WEEK"/>
+    </attribute>
+    <attribute id="WEEK_YEAR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WEEK_YEAR"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="WEEK_YEAR"/>
+    </attribute>
+    <attribute id="DAY_OF_WEEK" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DAY_OF_WEEK"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="DAY_OF_WEEK"/>
+    </attribute>
+    <attribute id="DAY" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DAY"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="DAY"/>
+    </attribute>
+    <attribute id="HOUR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HOUR"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="HOUR"/>
+    </attribute>
+    <attribute id="MINUTE" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MINUTE"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="MINUTE"/>
+    </attribute>
+    <attribute id="SECOND" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SECOND"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="SECOND"/>
+    </attribute>
+    <attribute id="CALQUARTER" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALQUARTER"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="CALQUARTER"/>
+    </attribute>
+    <attribute id="CALMONTH" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALMONTH"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="CALMONTH"/>
+    </attribute>
+    <attribute id="CALWEEK" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALWEEK"/>
+      <keyMapping columnObjectName="DailyCalendar" columnName="CALWEEK"/>
+    </attribute>
+  
+    <attribute id="calmon_desc" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="calmon_desc"/>
+  
+      <keyMapping columnObjectName="DailyCalendar" columnName="calmon_desc"/>
+  
+    </attribute>
+  
+    <attribute id="mon_desc" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="mon_desc"/>
+  
+      <keyMapping columnObjectName="DailyCalendar" columnName="mon_desc"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="DATETIMESTAMP" order="1" aggregationType="min" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="DATETIMESTAMP"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="DATETIMESTAMP"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="YEAR_INT" order="18" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="YEAR_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="YEAR_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="QUARTER_INT" order="19" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="QUARTER_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="QUARTER_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MONTH_INT" order="20" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="MONTH_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="MONTH_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WEEK_INT" order="21" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="WEEK_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="WEEK_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WEEK_YEAR_INT" order="22" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="WEEK_YEAR_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="WEEK_YEAR_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="DAY_OF_WEEK_INT" order="23" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="DAY_OF_WEEK_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="DAY_OF_WEEK_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="DAY_INT" order="24" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="DAY_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="DAY_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="HOUR_INT" order="25" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="HOUR_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="HOUR_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MINUTE_INT" order="26" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="MINUTE_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="MINUTE_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SECOND_INT" order="27" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="SECOND_INT"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="SECOND_INT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MONTH_LAST_DAY" order="28" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="MONTH_LAST_DAY"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="MONTH_LAST_DAY"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TZNTSTMPS" order="29" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="TZNTSTMPS"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="TZNTSTMPS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="TZNTSTMPL" order="30" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="TZNTSTMPL"/>
+      <measureMapping columnObjectName="DailyCalendar" columnName="TZNTSTMPL"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="daily_counter" order="31" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" datatype="BIGINT" length="" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="daily_counter"/>
+      <exceptionAggregation>
+        <attribute attributeName="DATE_SQL"/>
+      </exceptionAggregation>
+      <formula>1</formula>
+      
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="DailyCalendar" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="89" y="222"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

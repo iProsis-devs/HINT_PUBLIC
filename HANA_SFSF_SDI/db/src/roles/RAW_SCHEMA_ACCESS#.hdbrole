@@ -1,0 +1,17 @@
+{
+  "role": {
+    "name": "RAW_SCHEMA_ACCESS#",
+    "schema_privileges": [
+      {
+        "reference": "SFSF_RAW",
+        "privileges_with_grant_option": [
+          "CREATE ANY",
+          "EXECUTE",
+          "SELECT",
+          "INSERT",
+          "DELETE"
+        ]
+      }
+    ]
+  }
+}

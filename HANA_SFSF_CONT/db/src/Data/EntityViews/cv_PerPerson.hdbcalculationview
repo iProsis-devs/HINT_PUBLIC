@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::cv_PerPerson" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="cv_PerPerson"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="iprosis.config::EBV_PerPerson">
+    <resourceUri>iprosis.config::EBV_PerPerson</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="dbv_PerPerson">
+    <viewAttributes>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="lastModifiedBy"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="dateOfBirth"/>
+      <viewAttribute id="perPersonUuid"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="countryOfBirth"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="regionOfBirth"/>
+      <viewAttribute id="personId"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.config::EBV_PerPerson"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="dbv_PerPerson">
+  <attributes>
+    <attribute id="personIdExternal" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="personIdExternal"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="personIdExternal"/>
+    </attribute>
+    <attribute id="lastModifiedDateTime" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="lastModifiedDateTime"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="lastModifiedDateTime"/>
+    </attribute>
+    <attribute id="lastModifiedBy" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="lastModifiedBy"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="lastModifiedBy"/>
+    </attribute>
+    <attribute id="createdDateTime" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="createdDateTime"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="createdDateTime"/>
+    </attribute>
+    <attribute id="dateOfBirth" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="dateOfBirth"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="dateOfBirth"/>
+    </attribute>
+    <attribute id="perPersonUuid" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="perPersonUuid"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="perPersonUuid"/>
+    </attribute>
+    <attribute id="createdOn" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="createdOn"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="createdOn"/>
+    </attribute>
+    <attribute id="lastModifiedOn" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="lastModifiedOn"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="lastModifiedOn"/>
+    </attribute>
+    <attribute id="countryOfBirth" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="countryOfBirth"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="countryOfBirth"/>
+    </attribute>
+    <attribute id="createdBy" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="createdBy"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="createdBy"/>
+    </attribute>
+    <attribute id="regionOfBirth" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="regionOfBirth"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="regionOfBirth"/>
+    </attribute>
+    <attribute id="personId" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="personId"/>
+      <keyMapping columnObjectName="dbv_PerPerson" columnName="personId"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="dbv_PerPerson" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="261"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
