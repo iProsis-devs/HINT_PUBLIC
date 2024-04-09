@@ -13,15 +13,11 @@
   <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
     <viewAttributes>
       <viewAttribute id="userId"/>
-      <viewAttribute id="salary"/>
       <viewAttribute id="email"/>
       <viewAttribute id="firstName"/>
       <viewAttribute id="lastName"/>
       <viewAttribute id="username"/>
       <viewAttribute id="jobCode"/>
-      <viewAttribute id="jobTitle"/>
-      <viewAttribute id="jobRole"/>
-      <viewAttribute id="finalJobRole"/>
       <viewAttribute id="department"/>
       <viewAttribute id="groupID_CHAR"/>
       <viewAttribute id="groupName"/>
@@ -51,108 +47,93 @@
       <descriptions defaultDescription="userId"/>
       <keyMapping columnObjectName="Projection_1" columnName="userId"/>
     </attribute>
-    <attribute id="email" order="3" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="email" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="email"/>
       <keyMapping columnObjectName="Projection_1" columnName="email"/>
     </attribute>
-    <attribute id="firstName" order="4" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="firstName" order="3" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="firstName"/>
       <keyMapping columnObjectName="Projection_1" columnName="firstName"/>
     </attribute>
-    <attribute id="lastName" order="5" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="lastName" order="4" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="lastName"/>
       <keyMapping columnObjectName="Projection_1" columnName="lastName"/>
     </attribute>
-    <attribute id="username" order="6" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="username" order="5" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="username"/>
       <keyMapping columnObjectName="Projection_1" columnName="username"/>
     </attribute>
-    <attribute id="jobCode" order="7" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="jobCode" order="6" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="jobCode"/>
       <keyMapping columnObjectName="Projection_1" columnName="jobCode"/>
     </attribute>
-    <attribute id="jobTitle" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="jobTitle"/>
-      <keyMapping columnObjectName="Projection_1" columnName="jobTitle"/>
-    </attribute>
-    <attribute id="jobRole" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="jobRole"/>
-      <keyMapping columnObjectName="Projection_1" columnName="jobRole"/>
-    </attribute>
-    <attribute id="finalJobRole" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="finalJobRole"/>
-      <keyMapping columnObjectName="Projection_1" columnName="finalJobRole"/>
-    </attribute>
-    <attribute id="department" order="11" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="department" order="7" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="department"/>
       <keyMapping columnObjectName="Projection_1" columnName="department"/>
     </attribute>
-    <attribute id="groupID_CHAR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="groupID_CHAR" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="groupId"/>
       <keyMapping columnObjectName="Projection_1" columnName="groupID_CHAR"/>
     </attribute>
-    <attribute id="groupName" order="13" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="groupName" order="9" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="groupName"/>
       <keyMapping columnObjectName="Projection_1" columnName="groupName"/>
     </attribute>
-    <attribute id="groupType" order="14" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="groupType" order="10" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="groupType"/>
       <keyMapping columnObjectName="Projection_1" columnName="groupType"/>
     </attribute>
-    <attribute id="ruleId" order="15" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ruleId" order="11" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ruleId"/>
       <keyMapping columnObjectName="Projection_1" columnName="ruleId"/>
     </attribute>
-    <attribute id="roleDesc" order="16" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="roleDesc" order="12" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="roleDesc"/>
       <keyMapping columnObjectName="Projection_1" columnName="roleDesc"/>
     </attribute>
-    <attribute id="roleName" order="17" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="roleName" order="13" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="roleName"/>
       <keyMapping columnObjectName="Projection_1" columnName="roleName"/>
     </attribute>
-    <attribute id="userType" order="18" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="userType" order="14" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="userType"/>
       <keyMapping columnObjectName="Projection_1" columnName="userType"/>
     </attribute>
-    <attribute id="permissionType" order="19" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="permissionType" order="15" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="permissionType"/>
       <keyMapping columnObjectName="Projection_1" columnName="permissionType"/>
     </attribute>
-    <attribute id="permissionStringValue" order="20" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="permissionStringValue" order="16" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="permissionStringValue"/>
       <keyMapping columnObjectName="Projection_1" columnName="permissionStringValue"/>
     </attribute>
-    <attribute id="RoleId_CHAR" order="21" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="RoleId_CHAR" order="17" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="RoleId"/>
       <keyMapping columnObjectName="Projection_1" columnName="RoleId_CHAR"/>
     </attribute>
-    <attribute id="PermissionId_CHAR" order="22" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PermissionId_CHAR" order="18" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="PermissionId"/>
       <keyMapping columnObjectName="Projection_1" columnName="PermissionId_CHAR"/>
     </attribute>
-    <attribute id="AccessUser" order="23" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="AccessUser" order="19" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="AccessUser"/>
       <keyMapping columnObjectName="Projection_1" columnName="AccessUser"/>
     </attribute>
-    <attribute id="TargetUser" order="24" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TargetUser" order="20" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="TargetUser"/>
       <keyMapping columnObjectName="Projection_1" columnName="TargetUser"/>
     </attribute>
   
-    <attribute id="FullName" order="26" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="FullName" order="22" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="FullName"/>
+  
       <keyMapping columnObjectName="Projection_1" columnName="FullName"/>
+  
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="salary" order="2" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="salary"/>
-      <measureMapping columnObjectName="Projection_1" columnName="salary"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="COUNTER" order="25" aggregationType="sum" measureType="simple">
+    <measure id="COUNTER" order="21" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="COUNTER"/>
       <measureMapping columnObjectName="Projection_1" columnName="COUNTER"/>
       <exceptionAggregationMetadata/>

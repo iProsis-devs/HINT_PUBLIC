@@ -39,7 +39,6 @@
       <viewAttribute id="defaultEmployeeClass"/>
       <viewAttribute id="NAME_LOCALIZED"/>
       <viewAttribute id="entityUUID"/>
-      <viewAttribute id="standardHours"/>
       <viewAttribute id="description_defaultValue"/>
       <viewAttribute id="description_en_US"/>
       <viewAttribute id="lastModifiedBy"/>
@@ -174,28 +173,24 @@
       <descriptions defaultDescription="entityUUID"/>
       <keyMapping columnObjectName="dbv_JobCode" columnName="entityUUID"/>
     </attribute>
-    <attribute id="standardHours" order="28" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="standardHours"/>
-      <keyMapping columnObjectName="dbv_JobCode" columnName="standardHours"/>
-    </attribute>
-    <attribute id="description_defaultValue" order="29" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="description_defaultValue" order="28" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="description_defaultValue"/>
       <keyMapping columnObjectName="dbv_JobCode" columnName="description_defaultValue"/>
     </attribute>
-    <attribute id="description_en_US" order="30" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="description_en_US" order="29" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="description_en_US"/>
       <keyMapping columnObjectName="dbv_JobCode" columnName="description_en_US"/>
     </attribute>
-    <attribute id="lastModifiedBy" order="31" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="lastModifiedBy" order="30" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="lastModifiedBy"/>
       <keyMapping columnObjectName="dbv_JobCode" columnName="lastModifiedBy"/>
     </attribute>
-    <attribute id="DESCRIPTION_LOCALIZED" order="32" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DESCRIPTION_LOCALIZED" order="31" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DESCRIPTION_LOCALIZED"/>
       <keyMapping columnObjectName="dbv_JobCode" columnName="DESCRIPTION_LOCALIZED"/>
     </attribute>
   
-    <attribute id="isFulltimeEmployee" order="34" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="isFulltimeEmployee" order="33" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="isFulltimeEmployee"/>
   
       <keyMapping columnObjectName="dbv_JobCode" columnName="isFulltimeEmployee"/>
@@ -204,7 +199,7 @@
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="Counter" order="33" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+    <measure id="Counter" order="32" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="Counter"/>
       <measureMapping columnObjectName="dbv_JobCode" columnName="Counter"/>
       <exceptionAggregationMetadata/>
