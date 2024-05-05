@@ -143,7 +143,7 @@
       "schema": "AKT_AUTH_SF"
     }
   },
-  "iprosis.config::Synonym_24": {
+  "iprosis.config::FOBV_FOJobFunction": {
     "target": {
       "object": "FOBV_FOJobFunction",
       "schema": "AKT_AUTH_SF"
