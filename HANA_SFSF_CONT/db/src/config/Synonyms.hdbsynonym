@@ -112,5 +112,41 @@
       "object": "AuthManagers",
       "schema": "AKT_AUTH_SF"
     }
+  },
+  "iprosis.config::EBV_EmpEmploymentTermination": {
+    "target": {
+      "object": "EBV_EmpEmploymentTermination",
+      "schema": "AKT_AUTH_SF"
+    }
+  },
+  "iprosis.config::EBV_PickListValueV2": {
+    "target": {
+      "object": "EBV_PickListValueV2",
+      "schema": "AKT_AUTH_SF"
+    }
+  },
+  "iprosis.config::EBV_User": {
+    "target": {
+      "object": "EBV_User",
+      "schema": "AKT_AUTH_SF"
+    }
+  },
+  "iprosis.config::FOBV_FOCompany": {
+    "target": {
+      "object": "FOBV_FOCompany",
+      "schema": "AKT_AUTH_SF"
+    }
+  },
+  "iprosis.config::FOBV_FODepartment": {
+    "target": {
+      "object": "FOBV_FODepartment",
+      "schema": "AKT_AUTH_SF"
+    }
+  },
+  "iprosis.config::Synonym_24": {
+    "target": {
+      "object": "FOBV_FOJobFunction",
+      "schema": "AKT_AUTH_SF"
+    }
   }
 }
