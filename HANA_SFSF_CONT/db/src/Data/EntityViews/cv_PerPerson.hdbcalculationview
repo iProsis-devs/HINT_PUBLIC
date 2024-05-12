@@ -20,9 +20,7 @@
       <viewAttribute id="perPersonUuid"/>
       <viewAttribute id="createdOn"/>
       <viewAttribute id="lastModifiedOn"/>
-      <viewAttribute id="countryOfBirth"/>
       <viewAttribute id="createdBy"/>
-      <viewAttribute id="regionOfBirth"/>
       <viewAttribute id="personId"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -64,19 +62,11 @@
       <descriptions defaultDescription="lastModifiedOn"/>
       <keyMapping columnObjectName="dbv_PerPerson" columnName="lastModifiedOn"/>
     </attribute>
-    <attribute id="countryOfBirth" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="countryOfBirth"/>
-      <keyMapping columnObjectName="dbv_PerPerson" columnName="countryOfBirth"/>
-    </attribute>
-    <attribute id="createdBy" order="10" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="createdBy" order="9" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="createdBy"/>
       <keyMapping columnObjectName="dbv_PerPerson" columnName="createdBy"/>
     </attribute>
-    <attribute id="regionOfBirth" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="regionOfBirth"/>
-      <keyMapping columnObjectName="dbv_PerPerson" columnName="regionOfBirth"/>
-    </attribute>
-    <attribute id="personId" order="12" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="personId" order="10" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="personId"/>
       <keyMapping columnObjectName="dbv_PerPerson" columnName="personId"/>
     </attribute>

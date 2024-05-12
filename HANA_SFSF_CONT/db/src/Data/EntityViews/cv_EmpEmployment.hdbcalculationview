@@ -16,44 +16,21 @@
       <viewAttribute id="userId"/>
       <viewAttribute id="startDate"/>
       <viewAttribute id="endDate"/>
-      <viewAttribute id="StockEndDate"/>
       <viewAttribute id="assignmentClass"/>
       <viewAttribute id="assignmentIdExternal"/>
-      <viewAttribute id="benefitsEligibilityStartDate"/>
-      <viewAttribute id="benefitsEndDate"/>
-      <viewAttribute id="bonusPayExpirationDate"/>
       <viewAttribute id="createdBy"/>
       <viewAttribute id="createdDateTime"/>
       <viewAttribute id="createdOn"/>
-      <viewAttribute id="eligibleForSalContinuation"/>
-      <viewAttribute id="eligibleForStock"/>
-      <viewAttribute id="employeeFirstEmployment"/>
       <viewAttribute id="employmentId"/>
-      <viewAttribute id="firstDateWorked"/>
       <viewAttribute id="hiringNotCompleted"/>
-      <viewAttribute id="initialOptionGrant"/>
-      <viewAttribute id="initialStockGrant"/>
-      <viewAttribute id="isContingentWorker"/>
       <viewAttribute id="isECRecord"/>
       <viewAttribute id="lastDateWorked"/>
       <viewAttribute id="lastModifiedBy"/>
       <viewAttribute id="lastModifiedDateTime"/>
       <viewAttribute id="lastModifiedOn"/>
-      <viewAttribute id="okToRehire"/>
       <viewAttribute id="originalStartDate"/>
-      <viewAttribute id="payrollEndDate"/>
-      <viewAttribute id="prevEmployeeId"/>
-      <viewAttribute id="professionalServiceDate"/>
-      <viewAttribute id="regretTermination"/>
-      <viewAttribute id="salaryEndDate"/>
-      <viewAttribute id="seniorityDate"/>
-      <viewAttribute id="serviceDate"/>
-    </viewAttributes>
-    <calculatedViewAttributes>
-      <calculatedViewAttribute id="seniority" datatype="DOUBLE" expressionLanguage="SQL">
-        <formula>(MONTHS_BETWEEN(&quot;seniorityDate&quot;,CURRENT_DATE))/12</formula>
-      </calculatedViewAttribute>
-    </calculatedViewAttributes>
+      <viewAttribute id="regretTermination"/></viewAttributes>
+    <calculatedViewAttributes/>
     <input node="iprosis.config::EBV_EmpEmployment"/>
   </calculationView>
 </calculationViews>
@@ -61,160 +38,80 @@
 <logicalModel id="dbv_EmpEmployment">
   <attributes>
   
-    <attribute id="seniority" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="seniority"/>
-  
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="seniority"/>
-  
-    </attribute>
-  
-    <attribute id="personIdExternal" order="2" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="personIdExternal" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="personIdExternal"/>
   
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="personIdExternal"/>
   
     </attribute>
-    <attribute id="userId" order="3" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="userId" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="userId"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="userId"/>
     </attribute>
-    <attribute id="startDate" order="4" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="startDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="startDate"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="startDate"/>
     </attribute>
-    <attribute id="endDate" order="5" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="endDate" order="4" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="endDate"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="endDate"/>
     </attribute>
-    <attribute id="StockEndDate" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="StockEndDate"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="StockEndDate"/>
-    </attribute>
-    <attribute id="assignmentClass" order="7" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="assignmentClass" order="5" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="assignmentClass"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="assignmentClass"/>
     </attribute>
-    <attribute id="assignmentIdExternal" order="8" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="assignmentIdExternal" order="6" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="assignmentIdExternal"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="assignmentIdExternal"/>
     </attribute>
-    <attribute id="benefitsEligibilityStartDate" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="benefitsEligibilityStartDate"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="benefitsEligibilityStartDate"/>
-    </attribute>
-    <attribute id="benefitsEndDate" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="benefitsEndDate"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="benefitsEndDate"/>
-    </attribute>
-    <attribute id="bonusPayExpirationDate" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="bonusPayExpirationDate"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="bonusPayExpirationDate"/>
-    </attribute>
-    <attribute id="createdBy" order="12" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="createdBy" order="7" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="createdBy"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="createdBy"/>
     </attribute>
-    <attribute id="createdDateTime" order="13" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="createdDateTime" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="createdDateTime"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="createdDateTime"/>
     </attribute>
-    <attribute id="createdOn" order="14" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="createdOn" order="9" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="createdOn"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="createdOn"/>
     </attribute>
-    <attribute id="eligibleForSalContinuation" order="15" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="eligibleForSalContinuation"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="eligibleForSalContinuation"/>
-    </attribute>
-    <attribute id="eligibleForStock" order="16" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="eligibleForStock"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="eligibleForStock"/>
-    </attribute>
-    <attribute id="employeeFirstEmployment" order="17" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="employeeFirstEmployment"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="employeeFirstEmployment"/>
-    </attribute>
-    <attribute id="employmentId" order="18" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="employmentId" order="10" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="employmentId"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="employmentId"/>
     </attribute>
-    <attribute id="firstDateWorked" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="firstDateWorked"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="firstDateWorked"/>
-    </attribute>
-    <attribute id="hiringNotCompleted" order="20" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="hiringNotCompleted" order="11" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="hiringNotCompleted"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="hiringNotCompleted"/>
     </attribute>
-    <attribute id="initialOptionGrant" order="21" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="initialOptionGrant"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="initialOptionGrant"/>
-    </attribute>
-    <attribute id="initialStockGrant" order="22" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="initialStockGrant"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="initialStockGrant"/>
-    </attribute>
-    <attribute id="isContingentWorker" order="23" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="isContingentWorker"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="isContingentWorker"/>
-    </attribute>
-    <attribute id="isECRecord" order="24" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="isECRecord" order="12" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="isECRecord"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="isECRecord"/>
     </attribute>
-    <attribute id="lastDateWorked" order="25" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="lastDateWorked" order="13" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="lastDateWorked"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="lastDateWorked"/>
     </attribute>
-    <attribute id="lastModifiedBy" order="26" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="lastModifiedBy" order="14" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="lastModifiedBy"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="lastModifiedBy"/>
     </attribute>
-    <attribute id="lastModifiedDateTime" order="27" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="lastModifiedDateTime" order="15" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="lastModifiedDateTime"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="lastModifiedDateTime"/>
     </attribute>
-    <attribute id="lastModifiedOn" order="28" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="lastModifiedOn" order="16" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="lastModifiedOn"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="lastModifiedOn"/>
     </attribute>
-    <attribute id="okToRehire" order="29" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="okToRehire"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="okToRehire"/>
-    </attribute>
-    <attribute id="originalStartDate" order="30" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="originalStartDate" order="17" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="originalStartDate"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="originalStartDate"/>
     </attribute>
-    <attribute id="payrollEndDate" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="payrollEndDate"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="payrollEndDate"/>
-    </attribute>
-    <attribute id="prevEmployeeId" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="prevEmployeeId"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="prevEmployeeId"/>
-    </attribute>
-    <attribute id="professionalServiceDate" order="33" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="professionalServiceDate"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="professionalServiceDate"/>
-    </attribute>
-    <attribute id="regretTermination" order="34" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="regretTermination" order="18" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="regretTermination"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="regretTermination"/>
-    </attribute>
-    <attribute id="salaryEndDate" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="salaryEndDate"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="salaryEndDate"/>
-    </attribute>
-    <attribute id="seniorityDate" order="36" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="seniorityDate"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="seniorityDate"/>
-    </attribute>
-    <attribute id="serviceDate" order="37" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="serviceDate"/>
-      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="serviceDate"/>
-    </attribute>
-  </attributes>
+    </attribute></attributes>
   <calculatedAttributes/>
   <baseMeasures/>
   <calculatedMeasures/>

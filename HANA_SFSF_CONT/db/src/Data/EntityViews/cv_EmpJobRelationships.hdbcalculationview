@@ -23,7 +23,6 @@
       <viewAttribute id="personIdExternal"/>
       <viewAttribute id="startDate"/>
       <viewAttribute id="endDate"/>
-      <viewAttribute id="attachmentId"/>
       <viewAttribute id="createdBy"/>
       <viewAttribute id="createdDateTime"/>
       <viewAttribute id="createdOn"/>
@@ -35,22 +34,11 @@
       <viewAttribute id="lastModifiedOn"/>
       <viewAttribute id="lastName"/>
       <viewAttribute id="lastNameAlt1"/>
-      <viewAttribute id="maritalStatusCode"/>
-      <viewAttribute id="maritalStatus"/>
       <viewAttribute id="middleName"/>
       <viewAttribute id="middleNameAlt1"/>
       <viewAttribute id="nationality"/>
-      <viewAttribute id="nativePreferredLangCode"/>
-      <viewAttribute id="nativePreferredLang"/>
-      <viewAttribute id="preferredName"/>
-      <viewAttribute id="salutationCode"/>
-      <viewAttribute id="salutation"/>
-      <viewAttribute id="suffixCode"/>
-      <viewAttribute id="suffix"/>
       <viewAttribute id="dateOfBirth"/>
       <viewAttribute id="perPersonUuid"/>
-      <viewAttribute id="countryOfBirth"/>
-      <viewAttribute id="regionOfBirth"/>
       <viewAttribute id="personId"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -59,44 +47,24 @@
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="EmpEmployement">
     <viewAttributes>
-      <viewAttribute id="seniority"/>
       <viewAttribute id="personIdExternal"/>
       <viewAttribute id="userId"/>
       <viewAttribute id="startDate"/>
       <viewAttribute id="endDate"/>
-      <viewAttribute id="StockEndDate"/>
       <viewAttribute id="assignmentClass"/>
       <viewAttribute id="assignmentIdExternal"/>
-      <viewAttribute id="benefitsEligibilityStartDate"/>
-      <viewAttribute id="benefitsEndDate"/>
-      <viewAttribute id="bonusPayExpirationDate"/>
       <viewAttribute id="createdBy"/>
       <viewAttribute id="createdDateTime"/>
       <viewAttribute id="createdOn"/>
-      <viewAttribute id="eligibleForSalContinuation"/>
-      <viewAttribute id="eligibleForStock"/>
-      <viewAttribute id="employeeFirstEmployment"/>
       <viewAttribute id="employmentId"/>
-      <viewAttribute id="firstDateWorked"/>
       <viewAttribute id="hiringNotCompleted"/>
-      <viewAttribute id="initialOptionGrant"/>
-      <viewAttribute id="initialStockGrant"/>
-      <viewAttribute id="isContingentWorker"/>
       <viewAttribute id="isECRecord"/>
       <viewAttribute id="lastDateWorked"/>
       <viewAttribute id="lastModifiedBy"/>
       <viewAttribute id="lastModifiedDateTime"/>
       <viewAttribute id="lastModifiedOn"/>
-      <viewAttribute id="okToRehire"/>
       <viewAttribute id="originalStartDate"/>
-      <viewAttribute id="payrollEndDate"/>
-      <viewAttribute id="prevEmployeeId"/>
-      <viewAttribute id="professionalServiceDate"/>
-      <viewAttribute id="regretTermination"/>
-      <viewAttribute id="salaryEndDate"/>
-      <viewAttribute id="seniorityDate"/>
-      <viewAttribute id="serviceDate"/>
-    </viewAttributes>
+      <viewAttribute id="regretTermination"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.Data.EntityViews::cv_EmpEmployment"/>
   </calculationView>
