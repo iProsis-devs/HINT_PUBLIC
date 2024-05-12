@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.LogicViews::lv_empEmploymentHst" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="lv_EmpEmploymentHst"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="iprosis.Data.LogicViews::lv_historicJobEmp">
+    <resourceUri>iprosis.Data.LogicViews::lv_historicJobEmp</resourceUri>
+  </DataSource>
+  <DataSource id="historicTerminations$$$$iprosis.Data.LogicViews::lv_historicJobEmp$$">
+    <resourceUri>iprosis.Data.LogicViews::lv_historicJobEmp</resourceUri>
+  </DataSource>
+  <DataSource id="lateHire$$$$iprosis.Data.LogicViews::lv_historicJobEmp$$">
+    <resourceUri>iprosis.Data.LogicViews::lv_historicJobEmp</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="historicHires" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate_EmpJob"/>
+      <viewAttribute id="eventCode"/>
+      <viewAttribute id="personIdExternal"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.LogicViews::lv_historicJobEmp"/>
+    <filter>&quot;eventCode&quot;='H' or &quot;eventCode&quot;='R' or &quot;eventCode&quot;='SCWK'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="historicTerminations" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate_EmpJob"/>
+      <viewAttribute id="eventCode"/>
+      <viewAttribute id="personIdExternal"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="historicTerminations$$$$iprosis.Data.LogicViews::lv_historicJobEmp$$"/>
+    <filter>&quot;eventCode&quot;='26' or &quot;eventCode&quot;='ECWK' or &quot;eventCode&quot;='NS'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="lateHire" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate_EmpJob"/>
+      <viewAttribute id="eventCode"/>
+      <viewAttribute id="personIdExternal"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="lateHire$$$$iprosis.Data.LogicViews::lv_historicJobEmp$$"/>
+    <filter>&quot;eventCode&quot;='H' or &quot;eventCode&quot;='R' or &quot;eventCode&quot;='SCWK'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate_historicHires" aggregationType="min"/>
+      <viewAttribute id="eventCode_historicTerm"/>
+      <viewAttribute id="startDate_historicTerm" aggregationType="min"/>
+      <viewAttribute hidden="true" id="JOIN$userId$userId"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="EndDate" datatype="DATE" expressionLanguage="SQL">
+        <formula>CASE  
+	 WHEN &quot;eventCode_historicTerm&quot;='NS' then '99991231' 
+	 ELSE &quot;startDate_historicTerm&quot;
+ END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="historicHires">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate_historicHires" source="startDate_EmpJob"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <input node="historicTerminations">
+      <mapping xsi:type="Calculation:AttributeMapping" target="eventCode_historicTerm" source="eventCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate_historicTerm" source="startDate_EmpJob"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <joinAttribute name="JOIN$userId$userId"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:NonEquiJoinView" id="NonEquiJoin_1" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate_historicHires" aggregationType="min"/>
+      <viewAttribute id="eventCode_historicTerm"/>
+      <viewAttribute id="startDate_historicTerm" aggregationType="min"/>
+      <viewAttribute id="EndDate"/>
+      <viewAttribute id="userId_lateHire"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate_historicHires" source="startDate_historicHires"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eventCode_historicTerm" source="eventCode_historicTerm"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate_historicTerm" source="startDate_historicTerm"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EndDate" source="EndDate"/>
+    </input>
+    <input node="lateHire">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId_lateHire" source="userId"/>
+    </input>
+    <joinAttribute leftColumn="userId" rightColumn="userId" operator="EQ"/>
+    <joinAttribute leftColumn="startDate_historicHires" rightColumn="startDate_EmpJob" operator="LT"/>
+    <joinAttribute leftColumn="startDate_historicTerm" rightColumn="startDate_EmpJob" operator="GE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate_historicHires"/>
+      <viewAttribute id="eventCode_historicTerm"/>
+      <viewAttribute id="startDate_historicTerm"/>
+      <viewAttribute id="EndDate"/>
+      <viewAttribute id="userId_lateHire"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="lateHire_userId_isNull" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;userId_lateHire&quot;, '1')</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="count" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="NonEquiJoin_1"/>
+    <filter>&quot;lateHire_userId_isNull&quot;='1' and
+&quot;startDate_historicHires&quot;&lt;=&quot;startDate_historicTerm&quot;</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="userId" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="userId"/>
+      <keyMapping columnObjectName="Projection_1" columnName="userId"/>
+    </attribute>
+    <attribute id="startDate" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="startDate"/>
+      <keyMapping columnObjectName="Projection_1" columnName="startDate_historicHires"/>
+    </attribute>
+    <attribute id="EndDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EndDate"/>
+      <keyMapping columnObjectName="Projection_1" columnName="EndDate"/>
+    </attribute>
+    <attribute id="TerminationCode" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eventCode"/>
+      <keyMapping columnObjectName="Projection_1" columnName="eventCode_historicTerm"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="count" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="count"/>
+      <measureMapping columnObjectName="Projection_1" columnName="count"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="343.2644203178371" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="historicHires" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91.99999999999991" y="681.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="historicTerminations" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301.9999999999999" y="681.9999964237213"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="lateHire" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395.83959680791406" y="521.9999976158142"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666657" y="521.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="historicHires" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="177"/>
+    </shape>
+    <shape modelObjectName="historicTerminations" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="181"/>
+    </shape>
+    <shape expanded="true" modelObjectName="NonEquiJoin_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="329.7346324379398" y="361.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="NonEquiJoin_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="204"/>
+    </shape>
+    <shape modelObjectName="lateHire" modelObjectNameSpace="NonEquiJoin_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="177"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="329.7346324379398" y="236.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -101,8 +101,14 @@
       <viewAttribute hidden="true" id="JOIN$personIdExternal$personIdExternal"/>
     </viewAttributes>
     <calculatedViewAttributes>
-      <calculatedViewAttribute id="Age" datatype="DECIMAL" expressionLanguage="SQL" length="13" scale="2">
+      <calculatedViewAttribute id="Age" datatype="DOUBLE" expressionLanguage="SQL">
         <formula>(MONTHS_BETWEEN(&quot;dateOfBirth&quot;,CURRENT_DATE))/12</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="Employee_Name" datatype="NVARCHAR" length="300" expressionLanguage="SQL">
+    
+        <formula>&quot;firstName&quot; ||' ' || &quot;lastName&quot;</formula>
+    
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="ev_PerPersonal">
@@ -287,6 +293,13 @@
       <descriptions defaultDescription="personId"/>
       <keyMapping columnObjectName="Join_1" columnName="personId"/>
     </attribute>
+  
+    <attribute id="Employee_Name" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_Name"/>
+  
+      <keyMapping columnObjectName="Join_1" columnName="Employee_Name"/>
+  
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures/>
@@ -297,6 +310,8 @@
         <attribute attributeName="personIdExternal"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
+      
       
       
       

@@ -1,0 +1,12 @@
+VIEW "iprosis.Data.LogicViews::lv_PerivousJob"
+AS select distinct cur_job."userId",cur_job."startDate",cur_job."seqNumber", cur_job."jobTitle",
+LAST_VALUE(prev_job."jobTitle")
+  OVER (
+    PARTITION BY cur_job."userId",cur_job."startDate",cur_job."seqNumber"
+     ORDER BY prev_job."endDate"
+  ) AS Prev_Job_Title
+from "iprosis.Data.EntityViews::cv_EmpJob" as cur_job
+inner join "iprosis.Data.EntityViews::cv_EmpJob" as prev_job
+on cur_job."userId" = prev_job."userId" and 
+cur_job."jobTitle" <> prev_job."jobTitle" and
+cur_job."startDate" > prev_job."endDate"

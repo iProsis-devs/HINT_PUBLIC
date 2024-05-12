@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::cv_Managers" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="ev_Managers"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="iprosis.Data.EntityViews::ev_AuthManagers">
+    <resourceUri>iprosis.Data.EntityViews::ev_AuthManagers</resourceUri>
+  </DataSource>
+  <DataSource id="iprosis.Data.EntityViews::cv_PerPersonal">
+    <resourceUri>iprosis.Data.EntityViews::cv_PerPersonal</resourceUri>
+  </DataSource>
+  <DataSource id="man_personal$$$$iprosis.Data.EntityViews::cv_PerPersonal$$">
+    <resourceUri>iprosis.Data.EntityViews::cv_PerPersonal</resourceUri>
+  </DataSource>
+  <DataSource id="iprosis.Data.EntityViews::cv_EmpJob">
+    <resourceUri>iprosis.Data.EntityViews::cv_EmpJob</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="AuthManagers">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="manager"/>
+      <viewAttribute id="Level"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.EntityViews::ev_AuthManagers"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PerPersonal" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="Age"/>
+      <viewAttribute id="PersCounter"/>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="endDate"/>
+      <viewAttribute id="attachmentId"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="firstName"/>
+      <viewAttribute id="firstNameAlt1"/>
+      <viewAttribute id="gender"/>
+      <viewAttribute id="lastModifiedBy"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="lastName"/>
+      <viewAttribute id="lastNameAlt1"/>
+      <viewAttribute id="maritalStatusCode"/>
+      <viewAttribute id="maritalStatus"/>
+      <viewAttribute id="middleName"/>
+      <viewAttribute id="middleNameAlt1"/>
+      <viewAttribute id="nationality"/>
+      <viewAttribute id="nativePreferredLangCode"/>
+      <viewAttribute id="nativePreferredLang"/>
+      <viewAttribute id="preferredName"/>
+      <viewAttribute id="salutationCode"/>
+      <viewAttribute id="salutation"/>
+      <viewAttribute id="suffixCode"/>
+      <viewAttribute id="suffix"/>
+      <viewAttribute id="dateOfBirth"/>
+      <viewAttribute id="perPersonUuid"/>
+      <viewAttribute id="countryOfBirth"/>
+      <viewAttribute id="regionOfBirth"/>
+      <viewAttribute id="personId"/>
+    
+      <viewAttribute id="Employee_Name"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.EntityViews::cv_PerPersonal"/>
+    <filter>&quot;startDate&quot; &lt;=  CURRENT_DATE and CURRENT_DATE&lt;= &quot;endDate&quot;</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="man_personal" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="Age"/>
+      <viewAttribute id="PersCounter"/>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="endDate"/>
+      <viewAttribute id="attachmentId"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="firstName"/>
+      <viewAttribute id="firstNameAlt1"/>
+      <viewAttribute id="gender"/>
+      <viewAttribute id="lastModifiedBy"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="lastName"/>
+      <viewAttribute id="lastNameAlt1"/>
+      <viewAttribute id="maritalStatusCode"/>
+      <viewAttribute id="maritalStatus"/>
+      <viewAttribute id="middleName"/>
+      <viewAttribute id="middleNameAlt1"/>
+      <viewAttribute id="nationality"/>
+      <viewAttribute id="nativePreferredLangCode"/>
+      <viewAttribute id="nativePreferredLang"/>
+      <viewAttribute id="preferredName"/>
+      <viewAttribute id="salutationCode"/>
+      <viewAttribute id="salutation"/>
+      <viewAttribute id="suffixCode"/>
+      <viewAttribute id="suffix"/>
+      <viewAttribute id="dateOfBirth"/>
+      <viewAttribute id="perPersonUuid"/>
+      <viewAttribute id="countryOfBirth"/>
+      <viewAttribute id="regionOfBirth"/>
+      <viewAttribute id="personId"/>
+      <viewAttribute id="Employee_Name"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="man_personal$$$$iprosis.Data.EntityViews::cv_PerPersonal$$"/>
+    <filter>&quot;startDate&quot; &lt;=  CURRENT_DATE and CURRENT_DATE&lt;= &quot;endDate&quot;</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="manEmpJob" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="endDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.EntityViews::cv_EmpJob"/>
+    <filter>&quot;startDate&quot;&lt;= CURRENT_DATE and CURRENT_DATE &lt;= &quot;endDate&quot;</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="manager"/>
+      <viewAttribute id="Level"/>
+      <viewAttribute id="Employee_Name"/>
+      <viewAttribute hidden="true" id="JOIN$userId$personIdExternal"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="AuthManagers">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="manager" source="manager"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Level" source="Level"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$personIdExternal" source="userId"/>
+    </input>
+    <input node="PerPersonal">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$personIdExternal" source="personIdExternal"/>
+    </input>
+    <joinAttribute name="JOIN$userId$personIdExternal"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="manager"/>
+      <viewAttribute id="Level"/>
+      <viewAttribute id="Employee_Name"/>
+      <viewAttribute id="Manager_Name"/>
+      <viewAttribute hidden="true" id="JOIN$manager$personIdExternal"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="manager" source="manager"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Level" source="Level"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$manager$personIdExternal" source="manager"/>
+    </input>
+    <input node="man_personal">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Manager_Name" source="Employee_Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$manager$personIdExternal" source="personIdExternal"/>
+    </input>
+    <joinAttribute name="JOIN$manager$personIdExternal"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="manager"/>
+      <viewAttribute id="Level"/>
+      <viewAttribute id="Employee_Name"/>
+      <viewAttribute id="Manager_Name"/>
+      <viewAttribute hidden="true" id="JOIN$userId$userId"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="count" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="manager" source="manager"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Level" source="Level"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Manager_Name" source="Manager_Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <input node="manEmpJob">
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <joinAttribute name="JOIN$userId$userId"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_3">
+  <attributes>
+    <attribute id="userId" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="userId"/>
+      <keyMapping columnObjectName="Join_3" columnName="userId"/>
+    </attribute>
+    <attribute id="manager" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="manager"/>
+      <keyMapping columnObjectName="Join_3" columnName="manager"/>
+    </attribute>
+    <attribute id="Level" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Level"/>
+      <keyMapping columnObjectName="Join_3" columnName="Level"/>
+    </attribute>
+    <attribute id="Employee_Name" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_Name"/>
+      <keyMapping columnObjectName="Join_3" columnName="Employee_Name"/>
+    </attribute>
+    <attribute id="Manager_Name" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_Name_1"/>
+      <keyMapping columnObjectName="Join_3" columnName="Manager_Name"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="count" order="6" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="count"/>
+      <measureMapping columnObjectName="Join_3" columnName="count"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="AuthManagers" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-129" y="864"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PerPersonal" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="129" y="864"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="man_personal" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="335" y="599"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="manEmpJob" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="365" y="393"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="10" y="599"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="AuthManagers" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="147"/>
+    </shape>
+    <shape modelObjectName="PerPersonal" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="296" y="30"/>
+      <rectangleSize width="211"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="90" y="397"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="170"/>
+    </shape>
+    <shape modelObjectName="man_personal" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="145"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="108" y="202"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="170"/>
+    </shape>
+    <shape modelObjectName="manEmpJob" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

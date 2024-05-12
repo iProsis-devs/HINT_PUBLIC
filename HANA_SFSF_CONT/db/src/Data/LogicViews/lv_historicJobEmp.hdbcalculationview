@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.LogicViews::lv_historicJobEmp" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="lv_historicHires"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="iprosis.Data.EntityViews::cv_EmpJob">
+    <resourceUri>iprosis.Data.EntityViews::cv_EmpJob</resourceUri>
+  </DataSource>
+  <DataSource id="iprosis.Data.EntityViews::cv_EmpEmployment">
+    <resourceUri>iprosis.Data.EntityViews::cv_EmpEmployment</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="EmpJob">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="eventCode"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.EntityViews::cv_EmpJob"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Employment" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="endDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.EntityViews::cv_EmpEmployment"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:NonEquiJoinView" id="NonEquiJoin_1" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate_EmpJob" aggregationType="min"/>
+      <viewAttribute id="eventCode"/>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="startDate_Employment" aggregationType="min"/>
+      <viewAttribute id="endDate" aggregationType="min"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EmpJob">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate_EmpJob" source="startDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="eventCode" source="eventCode"/>
+    </input>
+    <input node="Employment">
+      <mapping xsi:type="Calculation:AttributeMapping" target="personIdExternal" source="personIdExternal"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate_Employment" source="startDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="endDate" source="endDate"/>
+    </input>
+    <joinAttribute leftColumn="userId" rightColumn="userId" operator="EQ"/>
+    <joinAttribute leftColumn="startDate" rightColumn="startDate" operator="GE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate_EmpJob"/>
+      <viewAttribute id="eventCode"/>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="startDate_Employment"/>
+      <viewAttribute id="endDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="end_date_calc" datatype="DATE" expressionLanguage="SQL">
+        <formula>ADD_DAYS(&quot;endDate&quot;,1)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="count" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="endDateNull" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;endDate&quot;, '1')</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="NonEquiJoin_1"/>
+    <filter>&quot;endDateNull&quot;='1' or &quot;startDate_EmpJob&quot;&lt;=&quot;end_date_calc&quot;</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="userId" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="userId"/>
+      <keyMapping columnObjectName="Projection_1" columnName="userId"/>
+    </attribute>
+    <attribute id="startDate_EmpJob" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="startDate"/>
+      <keyMapping columnObjectName="Projection_1" columnName="startDate_EmpJob"/>
+    </attribute>
+    <attribute id="eventCode" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="eventCode"/>
+      <keyMapping columnObjectName="Projection_1" columnName="eventCode"/>
+    </attribute>
+    <attribute id="personIdExternal" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="personIdExternal"/>
+      <keyMapping columnObjectName="Projection_1" columnName="personIdExternal"/>
+    </attribute>
+    <attribute id="startDate_Employment" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="startDate_Employment"/>
+      <keyMapping columnObjectName="Projection_1" columnName="startDate_Employment"/>
+    </attribute>
+    <attribute id="endDate" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="endDate"/>
+      <keyMapping columnObjectName="Projection_1" columnName="endDate"/>
+    </attribute>
+    <attribute id="end_date_calc" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="end_date_calc"/>
+      <keyMapping columnObjectName="Projection_1" columnName="end_date_calc"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="count" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="count"/>
+      <measureMapping columnObjectName="Projection_1" columnName="count"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="EmpJob" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-26" y="492"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Employment" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="212" y="492"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="NonEquiJoin_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="105" y="277"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="EmpJob" modelObjectNameSpace="NonEquiJoin_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="139.2060546875"/>
+    </shape>
+    <shape modelObjectName="Employment" modelObjectNameSpace="NonEquiJoin_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="169.16064453125"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="181"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

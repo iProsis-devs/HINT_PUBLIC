@@ -18,18 +18,18 @@
   </variable>
 </localVariables>
 <variableMappings>
-  <mapping xsi:type="Variable:VariableMapping" dataSource="iprosis.Data.Model::MV_Headcounts">
-    <targetVariable name="IP_START" resourceUri="iprosis.Data.Model::MV_Headcounts"/>
+  <mapping xsi:type="Variable:VariableMapping" dataSource="iprosis.Data.Model::MV_Headcount">
+    <targetVariable name="IP_START" resourceUri="iprosis.Data.Model::MV_Headcount"/>
     <localVariable>IP_START</localVariable>
   </mapping>
-  <mapping xsi:type="Variable:VariableMapping" dataSource="iprosis.Data.Model::MV_Headcounts">
-    <targetVariable name="IP_END" resourceUri="iprosis.Data.Model::MV_Headcounts"/>
+  <mapping xsi:type="Variable:VariableMapping" dataSource="iprosis.Data.Model::MV_Headcount">
+    <targetVariable name="IP_END" resourceUri="iprosis.Data.Model::MV_Headcount"/>
     <localVariable>IP_END</localVariable>
   </mapping>
 </variableMappings>
 <dataSources>
-  <DataSource id="iprosis.Data.Model::MV_Headcounts">
-    <resourceUri>iprosis.Data.Model::MV_Headcounts</resourceUri>
+  <DataSource id="iprosis.Data.Model::MV_Headcount">
+    <resourceUri>iprosis.Data.Model::MV_Headcount</resourceUri>
   </DataSource>
 </dataSources>
 <snapshotProcedures/>
@@ -92,9 +92,22 @@
       <viewAttribute id="calmon_desc"/>
     
       <viewAttribute id="mon_desc"/>
+    
+      <viewAttribute id="company_name"/>
+      <viewAttribute id="Department"/>
+      <viewAttribute id="hire_date"/>
+      <viewAttribute id="JOBCODE_DATE"/>
+      <viewAttribute id="PREV_JOB_TITLE"/>
+      <viewAttribute id="Employee_Name"/>
+      <viewAttribute id="Contractor_Module"/>
+      <viewAttribute id="isContingentWorker"/>
+      <viewAttribute id="Tenure"/>
+      <viewAttribute id="NoShow"/>
+      <viewAttribute id="TerminationCode"/>
+      <viewAttribute id="Tenure_Group"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.Model::MV_Headcounts"/>
+    <input node="iprosis.Data.Model::MV_Headcount"/>
     <filter>&quot;MONTH_LAST_DAY&quot;='1'</filter>
   </calculationView>
 </calculationViews>
@@ -108,6 +121,14 @@
     <attribute id="userId" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="userId"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="userId"/>
+    </attribute>
+    <attribute id="startDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="startDate"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="startDate"/>
+    </attribute>
+    <attribute id="endDate" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="endDate"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="endDate"/>
     </attribute>
     <attribute id="DivisionCode" order="5" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="Division">
       <descriptions defaultDescription="DIVISION"/>
@@ -257,32 +278,69 @@
       <keyMapping columnObjectName="MV_Headcount" columnName="businessUnit"/>
     </attribute>
   
-    <attribute id="calmon_desc" order="47" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="calmon_desc" order="45" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="calmon_desc"/>
   
       <keyMapping columnObjectName="MV_Headcount" columnName="calmon_desc"/>
   
     </attribute>
   
-    <attribute id="mon_desc" order="48" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="mon_desc" order="46" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="mon_desc"/>
   
       <keyMapping columnObjectName="MV_Headcount" columnName="mon_desc"/>
   
     </attribute>
+  
+    <attribute id="company_name" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="name"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="company_name"/>
+  
+    </attribute>
+    <attribute id="Department" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="name"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="Department"/>
+    </attribute>
+    <attribute id="hire_date" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="hireDates_startDate"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="hire_date"/>
+    </attribute>
+    <attribute id="PREV_JOB_TITLE" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PREV_JOB_TITLE"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="PREV_JOB_TITLE"/>
+    </attribute>
+    <attribute id="Employee_Name" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_Name"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="Employee_Name"/>
+    </attribute>
+    <attribute id="Contractor_Module" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Contractor_Module"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="Contractor_Module"/>
+    </attribute>
+    <attribute id="isContingentWorker" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="isContingentWorker"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="isContingentWorker"/>
+    </attribute>
+    <attribute id="Tenure" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tenure"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="Tenure"/>
+    </attribute>
+    <attribute id="NoShow" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NoShow"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="NoShow"/>
+    </attribute>
+    <attribute id="TerminationCode" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="histTerm_eventCode"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="TerminationCode"/>
+    </attribute>
+    <attribute id="Tenure_Group" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tenure_Group"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="Tenure_Group"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="startDate" order="3" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="startDate"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="startDate"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="endDate" order="4" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="endDate"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="endDate"/>
-      <exceptionAggregationMetadata/>
-    </measure>
     <measure id="FTE" order="24" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="FTE"/>
       <measureMapping columnObjectName="MV_Headcount" columnName="FTE"/>
@@ -298,15 +356,20 @@
       <measureMapping columnObjectName="MV_Headcount" columnName="daily_counter"/>
       <exceptionAggregationMetadata/>
     </measure>
-  
-    <measure id="seniority" order="45" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="seniority"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="seniority"/>
+    <measure id="JOBCODE_DATE" order="50" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="JOBCODE_DATE"/>
+      <measureMapping columnObjectName="MV_Headcount" columnName="JOBCODE_DATE"/>
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="Age" order="46" aggregationType="sum" measureType="simple">
+  
+    <measure id="Age" order="59" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="Age"/>
       <measureMapping columnObjectName="MV_Headcount" columnName="Age"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="seniority" order="60" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="seniority"/>
+      <measureMapping columnObjectName="MV_Headcount" columnName="seniority"/>
       <exceptionAggregationMetadata/>
     </measure>
   </baseMeasures>
@@ -320,6 +383,9 @@
         </filter>
         <attributeName>MONTH_LAST_DAY</attributeName>
       </restriction>
+      
+      
+      
       
       
       
@@ -338,7 +404,7 @@
     
   
     <shape expanded="true" modelObjectName="MV_Headcount" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-36" y="231"/>
+      <upperLeftCorner x="-62" y="241"/>
       <rectangleSize height="30" width="198"/>
     </shape>
   </shapes>

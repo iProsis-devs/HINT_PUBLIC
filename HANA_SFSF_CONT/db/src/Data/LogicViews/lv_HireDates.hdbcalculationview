@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.LogicViews::lv_HireDates" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="lv_HireDates"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="iprosis.Data.EntityViews::cv_EmpJob">
+    <resourceUri>iprosis.Data.EntityViews::cv_EmpJob</resourceUri>
+  </DataSource>
+  <DataSource id="emp$$$$iprosis.Data.EntityViews::cv_EmpJob$$">
+    <resourceUri>iprosis.Data.EntityViews::cv_EmpJob</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="hireDates" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="eventCode"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.EntityViews::cv_EmpJob"/>
+    <filter>&quot;eventCode&quot;='R' OR &quot;eventCode&quot;='H' OR &quot;eventCode&quot;='SCWK'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="emp">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="endDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="emp$$$$iprosis.Data.EntityViews::cv_EmpJob$$"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="emp_startDate" aggregationType="min"/>
+      <viewAttribute id="hireDates_startDate" aggregationType="min"/>
+      <viewAttribute id="endDate" aggregationType="min"/>
+      <viewAttribute hidden="true" id="JOIN$userId$userId"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="count" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>1</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="hireDates">
+      <mapping xsi:type="Calculation:AttributeMapping" target="hireDates_startDate" source="startDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <input node="emp">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="emp_startDate" source="startDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="endDate" source="endDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <filter>&quot;hireDates_startDate&quot;&lt;=&quot;endDate&quot;</filter>
+    <joinAttribute name="JOIN$userId$userId"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:RankView" id="Rank_1">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="emp_startDate" aggregationType="min"/>
+      <viewAttribute id="hireDates_startDate" aggregationType="min"/>
+      <viewAttribute id="count" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1"/>
+    <rankingFilter type="RANK" offsetReference="FRONT" dynamicPartitionAttributes="false">
+      <partitionViewAttributeName id="userId"/>
+      <partitionViewAttributeName id="emp_startDate"/>
+      <order byViewAttributeName="hireDates_startDate" direction="DESC"/>
+      <rankThreshold/>
+    </rankingFilter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Rank_1">
+  <attributes>
+    <attribute id="userId" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="userId"/>
+      <keyMapping columnObjectName="Rank_1" columnName="userId"/>
+    </attribute>
+    <attribute id="emp_startDate" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="emp_startDate"/>
+      <keyMapping columnObjectName="Rank_1" columnName="emp_startDate"/>
+    </attribute>
+    <attribute id="hireDates_startDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="hireDates_startDate"/>
+      <keyMapping columnObjectName="Rank_1" columnName="hireDates_startDate"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="count" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="count"/>
+      <measureMapping columnObjectName="Rank_1" columnName="count"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="hireDates" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-32" y="564"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="emp" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="257" y="564"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="338"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="hireDates" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="139"/>
+    </shape>
+    <shape modelObjectName="emp" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="130"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Rank_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="238"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -50,7 +50,7 @@
       <viewAttribute id="serviceDate"/>
     </viewAttributes>
     <calculatedViewAttributes>
-      <calculatedViewAttribute id="seniority" datatype="DECIMAL" length="13" scale="2" expressionLanguage="SQL">
+      <calculatedViewAttribute id="seniority" datatype="DOUBLE" expressionLanguage="SQL">
         <formula>(MONTHS_BETWEEN(&quot;seniorityDate&quot;,CURRENT_DATE))/12</formula>
       </calculatedViewAttribute>
     </calculatedViewAttributes>

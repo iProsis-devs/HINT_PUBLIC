@@ -112,5 +112,17 @@
       "object": "AuthManagers",
       "schema": "AUTH_SF"
     }
+  },
+  "iprosis.config::FOBV_FODepartment": {
+    "target": {
+      "object": "FOBV_FODepartment",
+      "schema": "AUTH_SF"
+    }
+  },
+  "iprosis.config::FOBV_FOCompany": {
+    "target": {
+      "object": "FOBV_FOCompany",
+      "schema": "AUTH_SF"
+    }
   }
 }

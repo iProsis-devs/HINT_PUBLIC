@@ -18,18 +18,18 @@
   </variable>
 </localVariables>
 <variableMappings>
-  <mapping xsi:type="Variable:VariableMapping" dataSource="iprosis.Data.Model::MV_Events">
-    <targetVariable name="IP_START" resourceUri="iprosis.Data.Model::MV_Events"/>
+  <mapping xsi:type="Variable:VariableMapping" dataSource="iprosis.Data.Model::MV_Event">
+    <targetVariable name="IP_START" resourceUri="iprosis.Data.Model::MV_Event"/>
     <localVariable>IP_START</localVariable>
   </mapping>
-  <mapping xsi:type="Variable:VariableMapping" dataSource="iprosis.Data.Model::MV_Events">
-    <targetVariable name="IP_END" resourceUri="iprosis.Data.Model::MV_Events"/>
+  <mapping xsi:type="Variable:VariableMapping" dataSource="iprosis.Data.Model::MV_Event">
+    <targetVariable name="IP_END" resourceUri="iprosis.Data.Model::MV_Event"/>
     <localVariable>IP_END</localVariable>
   </mapping>
 </variableMappings>
 <dataSources>
-  <DataSource id="iprosis.Data.Model::MV_Events">
-    <resourceUri>iprosis.Data.Model::MV_Events</resourceUri>
+  <DataSource id="iprosis.Data.Model::MV_Event">
+    <resourceUri>iprosis.Data.Model::MV_Event</resourceUri>
   </DataSource>
 </dataSources>
 <snapshotProcedures/>
@@ -93,9 +93,27 @@
       <viewAttribute id="calmon_desc"/>
     
       <viewAttribute id="mon_desc"/>
+    
+      <viewAttribute id="regretTermination"/>
+      <viewAttribute id="lastDateWorked"/>
+      <viewAttribute id="okToRehire"/>
+      <viewAttribute id="seniorityDate"/>
+      <viewAttribute id="startDate_Employment"/>
+      <viewAttribute id="Termination_Date"/>
+      <viewAttribute id="EndDate_empHist"/>
+      <viewAttribute id="Department"/>
+      <viewAttribute id="company_name"/>
+      <viewAttribute id="hire_date"/>
+      <viewAttribute id="JOBCODE_DATE"/>
+      <viewAttribute id="PREV_JOB_TITLE"/>
+      <viewAttribute id="Employee_Name"/>
+      <viewAttribute id="isContingentWorker"/>
+      <viewAttribute id="TerminationCode"/>
+    
+      <viewAttribute id="NoShow"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.Model::MV_Events"/>
+    <input node="iprosis.Data.Model::MV_Event"/>
   </calculationView>
 </calculationViews>
 
@@ -108,6 +126,14 @@
     <attribute id="userId" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="userId"/>
       <keyMapping columnObjectName="MV_Events" columnName="userId"/>
+    </attribute>
+    <attribute id="startDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="startDate"/>
+      <keyMapping columnObjectName="MV_Events" columnName="startDate"/>
+    </attribute>
+    <attribute id="endDate" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="endDate"/>
+      <keyMapping columnObjectName="MV_Events" columnName="endDate"/>
     </attribute>
     <attribute id="DivisionCode" order="5" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="Division">
       <descriptions defaultDescription="DIVISION"/>
@@ -261,32 +287,64 @@
       <keyMapping columnObjectName="MV_Events" columnName="businessUnit"/>
     </attribute>
   
-    <attribute id="calmon_desc" order="47" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="calmon_desc" order="45" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="calmon_desc"/>
   
       <keyMapping columnObjectName="MV_Events" columnName="calmon_desc"/>
   
     </attribute>
   
-    <attribute id="mon_desc" order="50" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="mon_desc" order="48" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="mon_desc"/>
   
       <keyMapping columnObjectName="MV_Events" columnName="mon_desc"/>
   
     </attribute>
+  
+    <attribute id="regretTermination" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="regretTermination"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="regretTermination"/>
+  
+    </attribute>
+    <attribute id="okToRehire" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="okToRehire"/>
+      <keyMapping columnObjectName="MV_Events" columnName="okToRehire"/>
+    </attribute>
+    <attribute id="seniorityDate" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="seniorityDate"/>
+      <keyMapping columnObjectName="MV_Events" columnName="seniorityDate"/>
+    </attribute>
+    <attribute id="startDate_Employment" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="startDate_Employment"/>
+      <keyMapping columnObjectName="MV_Events" columnName="startDate_Employment"/>
+    </attribute>
+    <attribute id="Termination_Date" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Termination_Date"/>
+      <keyMapping columnObjectName="MV_Events" columnName="Termination_Date"/>
+    </attribute>
+    <attribute id="Department" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Department"/>
+      <keyMapping columnObjectName="MV_Events" columnName="Department"/>
+    </attribute>
+    <attribute id="company_name" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Legal_Entity"/>
+      <keyMapping columnObjectName="MV_Events" columnName="company_name"/>
+    </attribute>
+    <attribute id="hire_date" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="hire_date"/>
+      <keyMapping columnObjectName="MV_Events" columnName="hire_date"/>
+    </attribute>
+  
+    <attribute id="NoShow" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NoShow"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="NoShow"/>
+  
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="startDate" order="3" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="startDate"/>
-      <measureMapping columnObjectName="MV_Events" columnName="startDate"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="endDate" order="4" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="endDate"/>
-      <measureMapping columnObjectName="MV_Events" columnName="endDate"/>
-      <exceptionAggregationMetadata/>
-    </measure>
     <measure id="FTE" order="25" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="FTE"/>
       <measureMapping columnObjectName="MV_Events" columnName="FTE"/>
@@ -303,20 +361,26 @@
       <exceptionAggregationMetadata/>
     </measure>
   
-    <measure id="seniority" order="45" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="seniority"/>
-      <measureMapping columnObjectName="MV_Events" columnName="seniority"/>
+    <measure id="lastDateWorked" order="50" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="lastDateWorked"/>
+      <measureMapping columnObjectName="MV_Events" columnName="lastDateWorked"/>
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="Age" order="46" aggregationType="sum" measureType="simple">
+  
+    <measure id="Age" order="59" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="Age"/>
       <measureMapping columnObjectName="MV_Events" columnName="Age"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="seniority" order="60" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="seniority"/>
+      <measureMapping columnObjectName="MV_Events" columnName="seniority"/>
       <exceptionAggregationMetadata/>
     </measure>
   </baseMeasures>
   <calculatedMeasures/>
   <restrictedMeasures>
-    <measure id="RS_HIRES" order="48" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="daily_counter" restrictionExpressionLanguage="SQL">
+    <measure id="RS_HIRES" order="46" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="daily_counter" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="Hires Num"/>
       <restriction logicalOperator="AND">
         <filter xsi:type="Privilege:AttributeFilter" attributeName="eventCode">
@@ -326,9 +390,13 @@
       </restriction>
       
       
+      
+      
+      
+      
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="RS_Term" order="49" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="daily_counter" restrictionExpressionLanguage="SQL">
+    <measure id="RS_Term" order="47" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="daily_counter" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="Terminations"/>
       <restriction logicalOperator="AND">
         <filter xsi:type="Privilege:AttributeFilter" attributeName="eventCode">
@@ -336,6 +404,10 @@
         </filter>
         <attributeName>eventCode</attributeName>
       </restriction>
+      
+      
+      
+      
       
       
       <exceptionAggregationMetadata/>
@@ -353,7 +425,7 @@
     
   
     <shape expanded="true" modelObjectName="MV_Events" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-2" y="241"/>
+      <upperLeftCorner x="-40" y="248"/>
       <rectangleSize height="30" width="198"/>
     </shape>
   </shapes>
