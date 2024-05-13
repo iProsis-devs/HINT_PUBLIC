@@ -35,7 +35,6 @@
       <viewAttribute id="personIdExternal"/>
       <viewAttribute id="startDate"/>
       <viewAttribute id="endDate"/>
-      <viewAttribute id="attachmentId"/>
       <viewAttribute id="createdBy"/>
       <viewAttribute id="createdDateTime"/>
       <viewAttribute id="createdOn"/>
@@ -47,22 +46,11 @@
       <viewAttribute id="lastModifiedOn"/>
       <viewAttribute id="lastName"/>
       <viewAttribute id="lastNameAlt1"/>
-      <viewAttribute id="maritalStatusCode"/>
-      <viewAttribute id="maritalStatus"/>
       <viewAttribute id="middleName"/>
       <viewAttribute id="middleNameAlt1"/>
       <viewAttribute id="nationality"/>
-      <viewAttribute id="nativePreferredLangCode"/>
-      <viewAttribute id="nativePreferredLang"/>
-      <viewAttribute id="preferredName"/>
-      <viewAttribute id="salutationCode"/>
-      <viewAttribute id="salutation"/>
-      <viewAttribute id="suffixCode"/>
-      <viewAttribute id="suffix"/>
       <viewAttribute id="dateOfBirth"/>
       <viewAttribute id="perPersonUuid"/>
-      <viewAttribute id="countryOfBirth"/>
-      <viewAttribute id="regionOfBirth"/>
       <viewAttribute id="personId"/>
     
       <viewAttribute id="Employee_Name"/>
@@ -78,7 +66,6 @@
       <viewAttribute id="personIdExternal"/>
       <viewAttribute id="startDate"/>
       <viewAttribute id="endDate"/>
-      <viewAttribute id="attachmentId"/>
       <viewAttribute id="createdBy"/>
       <viewAttribute id="createdDateTime"/>
       <viewAttribute id="createdOn"/>
@@ -90,22 +77,11 @@
       <viewAttribute id="lastModifiedOn"/>
       <viewAttribute id="lastName"/>
       <viewAttribute id="lastNameAlt1"/>
-      <viewAttribute id="maritalStatusCode"/>
-      <viewAttribute id="maritalStatus"/>
       <viewAttribute id="middleName"/>
       <viewAttribute id="middleNameAlt1"/>
       <viewAttribute id="nationality"/>
-      <viewAttribute id="nativePreferredLangCode"/>
-      <viewAttribute id="nativePreferredLang"/>
-      <viewAttribute id="preferredName"/>
-      <viewAttribute id="salutationCode"/>
-      <viewAttribute id="salutation"/>
-      <viewAttribute id="suffixCode"/>
-      <viewAttribute id="suffix"/>
       <viewAttribute id="dateOfBirth"/>
       <viewAttribute id="perPersonUuid"/>
-      <viewAttribute id="countryOfBirth"/>
-      <viewAttribute id="regionOfBirth"/>
       <viewAttribute id="personId"/>
       <viewAttribute id="Employee_Name"/>
     </viewAttributes>

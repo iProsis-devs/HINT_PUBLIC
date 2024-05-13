@@ -208,7 +208,7 @@
       <keyMapping columnObjectName="Join_1" columnName="personId"/>
     </attribute>
   
-    <attribute id="Employee_Name" order="35" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="Employee_Name" order="23" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Employee_Name"/>
   
       <keyMapping columnObjectName="Join_1" columnName="Employee_Name"/>
