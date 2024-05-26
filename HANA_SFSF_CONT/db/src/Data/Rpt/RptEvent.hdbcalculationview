@@ -179,7 +179,7 @@
       <keyMapping columnObjectName="MV_Events" columnName="POSITION"/>
     </attribute>
     <attribute id="COMPANY" order="20" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="COMPANY"/>
+      <descriptions defaultDescription="COMPANY_CODE"/>
       <keyMapping columnObjectName="MV_Events" columnName="COMPANY"/>
     </attribute>
     <attribute id="YEAR" order="21" displayAttribute="false" attributeHierarchyActive="false">
@@ -275,7 +275,7 @@
       <keyMapping columnObjectName="MV_Events" columnName="Department"/>
     </attribute>
     <attribute id="company_name" order="46" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Legal_Entity"/>
+      <descriptions defaultDescription="Company"/>
       <keyMapping columnObjectName="MV_Events" columnName="company_name"/>
     </attribute>
     <attribute id="hire_date" order="47" displayAttribute="false" attributeHierarchyActive="false">

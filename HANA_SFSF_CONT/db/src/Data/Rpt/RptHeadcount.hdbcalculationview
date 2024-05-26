@@ -168,7 +168,7 @@
       <keyMapping columnObjectName="MV_Headcount" columnName="POSITION"/>
     </attribute>
     <attribute id="COMPANY" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="COMPANY"/>
+      <descriptions defaultDescription="COMPANY_CODE"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="COMPANY"/>
     </attribute>
     <attribute id="YEAR" order="20" displayAttribute="false" attributeHierarchyActive="false">
@@ -246,7 +246,7 @@
     </attribute>
   
     <attribute id="company_name" order="39" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="name"/>
+      <descriptions defaultDescription="Company"/>
   
       <keyMapping columnObjectName="MV_Headcount" columnName="company_name"/>
   
