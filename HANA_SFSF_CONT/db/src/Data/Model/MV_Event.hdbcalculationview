@@ -6709,7 +6709,7 @@
       <keyMapping columnObjectName="Join_5" columnName="contractDate"/>
     </attribute>
     <attribute id="businessUnit" order="80" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="businessUnit"/>
+      <descriptions defaultDescription="Practice Code"/>
       <keyMapping columnObjectName="Join_5" columnName="businessUnit"/>
     </attribute>
     <attribute id="lastModifiedDateTime" order="81" displayAttribute="false" attributeHierarchyActive="false">
@@ -6985,7 +6985,7 @@
       <keyMapping columnObjectName="Join_5" columnName="Region"/>
     </attribute>
     <attribute id="BusinessUnitName" order="150" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BusinessUnitName"/>
+      <descriptions defaultDescription="Practice"/>
       <keyMapping columnObjectName="Join_5" columnName="BusinessUnitName"/>
     </attribute>
     <attribute id="DepartmentGroupName" order="151" displayAttribute="false" attributeHierarchyActive="false">

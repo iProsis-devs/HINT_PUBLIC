@@ -233,12 +233,12 @@
       <descriptions defaultDescription="Regioncode"/>
       <keyMapping columnObjectName="MV_Events" columnName="Regioncode"/>
     </attribute>
-    <attribute id="BusinessUnit" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BusinessUnitName"/>
+    <attribute id="BusinessUnit" order="35" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="BusinessUnitName">
+      <descriptions defaultDescription="Practice"/>
       <keyMapping columnObjectName="MV_Events" columnName="BusinessUnitName"/>
     </attribute>
-    <attribute id="BusinessUnitCode" order="36" descriptionColumnName="BusinessUnit" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="businessUnit"/>
+    <attribute id="BusinessUnitCode" order="36" descriptionColumnName="businessUnit" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty">
+      <descriptions defaultDescription="Practice Code"/>
       <keyMapping columnObjectName="MV_Events" columnName="businessUnit"/>
     </attribute>
   
