@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::cv_Managers" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::ev_Managers" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
 <descriptions defaultDescription="ev_Managers"/>
 <localVariables/>
 <variableMappings/>
@@ -7,14 +7,14 @@
   <DataSource id="iprosis.Data.EntityViews::ev_AuthManagers">
     <resourceUri>iprosis.Data.EntityViews::ev_AuthManagers</resourceUri>
   </DataSource>
-  <DataSource id="iprosis.Data.EntityViews::cv_PerPersonal">
-    <resourceUri>iprosis.Data.EntityViews::cv_PerPersonal</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_PerPersonal">
+    <resourceUri>iprosis.Data.EntityViews::ev_PerPersonal</resourceUri>
   </DataSource>
-  <DataSource id="man_personal$$$$iprosis.Data.EntityViews::cv_PerPersonal$$">
-    <resourceUri>iprosis.Data.EntityViews::cv_PerPersonal</resourceUri>
+  <DataSource id="man_personal$$$$iprosis.Data.EntityViews::ev_PerPersonal$$">
+    <resourceUri>iprosis.Data.EntityViews::ev_PerPersonal</resourceUri>
   </DataSource>
-  <DataSource id="iprosis.Data.EntityViews::cv_EmpJob">
-    <resourceUri>iprosis.Data.EntityViews::cv_EmpJob</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_EmpJob">
+    <resourceUri>iprosis.Data.EntityViews::ev_EmpJob</resourceUri>
   </DataSource>
 </dataSources>
 <snapshotProcedures/>
@@ -56,7 +56,7 @@
       <viewAttribute id="Employee_Name"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_PerPersonal"/>
+    <input node="iprosis.Data.EntityViews::ev_PerPersonal"/>
     <filter>&quot;startDate&quot; &lt;=  CURRENT_DATE and CURRENT_DATE&lt;= &quot;endDate&quot;</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="man_personal" filterExpressionLanguage="SQL">
@@ -86,7 +86,7 @@
       <viewAttribute id="Employee_Name"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="man_personal$$$$iprosis.Data.EntityViews::cv_PerPersonal$$"/>
+    <input node="man_personal$$$$iprosis.Data.EntityViews::ev_PerPersonal$$"/>
     <filter>&quot;startDate&quot; &lt;=  CURRENT_DATE and CURRENT_DATE&lt;= &quot;endDate&quot;</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="manEmpJob" filterExpressionLanguage="SQL">
@@ -96,7 +96,7 @@
       <viewAttribute id="endDate"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_EmpJob"/>
+    <input node="iprosis.Data.EntityViews::ev_EmpJob"/>
     <filter>&quot;startDate&quot;&lt;= CURRENT_DATE and CURRENT_DATE &lt;= &quot;endDate&quot;</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="leftOuter">

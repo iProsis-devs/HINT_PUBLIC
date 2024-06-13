@@ -2,4 +2,4 @@ VIEW "iprosis.Data.LogicViews::lv_JobCodeDate"
 AS select "userId","jobCode","startDate","seqNumber",
 FIRST_VALUE("startDate")
     OVER (PARTITION BY "userId","jobCode" ORDER BY "startDate" ASC) AS JobCode_Date 
-   FROM "iprosis.Data.EntityViews::cv_EmpJob";
+   FROM "iprosis.Data.EntityViews::ev_EmpJob";

@@ -1,16 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::ev_EmpJobRelationships" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
-<descriptions defaultDescription="ev_EmpJobRelationships.hdbcalculationview"/>
+<descriptions defaultDescription="cv_EmpJobRelationships.hdbcalculationview"/>
 <localVariables/>
 <variableMappings/>
 <dataSources>
+  <DataSource id="iprosis.Data.EntityViews::ev_PerPersonal">
+    <resourceUri>iprosis.Data.EntityViews::ev_PerPersonal</resourceUri>
+  </DataSource>
+  <DataSource id="iprosis.Data.EntityViews::ev_EmpEmployment">
+    <resourceUri>iprosis.Data.EntityViews::ev_EmpEmployment</resourceUri>
+  </DataSource>
   <DataSource id="iprosis.config::EBV_EmpJobRelationships">
     <resourceUri>iprosis.config::EBV_EmpJobRelationships</resourceUri>
   </DataSource>
 </dataSources>
 <snapshotProcedures/>
 <calculationViews>
-  <calculationView xsi:type="Calculation:ProjectionView" id="EBV_EmpJobRelationships">
+  <calculationView xsi:type="Calculation:ProjectionView" id="PerPersonal" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="Age"/>
+      <viewAttribute id="PersCounter"/>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="endDate"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="firstName"/>
+      <viewAttribute id="firstNameAlt1"/>
+      <viewAttribute id="gender"/>
+      <viewAttribute id="lastModifiedBy"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="lastName"/>
+      <viewAttribute id="lastNameAlt1"/>
+      <viewAttribute id="middleName"/>
+      <viewAttribute id="middleNameAlt1"/>
+      <viewAttribute id="nationality"/>
+      <viewAttribute id="dateOfBirth"/>
+      <viewAttribute id="perPersonUuid"/>
+      <viewAttribute id="personId"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.EntityViews::ev_PerPersonal"/>
+    <filter>&quot;startDate&quot;&lt;= CURRENT_DATE AND CURRENT_DATE&lt;= &quot;endDate&quot;</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="EmpEmployement">
+    <viewAttributes>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate"/>
+      <viewAttribute id="endDate"/>
+      <viewAttribute id="assignmentClass"/>
+      <viewAttribute id="assignmentIdExternal"/>
+      <viewAttribute id="createdBy"/>
+      <viewAttribute id="createdDateTime"/>
+      <viewAttribute id="createdOn"/>
+      <viewAttribute id="employmentId"/>
+      <viewAttribute id="hiringNotCompleted"/>
+      <viewAttribute id="isECRecord"/>
+      <viewAttribute id="lastDateWorked"/>
+      <viewAttribute id="lastModifiedBy"/>
+      <viewAttribute id="lastModifiedDateTime"/>
+      <viewAttribute id="lastModifiedOn"/>
+      <viewAttribute id="originalStartDate"/>
+      <viewAttribute id="regretTermination"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="iprosis.Data.EntityViews::ev_EmpEmployment"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="EmpJobRealationship">
     <viewAttributes>
       <viewAttribute id="userId"/>
       <viewAttribute id="startDate"/>
@@ -28,64 +86,108 @@
     <calculatedViewAttributes/>
     <input node="iprosis.config::EBV_EmpJobRelationships"/>
   </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate" aggregationType="min"/>
+      <viewAttribute id="relationshipTypeCode"/>
+      <viewAttribute id="relationshipType"/>
+      <viewAttribute id="endDate" aggregationType="min"/>
+      <viewAttribute id="relUserId"/>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute hidden="true" id="JOIN$userId$userId"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EmpJobRealationship">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate" source="startDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="relationshipTypeCode" source="relationshipTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="relationshipType" source="relationshipType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="endDate" source="endDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="relUserId" source="relUserId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <input node="EmpEmployement">
+      <mapping xsi:type="Calculation:AttributeMapping" target="personIdExternal" source="personIdExternal"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
+    </input>
+    <joinAttribute name="JOIN$userId$userId"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="userId"/>
+      <viewAttribute id="startDate" aggregationType="min"/>
+      <viewAttribute id="relationshipTypeCode"/>
+      <viewAttribute id="relationshipType"/>
+      <viewAttribute id="endDate" aggregationType="min"/>
+      <viewAttribute id="relUserId"/>
+      <viewAttribute id="personIdExternal"/>
+      <viewAttribute id="startDate_1" aggregationType="min"/>
+      <viewAttribute id="endDate_1" aggregationType="min"/>
+      <viewAttribute hidden="true" id="JOIN$personIdExternal$personIdExternal"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate" source="startDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="relationshipTypeCode" source="relationshipTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="relationshipType" source="relationshipType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="endDate" source="endDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="relUserId" source="relUserId"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="personIdExternal" source="personIdExternal"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$personIdExternal$personIdExternal" source="personIdExternal"/>
+    </input>
+    <input node="PerPersonal">
+      <mapping xsi:type="Calculation:AttributeMapping" target="startDate_1" source="startDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="endDate_1" source="endDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$personIdExternal$personIdExternal" source="personIdExternal"/>
+    </input>
+    <joinAttribute name="JOIN$personIdExternal$personIdExternal"/>
+  </calculationView>
 </calculationViews>
-<logicalModel id="EBV_EmpJobRelationships">
+<logicalModel id="Join_2">
   <attributes>
     <attribute id="userId" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="userId"/>
-      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="userId"/>
+      <keyMapping columnObjectName="Join_2" columnName="userId"/>
     </attribute>
     <attribute id="relationshipTypeCode" order="3" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="relationshipTypeCode"/>
-      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="relationshipTypeCode"/>
+      <keyMapping columnObjectName="Join_2" columnName="relationshipTypeCode"/>
     </attribute>
     <attribute id="relationshipType" order="4" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="relationshipType"/>
-      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="relationshipType"/>
+      <keyMapping columnObjectName="Join_2" columnName="relationshipType"/>
     </attribute>
-    <attribute id="createdBy" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="createdBy"/>
-      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="createdBy"/>
-    </attribute>
-    <attribute id="lastModifiedBy" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="lastModifiedBy"/>
-      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="lastModifiedBy"/>
-    </attribute>
-    <attribute id="relUserId" order="12" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="relUserId" order="6" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="relUserId"/>
-      <keyMapping columnObjectName="EBV_EmpJobRelationships" columnName="relUserId"/>
+      <keyMapping columnObjectName="Join_2" columnName="relUserId"/>
+    </attribute>
+    <attribute id="personIdExternal" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="personIdExternal"/>
+      <keyMapping columnObjectName="Join_2" columnName="personIdExternal"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="startDate" order="2" aggregationType="min" measureType="simple">
       <descriptions defaultDescription="startDate"/>
-      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="startDate"/>
+      <measureMapping columnObjectName="Join_2" columnName="startDate"/>
       <exceptionAggregationMetadata/>
     </measure>
     <measure id="endDate" order="5" aggregationType="min" measureType="simple">
       <descriptions defaultDescription="endDate"/>
-      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="endDate"/>
+      <measureMapping columnObjectName="Join_2" columnName="endDate"/>
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="createdDateTime" order="7" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="createdDateTime"/>
-      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="createdDateTime"/>
+    <measure id="startDate_1" order="8" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="startDate"/>
+      <measureMapping columnObjectName="Join_2" columnName="startDate_1"/>
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="createdOn" order="8" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="createdOn"/>
-      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="createdOn"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="lastModifiedDateTime" order="10" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="lastModifiedDateTime"/>
-      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="lastModifiedDateTime"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="lastModifiedOn" order="11" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="lastModifiedOn"/>
-      <measureMapping columnObjectName="EBV_EmpJobRelationships" columnName="lastModifiedOn"/>
+    <measure id="endDate_1" order="9" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="endDate"/>
+      <measureMapping columnObjectName="Join_2" columnName="endDate_1"/>
       <exceptionAggregationMetadata/>
     </measure>
   </baseMeasures>
@@ -99,9 +201,42 @@
       <upperLeftCorner x="40" y="85"/>
     </shape>
   
-    <shape expanded="false" modelObjectName="EBV_EmpJobRelationships" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="100" y="207"/>
+    <shape expanded="true" modelObjectName="PerPersonal" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="429" y="426"/>
       <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="EmpEmployement" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="269" y="674"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="EmpJobRealationship" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-57" y="674"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="103" y="421"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="EmpJobRealationship" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="16" y="240"/>
+      <rectangleSize width="192"/>
+    </shape>
+  
+    <shape modelObjectName="EmpEmployement" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="272" y="16"/>
+      <rectangleSize width="216"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="103" y="231"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="PerPersonal" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
     </shape>
   </shapes>
 </layout>

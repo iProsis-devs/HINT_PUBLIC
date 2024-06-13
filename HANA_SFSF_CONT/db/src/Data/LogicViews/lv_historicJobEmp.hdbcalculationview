@@ -4,11 +4,11 @@
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="iprosis.Data.EntityViews::cv_EmpJob">
-    <resourceUri>iprosis.Data.EntityViews::cv_EmpJob</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_EmpJob">
+    <resourceUri>iprosis.Data.EntityViews::ev_EmpJob</resourceUri>
   </DataSource>
-  <DataSource id="iprosis.Data.EntityViews::cv_EmpEmployment">
-    <resourceUri>iprosis.Data.EntityViews::cv_EmpEmployment</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_EmpEmployment">
+    <resourceUri>iprosis.Data.EntityViews::ev_EmpEmployment</resourceUri>
   </DataSource>
 </dataSources>
 <snapshotProcedures/>
@@ -20,9 +20,9 @@
       <viewAttribute id="eventCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_EmpJob"/>
+    <input node="iprosis.Data.EntityViews::ev_EmpJob"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Employment" filterExpressionLanguage="SQL">
+  <calculationView xsi:type="Calculation:ProjectionView" id="Employment">
     <viewAttributes>
       <viewAttribute id="personIdExternal"/>
       <viewAttribute id="userId"/>
@@ -30,7 +30,7 @@
       <viewAttribute id="endDate"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_EmpEmployment"/>
+    <input node="iprosis.Data.EntityViews::ev_EmpEmployment"/>
   </calculationView>
   <calculationView xsi:type="Calculation:NonEquiJoinView" id="NonEquiJoin_1" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
@@ -144,11 +144,11 @@
     </shape>
     <shape modelObjectName="EmpJob" modelObjectNameSpace="NonEquiJoin_1" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="139.2060546875"/>
+      <rectangleSize width="139"/>
     </shape>
     <shape modelObjectName="Employment" modelObjectNameSpace="NonEquiJoin_1" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="169.16064453125"/>
+      <rectangleSize width="169"/>
     </shape>
     <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="100" y="181"/>

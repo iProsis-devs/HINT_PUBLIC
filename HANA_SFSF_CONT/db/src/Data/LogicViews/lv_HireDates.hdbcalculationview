@@ -4,11 +4,11 @@
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="iprosis.Data.EntityViews::cv_EmpJob">
-    <resourceUri>iprosis.Data.EntityViews::cv_EmpJob</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_EmpJob">
+    <resourceUri>iprosis.Data.EntityViews::ev_EmpJob</resourceUri>
   </DataSource>
-  <DataSource id="emp$$$$iprosis.Data.EntityViews::cv_EmpJob$$">
-    <resourceUri>iprosis.Data.EntityViews::cv_EmpJob</resourceUri>
+  <DataSource id="EmpJob$$$$iprosis.Data.EntityViews::ev_EmpJob$$">
+    <resourceUri>iprosis.Data.EntityViews::ev_EmpJob</resourceUri>
   </DataSource>
 </dataSources>
 <snapshotProcedures/>
@@ -20,17 +20,17 @@
       <viewAttribute id="eventCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_EmpJob"/>
+    <input node="iprosis.Data.EntityViews::ev_EmpJob"/>
     <filter>&quot;eventCode&quot;='R' OR &quot;eventCode&quot;='H' OR &quot;eventCode&quot;='SCWK'</filter>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="emp">
+  <calculationView xsi:type="Calculation:ProjectionView" id="EmpJob">
     <viewAttributes>
       <viewAttribute id="userId"/>
       <viewAttribute id="startDate"/>
       <viewAttribute id="endDate"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="emp$$$$iprosis.Data.EntityViews::cv_EmpJob$$"/>
+    <input node="EmpJob$$$$iprosis.Data.EntityViews::ev_EmpJob$$"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner" filterExpressionLanguage="SQL">
     <viewAttributes>
@@ -49,7 +49,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="hireDates_startDate" source="startDate"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
     </input>
-    <input node="emp">
+    <input node="EmpJob">
       <mapping xsi:type="Calculation:AttributeMapping" target="userId" source="userId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="emp_startDate" source="startDate"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="endDate" source="endDate"/>
@@ -115,7 +115,7 @@
       <rectangleSize height="30" width="160"/>
     </shape>
   
-    <shape expanded="true" modelObjectName="emp" modelObjectNameSpace="CalculationView">
+    <shape expanded="true" modelObjectName="EmpJob" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="257" y="564"/>
       <rectangleSize height="30" width="160"/>
     </shape>
@@ -127,7 +127,7 @@
       <upperLeftCorner x="20" y="30"/>
       <rectangleSize width="139"/>
     </shape>
-    <shape modelObjectName="emp" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="EmpJob" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="130"/>
     </shape>

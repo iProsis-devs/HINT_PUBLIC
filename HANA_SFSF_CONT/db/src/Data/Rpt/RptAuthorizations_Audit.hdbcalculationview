@@ -4,8 +4,8 @@
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="iprosis.Data.Auth::Authorizations_Audit">
-    <resourceUri>iprosis.Data.Auth::Authorizations_Audit</resourceUri>
+  <DataSource id="iprosis.Data.LogicViews::Authorizations_Audit">
+    <resourceUri>iprosis.Data.LogicViews::Authorizations_Audit</resourceUri>
   </DataSource>
 </dataSources>
 <snapshotProcedures/>
@@ -37,7 +37,7 @@
       <viewAttribute id="FullName"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.Auth::Authorizations_Audit"/>
+    <input node="iprosis.Data.LogicViews::Authorizations_Audit"/>
   </calculationView>
 </calculationViews>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::cv_EmpJob" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="iprosis.Data.EntityViews::ev_EmpJob" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
 <descriptions defaultDescription="cv_PerPerson"/>
 <localVariables/>
 <variableMappings/>
@@ -7,8 +7,8 @@
   <DataSource id="iprosis.config::EBV_EmpJob">
     <resourceUri>iprosis.config::EBV_EmpJob</resourceUri>
   </DataSource>
-  <DataSource id="iprosis.Data.EntityViews::cv_EmpEmployment">
-    <resourceUri>iprosis.Data.EntityViews::cv_EmpEmployment</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_EmpEmployment">
+    <resourceUri>iprosis.Data.EntityViews::ev_EmpEmployment</resourceUri>
   </DataSource>
   <DataSource id="iprosis.config::FOBV_FOEventReason">
     <resourceUri>iprosis.config::FOBV_FOEventReason</resourceUri>
@@ -164,7 +164,7 @@
       <viewAttribute id="lastModifiedOn"/>
       <viewAttribute id="createdBy"/></viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_EmpEmployment"/>
+    <input node="iprosis.Data.EntityViews::ev_EmpEmployment"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="FOBV_FOEventReason">
     <viewAttributes>

@@ -22,14 +22,14 @@
   <DataSource id="iprosis.Data.Utilities::Calendar">
     <resourceUri>iprosis.Data.Utilities::Calendar</resourceUri>
   </DataSource>
-  <DataSource id="iprosis.Data.EntityViews::cv_EmpJob">
-    <resourceUri>iprosis.Data.EntityViews::cv_EmpJob</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_EmpJob">
+    <resourceUri>iprosis.Data.EntityViews::ev_EmpJob</resourceUri>
   </DataSource>
-  <DataSource id="iprosis.Data.EntityViews::cv_PerPersonal">
-    <resourceUri>iprosis.Data.EntityViews::cv_PerPersonal</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_PerPersonal">
+    <resourceUri>iprosis.Data.EntityViews::ev_PerPersonal</resourceUri>
   </DataSource>
-  <DataSource id="iprosis.Data.EntityViews::cv_JobCode">
-    <resourceUri>iprosis.Data.EntityViews::cv_JobCode</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_JobCode">
+    <resourceUri>iprosis.Data.EntityViews::ev_JobCode</resourceUri>
   </DataSource>
   <DataSource id="iprosis.config::FOBV_FOLocation">
     <resourceUri>iprosis.config::FOBV_FOLocation</resourceUri>
@@ -52,8 +52,8 @@
   <DataSource id="iprosis.config::FOBV_FODivision">
     <resourceUri>iprosis.config::FOBV_FODivision</resourceUri>
   </DataSource>
-  <DataSource id="iprosis.Data.EntityViews::cv_EmpEmployment">
-    <resourceUri>iprosis.Data.EntityViews::cv_EmpEmployment</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_EmpEmployment">
+    <resourceUri>iprosis.Data.EntityViews::ev_EmpEmployment</resourceUri>
   </DataSource>
   <DataSource id="iprosis.Data.LogicViews::lv_empEmploymentHst">
     <resourceUri>iprosis.Data.LogicViews::lv_empEmploymentHst</resourceUri>
@@ -61,8 +61,8 @@
   <DataSource id="iprosis.Data.EntityViews::ev_Department">
     <resourceUri>iprosis.Data.EntityViews::ev_Department</resourceUri>
   </DataSource>
-  <DataSource id="iprosis.Data.EntityViews::cv_Company">
-    <resourceUri>iprosis.Data.EntityViews::cv_Company</resourceUri>
+  <DataSource id="iprosis.Data.EntityViews::ev_Company">
+    <resourceUri>iprosis.Data.EntityViews::ev_Company</resourceUri>
   </DataSource>
   <DataSource id="iprosis.Data.LogicViews::lv_HireDates">
     <resourceUri>iprosis.Data.LogicViews::lv_HireDates</resourceUri>
@@ -226,7 +226,7 @@
     
       <viewAttribute id="ReasonName"/></viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_EmpJob"/>
+    <input node="iprosis.Data.EntityViews::ev_EmpJob"/>
     <filter>&quot;effectiveLatestChange&quot;='true' and &quot;startDate&quot;&lt;='$$IP_END$$'and &quot;endDate&quot;&gt;='$$IP_START$$' </filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PerPersonal" filterExpressionLanguage="SQL">
@@ -254,7 +254,7 @@
       <viewAttribute id="Employee_Name"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_PerPersonal">
+    <input node="iprosis.Data.EntityViews::ev_PerPersonal">
       <mapping xsi:type="Calculation:AttributeMapping" target="NATIONALITY" source="nationality"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="GENDER" source="gender"/>
     </input>
@@ -297,7 +297,7 @@
       <viewAttribute id="Counter"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_JobCode"/>
+    <input node="iprosis.Data.EntityViews::ev_JobCode"/>
     <filter>&quot;startDate&quot;&lt;='$$IP_END$$'and &quot;endDate&quot;&gt;='$$IP_START$$'</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="Location">
@@ -417,7 +417,7 @@
       <viewAttribute id="originalStartDate"/>
       <viewAttribute id="regretTermination"/></viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_EmpEmployment"/>
+    <input node="iprosis.Data.EntityViews::ev_EmpEmployment"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="EmpHist">
     <viewAttributes>
@@ -451,7 +451,7 @@
       <viewAttribute id="name"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.Data.EntityViews::cv_Company"/>
+    <input node="iprosis.Data.EntityViews::ev_Company"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="HireDate">
     <viewAttributes>
