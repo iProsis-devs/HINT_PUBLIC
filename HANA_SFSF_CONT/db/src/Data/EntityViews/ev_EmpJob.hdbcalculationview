@@ -130,6 +130,19 @@
       <viewAttribute id="paymentInLieuOfNotice"/>
     
       <viewAttribute id="EVENT"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="noticePeriod"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.config::EBV_EmpJob">
@@ -142,6 +155,13 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY" source="company"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION" source="location"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="EVENT" source="event"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="customDouble2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="customDouble3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="customString11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="customString2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="customString5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="customString6"/>
     </input></calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="EmpEmployment">
     <viewAttributes>
@@ -295,6 +315,16 @@
       <viewAttribute id="regretTermination"/>
       <viewAttribute id="assignmentClass"/>
       <viewAttribute id="EVENT"/>
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="noticePeriod"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -410,6 +440,16 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION" source="LOCATION"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="paymentInLieuOfNotice" source="paymentInLieuOfNotice"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="EVENT" source="EVENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
     </input>
     <input node="EmpEmployment">
@@ -543,6 +583,16 @@
       <viewAttribute id="assignmentClass"/>
     
       <viewAttribute id="ReasonName"/>
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="noticePeriod"/>
       <viewAttribute hidden="true" id="JOIN$eventReason$externalCode"/>
       <viewAttribute hidden="true" id="JOIN$eventCode$eventCode"/>
     </viewAttributes>
@@ -664,6 +714,16 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="hiringNotCompleted" source="hiringNotCompleted"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="regretTermination" source="regretTermination"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="assignmentClass" source="assignmentClass"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$eventReason$externalCode" source="eventReason"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$eventCode$eventCode" source="eventCode"/>
     </input>
@@ -1129,7 +1189,54 @@
   
       <keyMapping columnObjectName="EmplEvnt" columnName="ReasonName"/>
   
-    </attribute></attributes>
+    </attribute>
+    <attribute id="MinCommitmentHrs" order="113" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MinCommitmentHrs"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="MinCommitmentHrs"/>
+    </attribute>
+    <attribute id="MinCommitment" order="114" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MinCommitment"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="MinCommitment"/>
+    </attribute>
+    <attribute id="ProbationPeriod" order="115" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ProbationPeriod"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="ProbationPeriod"/>
+    </attribute>
+    <attribute id="JobFamily" order="116" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="JobFamily"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="JobFamily"/>
+    </attribute>
+    <attribute id="DeliverySite" order="117" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DeliverySite"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="DeliverySite"/>
+    </attribute>
+    <attribute id="AdminOffice" order="118" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AdminOffice"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="AdminOffice"/>
+    </attribute>
+  
+    <attribute id="employeeTypeCode" order="119" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Engagement Type Code"/>
+  
+      <keyMapping columnObjectName="EmplEvnt" columnName="employeeTypeCode"/>
+  
+    </attribute>
+    <attribute id="employeeType" order="120" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="employeeType"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="employeeType"/>
+    </attribute>
+  
+    <attribute id="noticePeriodCode" order="121" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="noticePeriodCode"/>
+  
+      <keyMapping columnObjectName="EmplEvnt" columnName="noticePeriodCode"/>
+  
+    </attribute>
+    <attribute id="noticePeriod" order="122" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="noticePeriod"/>
+      <keyMapping columnObjectName="EmplEvnt" columnName="noticePeriod"/>
+    </attribute>
+  </attributes>
   <calculatedAttributes/>
   <baseMeasures/>
   <calculatedMeasures>
@@ -1139,6 +1246,7 @@
         <attribute attributeName="userId"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       
       
       

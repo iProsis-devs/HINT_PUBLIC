@@ -31,7 +31,10 @@
       <viewAttribute id="lastNameAlt1"/>
       <viewAttribute id="middleName"/>
       <viewAttribute id="middleNameAlt1"/>
-      <viewAttribute id="nationality"/></viewAttributes>
+      <viewAttribute id="nationality"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.config::EBV_PerPersonal"/>
   </calculationView>
@@ -72,6 +75,8 @@
       <viewAttribute id="middleName"/>
       <viewAttribute id="middleNameAlt1"/>
       <viewAttribute id="nationality"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
       <viewAttribute hidden="true" id="JOIN$personIdExternal$personIdExternal"/>
     </viewAttributes>
     <calculatedViewAttributes>
@@ -103,6 +108,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="middleName" source="middleName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="middleNameAlt1" source="middleNameAlt1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="nationality" source="nationality"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$personIdExternal$personIdExternal" source="personIdExternal"/>
     </input>
     <input node="EBV_PerPerson">
@@ -213,6 +220,15 @@
   
       <keyMapping columnObjectName="Join_1" columnName="Employee_Name"/>
   
+    </attribute>
+  
+    <attribute id="businessFirstName" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="businessFirstName"/>
+      <keyMapping columnObjectName="Join_1" columnName="businessFirstName"/>
+    </attribute>
+    <attribute id="secondNationality" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="secondNationality"/>
+      <keyMapping columnObjectName="Join_1" columnName="secondNationality"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>

@@ -29,9 +29,13 @@
       <viewAttribute id="lastModifiedDateTime"/>
       <viewAttribute id="lastModifiedOn"/>
       <viewAttribute id="originalStartDate"/>
-      <viewAttribute id="regretTermination"/></viewAttributes>
+      <viewAttribute id="regretTermination"/>
+      <viewAttribute id="DetailedReason"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="iprosis.config::EBV_EmpEmployment"/>
+    <input node="iprosis.config::EBV_EmpEmployment">
+      <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="customString17"/>
+    </input>
   </calculationView>
 </calculationViews>
 
@@ -111,7 +115,12 @@
     <attribute id="regretTermination" order="18" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="regretTermination"/>
       <keyMapping columnObjectName="dbv_EmpEmployment" columnName="regretTermination"/>
-    </attribute></attributes>
+    </attribute>
+    <attribute id="DetailedReason" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DetailedReason"/>
+      <keyMapping columnObjectName="dbv_EmpEmployment" columnName="DetailedReason"/>
+    </attribute>
+  </attributes>
   <calculatedAttributes/>
   <baseMeasures/>
   <calculatedMeasures/>

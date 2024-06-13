@@ -41,7 +41,6 @@
       <viewAttribute id="startDate"/>
       <viewAttribute id="endDate"/>
       <viewAttribute id="DIVISION"/>
-      <viewAttribute id="DepartmentGroupName"/>
       <viewAttribute id="managerId"/>
       <viewAttribute id="event"/>
       <viewAttribute id="eventReason"/>
@@ -53,7 +52,6 @@
       <viewAttribute id="emplStatus"/>
       <viewAttribute id="FTE"/>
       <viewAttribute id="POSITION"/>
-      <viewAttribute id="COMPANY"/>
       <viewAttribute id="YEAR"/>
       <viewAttribute id="MONTH"/>
       <viewAttribute id="CALMONTH"/>
@@ -75,22 +73,61 @@
     
       <viewAttribute id="emplStatusCode"/>
       <viewAttribute id="flsaStatusCode"/>
-      <viewAttribute id="LocationCode"/>
       <viewAttribute id="LocationName"/>
       <viewAttribute id="Age"/>
     
       <viewAttribute id="calmon_desc"/>
     
       <viewAttribute id="mon_desc"/>
-    
-      <viewAttribute id="company_name"/>
       <viewAttribute id="Department"/>
       <viewAttribute id="hire_date"/>
       <viewAttribute id="JOBCODE_DATE"/>
       <viewAttribute id="PREV_JOB_TITLE"/>
       <viewAttribute id="Employee_Name"/>
       <viewAttribute id="NoShow"/>
-      <viewAttribute id="TerminationCode"/></viewAttributes>
+      <viewAttribute id="TerminationCode"/>
+      <viewAttribute id="COMPANY"/>
+      <viewAttribute id="CompanyName"/>
+    
+      <viewAttribute id="countryOfCompanyCode"/>
+      <viewAttribute id="countryOfCompany"/>
+    
+      <viewAttribute id="DivisionName"/>
+    
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="holidayCalendarCode"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="payGrade"/>
+    
+      <viewAttribute id="positionEntryDate"/>
+    
+      <viewAttribute id="probationPeriodEndDate"/>
+      <viewAttribute id="standardHours"/>
+    
+      <viewAttribute id="timeTypeProfileCode"/>
+      <viewAttribute id="TIMEZONE"/>
+      <viewAttribute id="workscheduleCode"/>
+    
+      <viewAttribute id="originalStartDate"/>
+    
+      <viewAttribute id="Termination_Date"/>
+      <viewAttribute id="DetailedReason"/>
+    
+      <viewAttribute id="lastDateWorked"/>
+      <viewAttribute id="regretTermination"/>
+    
+      <viewAttribute id="middleName"/>
+    
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="lastNameAlt1"/>
+      <viewAttribute id="firstNameAlt1"/>
+      <viewAttribute id="middleNameAlt1"/>
+    
+      <viewAttribute id="NATIONALITY"/>
+      <viewAttribute id="secondNationality"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.Data.Model::MV_Headcount"/>
     <filter>&quot;MONTH_LAST_DAY&quot;='1'</filter>
@@ -115,197 +152,324 @@
       <descriptions defaultDescription="endDate"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="endDate"/>
     </attribute>
-    <attribute id="DivisionCode" order="5" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="Division">
-      <descriptions defaultDescription="DIVISION"/>
+    <attribute id="DIVISION" order="5" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="DIVISION" semanticType="empty">
+      <descriptions defaultDescription="Unit Code"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="DIVISION"/>
     </attribute>
-    <attribute id="Division" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DepartmentGroupName"/>
-      <keyMapping columnObjectName="MV_Headcount" columnName="DepartmentGroupName"/>
-    </attribute>
-    <attribute id="managerId" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="managerId"/>
+    <attribute id="managerId" order="6" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="managerId">
+      <descriptions defaultDescription="Manager"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="managerId"/>
     </attribute>
-    <attribute id="event" order="8" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="event" order="7" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="event"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="event"/>
     </attribute>
-    <attribute id="eventReason" order="9" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="eventReason" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="eventReason"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="eventReason"/>
     </attribute>
-    <attribute id="firstName" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="firstName"/>
+    <attribute id="firstName" order="9" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="firstName">
+      <descriptions defaultDescription="First Name"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="firstName"/>
     </attribute>
-    <attribute id="lastName" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="lastName"/>
+    <attribute id="lastName" order="10" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="lastName">
+      <descriptions defaultDescription="Last Name"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="lastName"/>
     </attribute>
-    <attribute id="Gender" order="12" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="GENDER"/>
+    <attribute id="Gender" order="11" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="GENDER">
+      <descriptions defaultDescription="Gender"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="GENDER"/>
     </attribute>
-    <attribute id="jobCode" order="13" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="jobCode"/>
+    <attribute id="jobCode" order="12" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="jobCode">
+      <descriptions defaultDescription="Job"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="jobCode"/>
     </attribute>
-    <attribute id="jobTitle" order="14" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="jobTitle"/>
+    <attribute id="jobTitle" order="13" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="jobTitle">
+      <descriptions defaultDescription="Title"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="jobTitle"/>
     </attribute>
-    <attribute id="emplStatus" order="15" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="emplStatus" order="14" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="emplStatus"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="emplStatus"/>
     </attribute>
-    <attribute id="emplStatusCode" order="16" descriptionColumnName="emplStatus" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="emplStatusCode" order="15" descriptionColumnName="emplStatus" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="emplStatusCode"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="emplStatusCode"/>
     </attribute>
-    <attribute id="POSITION" order="18" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="POSITION"/>
+    <attribute id="POSITION" order="17" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="POSITION">
+      <descriptions defaultDescription="Position"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="POSITION"/>
     </attribute>
-    <attribute id="COMPANY" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="COMPANY_CODE"/>
-      <keyMapping columnObjectName="MV_Headcount" columnName="COMPANY"/>
-    </attribute>
-    <attribute id="YEAR" order="20" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="YEAR" order="18" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="YEAR"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="YEAR"/>
     </attribute>
-    <attribute id="MONTH" order="21" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MONTH" order="19" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MONTH"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="MONTH"/>
     </attribute>
-    <attribute id="CALMONTH" order="22" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="calmon_desc">
+    <attribute id="CALMONTH" order="20" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="calmon_desc">
       <descriptions defaultDescription="CALMONTH"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="CALMONTH"/>
     </attribute>
-    <attribute id="MONTH_LAST_DAY" order="23" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MONTH_LAST_DAY" order="21" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MONTH_LAST_DAY"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="MONTH_LAST_DAY"/>
     </attribute>
-    <attribute id="first_day_of_month" order="24" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="first_day_of_month" order="22" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="first_day_of_month"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="first_day_of_month"/>
     </attribute>
-    <attribute id="CALQUARTER" order="25" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CALQUARTER" order="23" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CALQUARTER"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="CALQUARTER"/>
     </attribute>
-    <attribute id="DATE_SQL" order="26" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DATE_SQL" order="24" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DATE_SQL"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="DATE_SQL"/>
     </attribute>
-    <attribute id="DATE_SAP" order="27" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DATE_SAP" order="25" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DATE_SAP"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="DATE_SAP"/>
     </attribute>
-  
-    <attribute id="LocationCode" order="30" descriptionColumnName="LocationName" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LocationCode"/>
-  
-      <keyMapping columnObjectName="MV_Headcount" columnName="LocationCode"/>
-  
-    </attribute>
-    <attribute id="LocationName" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LocationName"/>
+    <attribute id="LocationName" order="28" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="LocationName">
+      <descriptions defaultDescription="Location (Office)"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="LocationName"/>
     </attribute>
-    <attribute id="Region" order="32" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="Region" order="29" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Region"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="Region"/>
     </attribute>
-    <attribute id="Regioncode" order="33" descriptionColumnName="Region" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="Regioncode" order="30" descriptionColumnName="Region" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Regioncode"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="Regioncode"/>
     </attribute>
-    <attribute id="BusinessUnit" order="34" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BusinessUnitName" order="31" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="BusinessUnitName"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="BusinessUnitName"/>
     </attribute>
-    <attribute id="BusinessUnitCode" order="35" descriptionColumnName="BusinessUnit" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BusinessUnit" order="32" descriptionColumnName="BusinessUnitName" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="businessUnit"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="businessUnit"/>
     </attribute>
   
-    <attribute id="calmon_desc" order="37" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="calmon_desc" order="34" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="calmon_desc"/>
   
       <keyMapping columnObjectName="MV_Headcount" columnName="calmon_desc"/>
   
     </attribute>
   
-    <attribute id="mon_desc" order="38" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="mon_desc" order="35" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="mon_desc"/>
   
       <keyMapping columnObjectName="MV_Headcount" columnName="mon_desc"/>
   
     </attribute>
-  
-    <attribute id="company_name" order="39" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Company"/>
-  
-      <keyMapping columnObjectName="MV_Headcount" columnName="company_name"/>
-  
-    </attribute>
-    <attribute id="Department" order="40" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="Department" order="36" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="name"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="Department"/>
     </attribute>
-    <attribute id="hire_date" order="41" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="hire_date" order="37" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="hireDates_startDate"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="hire_date"/>
     </attribute>
-    <attribute id="PREV_JOB_TITLE" order="43" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PREV_JOB_TITLE" order="39" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="PREV_JOB_TITLE"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="PREV_JOB_TITLE"/>
     </attribute>
-    <attribute id="Employee_Name" order="44" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="Employee_Name" order="40" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Employee_Name"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="Employee_Name"/>
     </attribute>
-    <attribute id="NoShow" order="45" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NoShow" order="41" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="NoShow"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="NoShow"/>
     </attribute>
-    <attribute id="TerminationCode" order="46" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TerminationCode" order="42" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="histTerm_eventCode"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="TerminationCode"/>
-    </attribute></attributes>
+    </attribute>
+    <attribute id="COMPANY" order="44" semanticType="empty" descriptionColumnName="COMPANY" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Legal Entity Code"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="COMPANY"/>
+    </attribute>
+    <attribute id="CompanyName" order="45" semanticType="empty" descriptionColumnName="CompanyName" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Legal Entity"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="CompanyName"/>
+    </attribute>
+  
+    <attribute id="countryOfCompanyCode" order="46" semanticType="empty" descriptionColumnName="countryOfCompanyCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Legal Entity Country Code"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="countryOfCompanyCode"/>
+  
+    </attribute>
+    <attribute id="countryOfCompany" order="47" semanticType="empty" descriptionColumnName="countryOfCompany" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Legal Entity Country"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="countryOfCompany"/>
+    </attribute>
+  
+    <attribute id="DivisionName" order="48" semanticType="empty" descriptionColumnName="DivisionName" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="DivisionName"/>
+  
+    </attribute>
+  
+    <attribute id="employeeType" order="49" semanticType="empty" descriptionColumnName="employeeType" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Engagement Type"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="employeeType"/>
+  
+    </attribute>
+  
+    <attribute id="holidayCalendarCode" order="50" semanticType="empty" descriptionColumnName="holidayCalendarCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Holiday Calendar"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="holidayCalendarCode"/>
+  
+    </attribute>
+  
+    <attribute id="noticePeriod" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Notice Period"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="noticePeriod"/>
+  
+    </attribute>
+    <attribute id="payGrade" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Level"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="payGrade"/>
+    </attribute>
+  
+    <attribute id="positionEntryDate" order="53" semanticType="empty" descriptionColumnName="positionEntryDate" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Position Entry Date"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="positionEntryDate"/>
+  
+    </attribute>
+  
+    <attribute id="probationPeriodEndDate" order="54" semanticType="empty" descriptionColumnName="probationPeriodEndDate" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Probation Period End Date"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="probationPeriodEndDate"/>
+  
+    </attribute>
+    <attribute id="standardHours" order="55" semanticType="empty" descriptionColumnName="standardHours" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Potential Capacity (hrs per week, in average)"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="standardHours"/>
+    </attribute>
+  
+    <attribute id="timeTypeProfileCode" order="56" semanticType="empty" descriptionColumnName="timeTypeProfileCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Time Profile"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="timeTypeProfileCode"/>
+  
+    </attribute>
+    <attribute id="TIMEZONE" order="57" semanticType="empty" descriptionColumnName="TIMEZONE" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Time Zone"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="TIMEZONE"/>
+    </attribute>
+    <attribute id="workscheduleCode" order="58" semanticType="empty" descriptionColumnName="workscheduleCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Work Schedule"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="workscheduleCode"/>
+    </attribute>
+  
+    <attribute id="originalStartDate" order="59" semanticType="empty" descriptionColumnName="originalStartDate" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Original Hire Date"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="originalStartDate"/>
+  
+    </attribute>
+  
+    <attribute id="Termination_Date" order="60" semanticType="empty" descriptionColumnName="Termination_Date" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Termination Date"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="Termination_Date"/>
+  
+    </attribute>
+    <attribute id="DetailedReason" order="61" semanticType="empty" descriptionColumnName="DetailedReason" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Detailed Reason"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="DetailedReason"/>
+    </attribute>
+  
+    <attribute id="lastDateWorked" order="62" semanticType="empty" descriptionColumnName="lastDateWorked" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Last Date Worked"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="lastDateWorked"/>
+  
+    </attribute>
+    <attribute id="regretTermination" order="63" semanticType="empty" descriptionColumnName="regretTermination" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Regret Termination"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="regretTermination"/>
+    </attribute>
+  
+    <attribute id="middleName" order="64" semanticType="empty" descriptionColumnName="middleName" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Middle Name"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="middleName"/>
+  
+    </attribute>
+  
+    <attribute id="businessFirstName" order="65" semanticType="empty" descriptionColumnName="businessFirstName" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Formal First Name"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="businessFirstName"/>
+  
+    </attribute>
+    <attribute id="lastNameAlt1" order="66" semanticType="empty" descriptionColumnName="lastNameAlt1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Local last Name"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="lastNameAlt1"/>
+    </attribute>
+    <attribute id="firstNameAlt1" order="67" semanticType="empty" descriptionColumnName="firstNameAlt1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Local First Name"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="firstNameAlt1"/>
+    </attribute>
+    <attribute id="middleNameAlt1" order="68" semanticType="empty" descriptionColumnName="middleNameAlt1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Local Middle Name"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="middleNameAlt1"/>
+    </attribute>
+  
+    <attribute id="NATIONALITY" order="69" semanticType="empty" descriptionColumnName="NATIONALITY" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Nationality"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="NATIONALITY"/>
+    </attribute>
+    <attribute id="secondNationality" order="70" semanticType="empty" descriptionColumnName="secondNationality" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Additional Nationality"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="secondNationality"/>
+    </attribute>
+  </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="FTE" order="17" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="FTE"/>
+    <measure id="FTE" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Potential Capacity (FTE)"/>
       <measureMapping columnObjectName="MV_Headcount" columnName="FTE"/>
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="EmplCount" order="28" aggregationType="sum" measureType="simple">
+    <measure id="EmplCount" order="26" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="EmplCount"/>
       <measureMapping columnObjectName="MV_Headcount" columnName="EmplCount"/>
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="daily_counter" order="29" aggregationType="sum" measureType="simple">
+    <measure id="daily_counter" order="27" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="daily_counter"/>
       <measureMapping columnObjectName="MV_Headcount" columnName="daily_counter"/>
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="JOBCODE_DATE" order="42" aggregationType="min" measureType="simple">
+    <measure id="JOBCODE_DATE" order="38" aggregationType="min" measureType="simple">
       <descriptions defaultDescription="JOBCODE_DATE"/>
       <measureMapping columnObjectName="MV_Headcount" columnName="JOBCODE_DATE"/>
       <exceptionAggregationMetadata/>
     </measure>
   
-    <measure id="Age" order="47" aggregationType="sum" measureType="simple">
+    <measure id="Age" order="43" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="Age"/>
       <measureMapping columnObjectName="MV_Headcount" columnName="Age"/>
       <exceptionAggregationMetadata/>
     </measure></baseMeasures>
   <calculatedMeasures/>
   <restrictedMeasures>
-    <measure id="RS_MONTHLY_HEADCOUNT" order="36" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="EmplCount" restrictionExpressionLanguage="SQL">
+    <measure id="RS_MONTHLY_HEADCOUNT" order="33" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="EmplCount" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="Monthly headcount"/>
       <restriction logicalOperator="AND">
         <filter xsi:type="Privilege:AttributeFilter" attributeName="MONTH_LAST_DAY">
@@ -313,6 +477,9 @@
         </filter>
         <attributeName>MONTH_LAST_DAY</attributeName>
       </restriction>
+      
+      
+      
       
       
       
