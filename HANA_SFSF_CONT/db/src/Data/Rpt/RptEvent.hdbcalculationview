@@ -98,6 +98,9 @@
       <viewAttribute id="TerminationCode"/>
     
       <viewAttribute id="NoShow"/>
+    
+      <viewAttribute id="countryOfCompanyCode"/>
+      <viewAttribute id="countryOfCompany"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.Data.Model::MV_Event"/>
@@ -178,8 +181,8 @@
       <descriptions defaultDescription="POSITION"/>
       <keyMapping columnObjectName="MV_Events" columnName="POSITION"/>
     </attribute>
-    <attribute id="COMPANY" order="20" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="COMPANY_CODE"/>
+    <attribute id="COMPANY" order="20" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="COMPANY">
+      <descriptions defaultDescription="Legal Entity Code"/>
       <keyMapping columnObjectName="MV_Events" columnName="COMPANY"/>
     </attribute>
     <attribute id="YEAR" order="21" displayAttribute="false" attributeHierarchyActive="false">
@@ -233,11 +236,11 @@
       <descriptions defaultDescription="Regioncode"/>
       <keyMapping columnObjectName="MV_Events" columnName="Regioncode"/>
     </attribute>
-    <attribute id="BusinessUnit" order="35" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="BusinessUnitName">
+    <attribute id="BusinessUnitName" order="35" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Practice"/>
       <keyMapping columnObjectName="MV_Events" columnName="BusinessUnitName"/>
     </attribute>
-    <attribute id="BusinessUnitCode" order="36" descriptionColumnName="businessUnit" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty">
+    <attribute id="BusinessUnit" order="36" descriptionColumnName="BusinessUnitName" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Practice Code"/>
       <keyMapping columnObjectName="MV_Events" columnName="businessUnit"/>
     </attribute>
@@ -274,8 +277,8 @@
       <descriptions defaultDescription="Department"/>
       <keyMapping columnObjectName="MV_Events" columnName="Department"/>
     </attribute>
-    <attribute id="company_name" order="46" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Company"/>
+    <attribute id="company_name" order="46" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="company_name">
+      <descriptions defaultDescription="Legal Entity"/>
       <keyMapping columnObjectName="MV_Events" columnName="company_name"/>
     </attribute>
     <attribute id="hire_date" order="47" displayAttribute="false" attributeHierarchyActive="false">
@@ -288,6 +291,17 @@
   
       <keyMapping columnObjectName="MV_Events" columnName="NoShow"/>
   
+    </attribute>
+  
+    <attribute id="countryOfCompanyCode" order="50" semanticType="empty" descriptionColumnName="countryOfCompanyCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Legal Entity Country Code"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="countryOfCompanyCode"/>
+  
+    </attribute>
+    <attribute id="countryOfCompany" order="51" semanticType="empty" descriptionColumnName="countryOfCompany" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Legal Entity Country"/>
+      <keyMapping columnObjectName="MV_Events" columnName="countryOfCompany"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
@@ -335,6 +349,7 @@
       
       
       
+      
       <exceptionAggregationMetadata/>
     </measure>
     <measure id="RS_Term" order="39" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="daily_counter" restrictionExpressionLanguage="SQL">
@@ -345,6 +360,7 @@
         </filter>
         <attributeName>eventCode</attributeName>
       </restriction>
+      
       
       
       

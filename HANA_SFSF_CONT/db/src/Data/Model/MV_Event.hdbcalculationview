@@ -6613,11 +6613,11 @@
       <keyMapping columnObjectName="Join_5" columnName="occupationPer"/>
     </attribute>
     <attribute id="countryOfCompanyCode" order="55" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="countryOfCompanyCode"/>
+      <descriptions defaultDescription="Legal Entity Country Code"/>
       <keyMapping columnObjectName="Join_5" columnName="countryOfCompanyCode"/>
     </attribute>
     <attribute id="countryOfCompany" order="56" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="countryOfCompany"/>
+      <descriptions defaultDescription="Legal Entity Country"/>
       <keyMapping columnObjectName="Join_5" columnName="countryOfCompany"/>
     </attribute>
     <attribute id="eeo6JobCategory" order="57" displayAttribute="false" attributeHierarchyActive="false">
@@ -6849,7 +6849,7 @@
       <keyMapping columnObjectName="Join_5" columnName="contractReferenceForAed"/>
     </attribute>
     <attribute id="COMPANY" order="116" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="COMPANY"/>
+      <descriptions defaultDescription="Legal Entity Code"/>
       <keyMapping columnObjectName="Join_5" columnName="COMPANY"/>
     </attribute>
     <attribute id="eeo1JobCategoryCode" order="117" displayAttribute="false" attributeHierarchyActive="false">
@@ -7037,7 +7037,7 @@
       <keyMapping columnObjectName="Join_5" columnName="Department"/>
     </attribute>
     <attribute id="company_name" order="164" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Legal_Entity"/>
+      <descriptions defaultDescription="Legal Entity"/>
       <keyMapping columnObjectName="Join_5" columnName="Legal_Entity"/>
     </attribute>
     <attribute id="hire_date" order="165" displayAttribute="false" attributeHierarchyActive="false">
@@ -7123,6 +7123,7 @@
         <attribute attributeName="userId"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       
       
       
