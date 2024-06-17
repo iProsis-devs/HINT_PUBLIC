@@ -230,6 +230,10 @@
       <viewAttribute id="employeeType"/>
     
       <viewAttribute id="noticePeriod"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.Data.EntityViews::ev_EmpJob"/>
@@ -641,6 +645,10 @@
       <viewAttribute id="employeeType"/>
     
       <viewAttribute id="noticePeriod"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="Calendar">
@@ -788,6 +796,10 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <joinAttribute leftColumn="DATETIMESTAMP" rightColumn="endDate" operator="LE"/>
     <joinAttribute leftColumn="DATETIMESTAMP" rightColumn="startDate" operator="GT"/>
@@ -952,6 +964,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_1">
@@ -1098,6 +1114,10 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="PerPersonal">
       <mapping xsi:type="Calculation:AttributeMapping" target="personIdExternal" source="personIdExternal"/>
@@ -1289,6 +1309,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_2">
@@ -1450,6 +1474,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="JobCode">
       <mapping xsi:type="Calculation:AttributeMapping" target="supervisorLevel" source="supervisorLevel"/>
@@ -1633,6 +1661,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_3">
@@ -1801,6 +1833,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="FOBV_Division">
       <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
@@ -1982,6 +2018,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_4">
@@ -2154,6 +2194,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="Location">
       <mapping xsi:type="Calculation:AttributeMapping" target="LocationName" source="NAME"/>
@@ -2334,6 +2378,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_5">
@@ -2505,6 +2553,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="LocationGroup-Region">
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="NAME"/>
@@ -2685,6 +2737,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_6">
@@ -2857,6 +2913,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="BusinessUnit">
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="NAME"/>
@@ -3039,6 +3099,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_7">
@@ -3212,6 +3276,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="TeamHRBP">
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="relUserId"/>
@@ -3394,6 +3462,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_8">
@@ -3568,6 +3640,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="LocalHRBP">
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="relUserId"/>
@@ -3751,6 +3827,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_9">
@@ -3926,6 +4006,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="CompensationPlanner">
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="relUserId"/>
@@ -4107,6 +4191,8 @@
       <viewAttribute id="DetailedReason"/>
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="noticePeriodCode"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -4276,6 +4362,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
     </input>
     <input node="Employment">
@@ -4471,6 +4559,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="Join_1">
@@ -4651,6 +4743,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="EmpHist">
       <mapping xsi:type="Calculation:AttributeMapping" target="EndDate_empHist" source="EndDate"/>
@@ -4843,6 +4939,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_11">
@@ -5026,6 +5126,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="Department">
       <mapping xsi:type="Calculation:AttributeMapping" target="Department" source="name"/>
@@ -5217,6 +5321,10 @@
     
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_12">
@@ -5400,6 +5508,10 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="Company">
       <mapping xsi:type="Calculation:AttributeMapping" target="CompanyName" source="CompanyName"/>
@@ -5585,6 +5697,8 @@
       <viewAttribute id="DetailedReason"/>
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="noticePeriodCode"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
       <viewAttribute hidden="true" id="JOIN$startDate$emp_startDate"/>
     </viewAttributes>
@@ -5764,6 +5878,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$startDate$emp_startDate" source="startDate"/>
     </input>
@@ -5953,6 +6069,8 @@
       <viewAttribute id="DetailedReason"/>
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="noticePeriodCode"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
       <viewAttribute hidden="true" id="JOIN$startDate$startDate"/>
       <viewAttribute hidden="true" id="JOIN$jobCode$jobCode"/>
@@ -6135,6 +6253,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$startDate$startDate" source="startDate"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$jobCode$jobCode" source="jobCode"/>
@@ -6331,6 +6451,8 @@
       <viewAttribute id="DetailedReason"/>
       <viewAttribute id="businessFirstName"/>
       <viewAttribute id="secondNationality"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="noticePeriodCode"/>
       <viewAttribute hidden="true" id="JOIN$seqNumber$seqNumber"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
       <viewAttribute hidden="true" id="JOIN$startDate$startDate"/>
@@ -6513,6 +6635,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$seqNumber$seqNumber" source="seqNumber"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$startDate$startDate" source="startDate"/>
@@ -7219,6 +7343,20 @@
       <descriptions defaultDescription="Additional Nationality"/>
       <keyMapping columnObjectName="Join_4" columnName="secondNationality"/>
     </attribute>
+  
+    <attribute id="employeeTypeCode" order="173" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Engagement Type Code"/>
+  
+      <keyMapping columnObjectName="Join_4" columnName="employeeTypeCode"/>
+  
+    </attribute>
+  
+    <attribute id="noticePeriodCode" order="174" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Notice Period Code"/>
+  
+      <keyMapping columnObjectName="Join_4" columnName="noticePeriodCode"/>
+  
+    </attribute>
   </attributes>
   <calculatedAttributes>
     <calculatedAttribute id="NoShow" order="156" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
@@ -7228,7 +7366,7 @@
 	 ELSE 'No'
  END</formula>
       </keyCalculation>
-      </calculatedAttribute></calculatedAttributes>
+    </calculatedAttribute></calculatedAttributes>
   <baseMeasures>
     <measure id="daily_counter" order="15" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="daily_counter"/>
@@ -7258,6 +7396,7 @@
         <attribute attributeName="userId"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       
       
       

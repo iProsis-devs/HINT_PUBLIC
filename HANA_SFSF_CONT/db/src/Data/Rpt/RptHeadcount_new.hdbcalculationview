@@ -112,6 +112,10 @@
       <viewAttribute id="YEAR"/>
     
       <viewAttribute id="createdDateTime"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+    
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.Data.Model::MV_Headcount"/>
@@ -205,6 +209,10 @@
       <descriptions defaultDescription="emplStatusCode"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="emplStatusCode"/>
     </attribute>
+    <attribute id="endDate" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="endDate"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="endDate"/>
+    </attribute>
     <attribute id="event" order="26" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="event"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="event"/>
@@ -233,6 +241,10 @@
       <descriptions defaultDescription="Gender"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="GENDER"/>
     </attribute>
+    <attribute id="hire_date" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="hireDates_startDate"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="hire_date"/>
+    </attribute>
     <attribute id="holidayCalendarCode" order="35" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Holiday Calendar"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="holidayCalendarCode"/>
@@ -248,6 +260,10 @@
     <attribute id="jobTitle" order="39" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Title"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="jobTitle"/>
+    </attribute>
+    <attribute id="lastDateWorked" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Last Date Worked"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="lastDateWorked"/>
     </attribute>
     <attribute id="lastName" order="41" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Last Name"/>
@@ -285,6 +301,10 @@
       <descriptions defaultDescription="MONTH"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="MONTH"/>
     </attribute>
+    <attribute id="MONTH_LAST_DAY" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MONTH_LAST_DAY"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="MONTH_LAST_DAY"/>
+    </attribute>
     <attribute id="NATIONALITY" order="51" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Nationality"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="NATIONALITY"/>
@@ -296,6 +316,10 @@
     <attribute id="noticePeriod" order="53" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Notice Period"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="noticePeriod"/>
+    </attribute>
+    <attribute id="originalStartDate" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Original Hire Date"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="originalStartDate"/>
     </attribute>
     <attribute id="payGrade" order="55" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Level"/>
@@ -309,9 +333,17 @@
       <descriptions defaultDescription="Position"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="POSITION"/>
     </attribute>
+    <attribute id="positionEntryDate" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Position Entry Date"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="positionEntryDate"/>
+    </attribute>
     <attribute id="PREV_JOB_TITLE" order="59" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="PREV_JOB_TITLE"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="PREV_JOB_TITLE"/>
+    </attribute>
+    <attribute id="probationPeriodEndDate" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Probation Period End Date"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="probationPeriodEndDate"/>
     </attribute>
     <attribute id="Region" order="61" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Region"/>
@@ -328,6 +360,18 @@
     <attribute id="secondNationality" order="64" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Additional Nationality"/>
       <keyMapping columnObjectName="MV_Headcount" columnName="secondNationality"/>
+    </attribute>
+    <attribute id="standardHours" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Potential Capacity (hrs per week, in average)"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="standardHours"/>
+    </attribute>
+    <attribute id="startDate" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="startDate"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="startDate"/>
+    </attribute>
+    <attribute id="Termination_Date" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Termination Date"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="Termination_Date"/>
     </attribute>
     <attribute id="TerminationCode" order="68" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="histTerm_eventCode"/>
@@ -360,6 +404,18 @@
       <keyMapping columnObjectName="MV_Headcount" columnName="createdDateTime"/>
   
     </attribute>
+  
+    <attribute id="employeeTypeCode" order="76" semanticType="empty" descriptionColumnName="employeeTypeCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Engagement Type Code"/>
+  
+      <keyMapping columnObjectName="MV_Headcount" columnName="employeeTypeCode"/>
+  
+    </attribute>
+  
+    <attribute id="noticePeriodCode" order="77" semanticType="empty" descriptionColumnName="noticePeriodCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Notice Period Code"/>
+      <keyMapping columnObjectName="MV_Headcount" columnName="noticePeriodCode"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
@@ -378,67 +434,16 @@
       <measureMapping columnObjectName="MV_Headcount" columnName="EmplCount"/>
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="endDate" order="25" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="endDate"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="endDate"/>
-      <exceptionAggregationMetadata/>
-    </measure>
     <measure id="FTE" order="32" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="Potential Capacity (FTE)"/>
       <measureMapping columnObjectName="MV_Headcount" columnName="FTE"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="hire_date" order="34" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="hireDates_startDate"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="hire_date"/>
       <exceptionAggregationMetadata/>
     </measure>
     <measure id="JOBCODE_DATE" order="38" aggregationType="min" measureType="simple">
       <descriptions defaultDescription="JOBCODE_DATE"/>
       <measureMapping columnObjectName="MV_Headcount" columnName="JOBCODE_DATE"/>
       <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="lastDateWorked" order="40" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="Last Date Worked"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="lastDateWorked"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="MONTH_LAST_DAY" order="50" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="MONTH_LAST_DAY"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="MONTH_LAST_DAY"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="originalStartDate" order="54" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="Original Hire Date"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="originalStartDate"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="positionEntryDate" order="58" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="Position Entry Date"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="positionEntryDate"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="probationPeriodEndDate" order="60" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="Probation Period End Date"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="probationPeriodEndDate"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="standardHours" order="65" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="Potential Capacity (hrs per week, in average)"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="standardHours"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="startDate" order="66" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="startDate"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="startDate"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="Termination_Date" order="67" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="Termination Date"/>
-      <measureMapping columnObjectName="MV_Headcount" columnName="Termination_Date"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-  </baseMeasures>
+    </measure></baseMeasures>
   <calculatedMeasures/>
   <restrictedMeasures>
     <measure id="RS_MONTHLY_HEADCOUNT" order="74" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="EmplCount" restrictionExpressionLanguage="SQL">
