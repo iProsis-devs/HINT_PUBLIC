@@ -40,8 +40,6 @@
       <viewAttribute id="userId"/>
       <viewAttribute id="startDate"/>
       <viewAttribute id="endDate"/>
-      <viewAttribute id="DIVISION"/>
-      <viewAttribute id="DepartmentGroupName"/>
       <viewAttribute id="managerId"/>
       <viewAttribute id="eventCode"/>
       <viewAttribute id="event"/>
@@ -101,6 +99,44 @@
     
       <viewAttribute id="countryOfCompanyCode"/>
       <viewAttribute id="countryOfCompany"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+    
+      <viewAttribute id="DIVISION"/>
+      <viewAttribute id="DivisionName"/>
+    
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="holidayCalendarCode"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="payGrade"/>
+    
+      <viewAttribute id="positionEntryDate"/>
+      <viewAttribute id="probationPeriodEndDate"/>
+      <viewAttribute id="standardHours"/>
+    
+      <viewAttribute id="TIMEZONE"/>
+      <viewAttribute id="timeTypeProfileCode"/>
+      <viewAttribute id="workscheduleCode"/>
+    
+      <viewAttribute id="originalStartDate"/>
+      <viewAttribute id="DetailedReason"/>
+    
+      <viewAttribute id="middleName"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="lastNameAlt1"/>
+      <viewAttribute id="firstNameAlt1"/>
+      <viewAttribute id="middleNameAlt1"/>
+      <viewAttribute id="NATIONALITY"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.Data.Model::MV_Event"/>
@@ -125,217 +161,349 @@
       <descriptions defaultDescription="endDate"/>
       <keyMapping columnObjectName="MV_Events" columnName="endDate"/>
     </attribute>
-    <attribute id="DivisionCode" order="5" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="Division">
-      <descriptions defaultDescription="DIVISION"/>
-      <keyMapping columnObjectName="MV_Events" columnName="DIVISION"/>
-    </attribute>
-    <attribute id="Division" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DepartmentGroupName"/>
-      <keyMapping columnObjectName="MV_Events" columnName="DepartmentGroupName"/>
-    </attribute>
-    <attribute id="managerId" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="managerId"/>
+    <attribute id="managerId" order="5" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="managerId">
+      <descriptions defaultDescription="Manager"/>
       <keyMapping columnObjectName="MV_Events" columnName="managerId"/>
     </attribute>
-    <attribute id="eventCode" order="8" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="eventCode" order="6" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="eventCode"/>
       <keyMapping columnObjectName="MV_Events" columnName="eventCode"/>
     </attribute>
-    <attribute id="event" order="9" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="event" order="7" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="event"/>
       <keyMapping columnObjectName="MV_Events" columnName="event"/>
     </attribute>
-    <attribute id="eventReason" order="10" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="eventReason" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="eventReason"/>
       <keyMapping columnObjectName="MV_Events" columnName="eventReason"/>
     </attribute>
-    <attribute id="firstName" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="firstName"/>
+    <attribute id="firstName" order="9" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="firstName">
+      <descriptions defaultDescription="First Name"/>
       <keyMapping columnObjectName="MV_Events" columnName="firstName"/>
     </attribute>
-    <attribute id="lastName" order="12" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="lastName"/>
+    <attribute id="lastName" order="10" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="lastName">
+      <descriptions defaultDescription="Last Name"/>
       <keyMapping columnObjectName="MV_Events" columnName="lastName"/>
     </attribute>
-    <attribute id="Gender" order="13" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="GENDER"/>
+    <attribute id="GENDER" order="11" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="GENDER">
+      <descriptions defaultDescription="Gender"/>
       <keyMapping columnObjectName="MV_Events" columnName="GENDER"/>
     </attribute>
-    <attribute id="jobCode" order="14" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="jobCode"/>
+    <attribute id="jobCode" order="12" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="jobCode">
+      <descriptions defaultDescription="Job"/>
       <keyMapping columnObjectName="MV_Events" columnName="jobCode"/>
     </attribute>
-    <attribute id="jobTitle" order="15" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="jobTitle"/>
+    <attribute id="jobTitle" order="13" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="jobTitle">
+      <descriptions defaultDescription="Title"/>
       <keyMapping columnObjectName="MV_Events" columnName="jobTitle"/>
     </attribute>
-    <attribute id="emplStatus" order="16" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="emplStatus" order="14" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="emplStatus"/>
       <keyMapping columnObjectName="MV_Events" columnName="emplStatus"/>
     </attribute>
-    <attribute id="emplStatusCode" order="17" descriptionColumnName="emplStatus" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="emplStatusCode" order="15" descriptionColumnName="emplStatus" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="emplStatusCode"/>
       <keyMapping columnObjectName="MV_Events" columnName="emplStatusCode"/>
     </attribute>
-    <attribute id="POSITION" order="19" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="FTE" order="16" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Potential Capacity (FTE)"/>
+      <keyMapping columnObjectName="MV_Events" columnName="FTE"/>
+    </attribute>
+    <attribute id="POSITION" order="17" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="POSITION"/>
       <keyMapping columnObjectName="MV_Events" columnName="POSITION"/>
     </attribute>
-    <attribute id="COMPANY" order="20" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="COMPANY">
+    <attribute id="COMPANY" order="18" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="COMPANY">
       <descriptions defaultDescription="Legal Entity Code"/>
       <keyMapping columnObjectName="MV_Events" columnName="COMPANY"/>
     </attribute>
-    <attribute id="YEAR" order="21" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="YEAR" order="19" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="YEAR"/>
       <keyMapping columnObjectName="MV_Events" columnName="YEAR"/>
     </attribute>
-    <attribute id="MONTH" order="22" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MONTH" order="20" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MONTH"/>
       <keyMapping columnObjectName="MV_Events" columnName="MONTH"/>
     </attribute>
-    <attribute id="CALMONTH" order="23" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="calmon_desc">
+    <attribute id="CALMONTH" order="21" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="calmon_desc">
       <descriptions defaultDescription="CALMONTH"/>
       <keyMapping columnObjectName="MV_Events" columnName="CALMONTH"/>
     </attribute>
-    <attribute id="MONTH_LAST_DAY" order="24" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MONTH_LAST_DAY" order="22" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MONTH_LAST_DAY"/>
       <keyMapping columnObjectName="MV_Events" columnName="MONTH_LAST_DAY"/>
     </attribute>
-    <attribute id="first_day_of_month" order="25" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="first_day_of_month" order="23" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="first_day_of_month"/>
       <keyMapping columnObjectName="MV_Events" columnName="first_day_of_month"/>
     </attribute>
-    <attribute id="CALQUARTER" order="26" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CALQUARTER" order="24" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CALQUARTER"/>
       <keyMapping columnObjectName="MV_Events" columnName="CALQUARTER"/>
     </attribute>
-    <attribute id="DATE_SQL" order="27" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DATE_SQL" order="25" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DATE_SQL"/>
       <keyMapping columnObjectName="MV_Events" columnName="DATE_SQL"/>
     </attribute>
-    <attribute id="DATE_SAP" order="28" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DATE_SAP" order="26" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DATE_SAP"/>
       <keyMapping columnObjectName="MV_Events" columnName="DATE_SAP"/>
     </attribute>
   
-    <attribute id="LocationCode" order="31" descriptionColumnName="LocationName" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LocationCode"/>
+    <attribute id="LocationCode" order="29" descriptionColumnName="LocationCode" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty">
+      <descriptions defaultDescription="Location (Office) Code"/>
   
       <keyMapping columnObjectName="MV_Events" columnName="LocationCode"/>
   
     </attribute>
-    <attribute id="LocationName" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LocationName"/>
+    <attribute id="LocationName" order="30" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="LocationName">
+      <descriptions defaultDescription="Location (Office)"/>
       <keyMapping columnObjectName="MV_Events" columnName="LocationName"/>
     </attribute>
-    <attribute id="Region" order="33" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="Region" order="31" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Region"/>
       <keyMapping columnObjectName="MV_Events" columnName="Region"/>
     </attribute>
-    <attribute id="Regioncode" order="34" descriptionColumnName="Region" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="Regioncode" order="32" descriptionColumnName="Region" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Regioncode"/>
       <keyMapping columnObjectName="MV_Events" columnName="Regioncode"/>
     </attribute>
-    <attribute id="BusinessUnitName" order="35" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BusinessUnitName" order="33" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="BusinessUnitName">
       <descriptions defaultDescription="Practice"/>
       <keyMapping columnObjectName="MV_Events" columnName="BusinessUnitName"/>
     </attribute>
-    <attribute id="BusinessUnit" order="36" descriptionColumnName="BusinessUnitName" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BusinessUnit" order="34" descriptionColumnName="BusinessUnitName" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Practice Code"/>
       <keyMapping columnObjectName="MV_Events" columnName="businessUnit"/>
     </attribute>
   
-    <attribute id="calmon_desc" order="37" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="calmon_desc" order="35" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="calmon_desc"/>
   
       <keyMapping columnObjectName="MV_Events" columnName="calmon_desc"/>
   
     </attribute>
   
-    <attribute id="mon_desc" order="40" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="mon_desc" order="38" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="mon_desc"/>
   
       <keyMapping columnObjectName="MV_Events" columnName="mon_desc"/>
   
     </attribute>
   
-    <attribute id="regretTermination" order="41" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="regretTermination"/>
+    <attribute id="regretTermination" order="39" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="regretTermination">
+      <descriptions defaultDescription="Regret Termination"/>
   
       <keyMapping columnObjectName="MV_Events" columnName="regretTermination"/>
   
     </attribute>
-    <attribute id="startDate_Employment" order="43" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="lastDateWorked" order="40" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Last Date Worked"/>
+      <keyMapping columnObjectName="MV_Events" columnName="lastDateWorked"/>
+    </attribute>
+    <attribute id="startDate_Employment" order="41" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="startDate_Employment"/>
       <keyMapping columnObjectName="MV_Events" columnName="startDate_Employment"/>
     </attribute>
-    <attribute id="Termination_Date" order="44" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Termination_Date"/>
+    <attribute id="Termination_Date" order="42" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="Termination_Date">
+      <descriptions defaultDescription="Termination Date"/>
       <keyMapping columnObjectName="MV_Events" columnName="Termination_Date"/>
     </attribute>
-    <attribute id="Department" order="45" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="Department" order="43" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Department"/>
       <keyMapping columnObjectName="MV_Events" columnName="Department"/>
     </attribute>
-    <attribute id="company_name" order="46" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="company_name">
+    <attribute id="company_name" order="44" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="company_name">
       <descriptions defaultDescription="Legal Entity"/>
       <keyMapping columnObjectName="MV_Events" columnName="company_name"/>
     </attribute>
-    <attribute id="hire_date" order="47" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="hire_date" order="45" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="hire_date"/>
       <keyMapping columnObjectName="MV_Events" columnName="hire_date"/>
     </attribute>
   
-    <attribute id="NoShow" order="48" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NoShow" order="46" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="NoShow"/>
   
       <keyMapping columnObjectName="MV_Events" columnName="NoShow"/>
   
     </attribute>
   
-    <attribute id="countryOfCompanyCode" order="50" semanticType="empty" descriptionColumnName="countryOfCompanyCode" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="countryOfCompanyCode" order="48" semanticType="empty" descriptionColumnName="countryOfCompanyCode" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Legal Entity Country Code"/>
   
       <keyMapping columnObjectName="MV_Events" columnName="countryOfCompanyCode"/>
   
     </attribute>
-    <attribute id="countryOfCompany" order="51" semanticType="empty" descriptionColumnName="countryOfCompany" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="countryOfCompany" order="49" semanticType="empty" descriptionColumnName="countryOfCompany" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Legal Entity Country"/>
       <keyMapping columnObjectName="MV_Events" columnName="countryOfCompany"/>
+    </attribute>
+  
+    <attribute id="MinCommitmentHrs" order="50" semanticType="empty" descriptionColumnName="MinCommitmentHrs" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Min. Commitment (hrs per week, in average)"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="MinCommitmentHrs"/>
+  
+    </attribute>
+    <attribute id="MinCommitment" order="51" semanticType="empty" descriptionColumnName="MinCommitment" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum Commitment"/>
+      <keyMapping columnObjectName="MV_Events" columnName="MinCommitment"/>
+    </attribute>
+    <attribute id="ProbationPeriod" order="52" semanticType="empty" descriptionColumnName="ProbationPeriod" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Probation Period"/>
+      <keyMapping columnObjectName="MV_Events" columnName="ProbationPeriod"/>
+    </attribute>
+    <attribute id="JobFamily" order="53" semanticType="empty" descriptionColumnName="JobFamily" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Job Family"/>
+      <keyMapping columnObjectName="MV_Events" columnName="JobFamily"/>
+    </attribute>
+    <attribute id="DeliverySite" order="54" semanticType="empty" descriptionColumnName="DeliverySite" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delivery Site"/>
+      <keyMapping columnObjectName="MV_Events" columnName="DeliverySite"/>
+    </attribute>
+    <attribute id="AdminOffice" order="55" semanticType="empty" descriptionColumnName="AdminOffice" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Admin Office"/>
+      <keyMapping columnObjectName="MV_Events" columnName="AdminOffice"/>
+    </attribute>
+  
+    <attribute id="DIVISION" order="56" semanticType="empty" descriptionColumnName="DIVISION" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit Code"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="DIVISION"/>
+  
+    </attribute>
+    <attribute id="DivisionName" order="57" semanticType="empty" descriptionColumnName="DivisionName" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit"/>
+      <keyMapping columnObjectName="MV_Events" columnName="DivisionName"/>
+    </attribute>
+  
+    <attribute id="employeeTypeCode" order="58" semanticType="empty" descriptionColumnName="employeeTypeCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Engagement Type Code"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="employeeTypeCode"/>
+  
+    </attribute>
+    <attribute id="employeeType" order="59" semanticType="empty" descriptionColumnName="employeeType" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Engagement Type"/>
+      <keyMapping columnObjectName="MV_Events" columnName="employeeType"/>
+    </attribute>
+  
+    <attribute id="holidayCalendarCode" order="60" semanticType="empty" descriptionColumnName="holidayCalendarCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Holiday Calendar"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="holidayCalendarCode"/>
+  
+    </attribute>
+  
+    <attribute id="noticePeriod" order="61" semanticType="empty" descriptionColumnName="noticePeriod" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Notice Period"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="noticePeriod"/>
+  
+    </attribute>
+    <attribute id="noticePeriodCode" order="62" semanticType="empty" descriptionColumnName="noticePeriodCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Notice Period Code"/>
+      <keyMapping columnObjectName="MV_Events" columnName="noticePeriodCode"/>
+    </attribute>
+    <attribute id="payGrade" order="63" semanticType="empty" descriptionColumnName="payGrade" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Level"/>
+      <keyMapping columnObjectName="MV_Events" columnName="payGrade"/>
+    </attribute>
+  
+    <attribute id="positionEntryDate" order="64" semanticType="empty" descriptionColumnName="positionEntryDate" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Position Entry Date"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="positionEntryDate"/>
+  
+    </attribute>
+    <attribute id="probationPeriodEndDate" order="65" semanticType="empty" descriptionColumnName="probationPeriodEndDate" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Probation Period End Date"/>
+      <keyMapping columnObjectName="MV_Events" columnName="probationPeriodEndDate"/>
+    </attribute>
+    <attribute id="standardHours" order="66" semanticType="empty" descriptionColumnName="standardHours" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Potential Capacity (hrs per week, in average)"/>
+      <keyMapping columnObjectName="MV_Events" columnName="standardHours"/>
+    </attribute>
+  
+    <attribute id="TIMEZONE" order="67" semanticType="empty" descriptionColumnName="TIMEZONE" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Time Zone"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="TIMEZONE"/>
+  
+    </attribute>
+    <attribute id="timeTypeProfileCode" order="68" semanticType="empty" descriptionColumnName="timeTypeProfileCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Time Profile"/>
+      <keyMapping columnObjectName="MV_Events" columnName="timeTypeProfileCode"/>
+    </attribute>
+    <attribute id="workscheduleCode" order="69" semanticType="empty" descriptionColumnName="workscheduleCode" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Work Schedule"/>
+      <keyMapping columnObjectName="MV_Events" columnName="workscheduleCode"/>
+    </attribute>
+  
+    <attribute id="originalStartDate" order="70" semanticType="empty" descriptionColumnName="originalStartDate" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Original Hire Date"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="originalStartDate"/>
+  
+    </attribute>
+    <attribute id="DetailedReason" order="71" semanticType="empty" descriptionColumnName="DetailedReason" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DetailedReason"/>
+      <keyMapping columnObjectName="MV_Events" columnName="DetailedReason"/>
+    </attribute>
+  
+    <attribute id="middleName" order="72" semanticType="empty" descriptionColumnName="middleName" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Middle Name"/>
+  
+      <keyMapping columnObjectName="MV_Events" columnName="middleName"/>
+  
+    </attribute>
+    <attribute id="businessFirstName" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="businessFirstName"/>
+      <keyMapping columnObjectName="MV_Events" columnName="businessFirstName"/>
+    </attribute>
+    <attribute id="lastNameAlt1" order="74" semanticType="empty" descriptionColumnName="lastNameAlt1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Local last Name"/>
+      <keyMapping columnObjectName="MV_Events" columnName="lastNameAlt1"/>
+    </attribute>
+    <attribute id="firstNameAlt1" order="75" semanticType="empty" descriptionColumnName="firstNameAlt1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Local First Name"/>
+      <keyMapping columnObjectName="MV_Events" columnName="firstNameAlt1"/>
+    </attribute>
+    <attribute id="middleNameAlt1" order="76" semanticType="empty" descriptionColumnName="middleNameAlt1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Local Middle Name"/>
+      <keyMapping columnObjectName="MV_Events" columnName="middleNameAlt1"/>
+    </attribute>
+    <attribute id="NATIONALITY" order="77" semanticType="empty" descriptionColumnName="NATIONALITY" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Nationality"/>
+      <keyMapping columnObjectName="MV_Events" columnName="NATIONALITY"/>
+    </attribute>
+    <attribute id="secondNationality" order="78" displayAttribute="false" attributeHierarchyActive="false" semanticType="empty" descriptionColumnName="secondNationality">
+      <descriptions defaultDescription="Additional Nationality"/>
+      <keyMapping columnObjectName="MV_Events" columnName="secondNationality"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="FTE" order="18" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="FTE"/>
-      <measureMapping columnObjectName="MV_Events" columnName="FTE"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-    <measure id="EmplCount" order="29" aggregationType="sum" measureType="simple">
+    <measure id="EmplCount" order="27" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="EmplCount"/>
       <measureMapping columnObjectName="MV_Events" columnName="EmplCount"/>
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="daily_counter" order="30" aggregationType="sum" measureType="simple">
+    <measure id="daily_counter" order="28" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="daily_counter"/>
       <measureMapping columnObjectName="MV_Events" columnName="daily_counter"/>
       <exceptionAggregationMetadata/>
     </measure>
   
-    <measure id="lastDateWorked" order="42" aggregationType="min" measureType="simple">
-      <descriptions defaultDescription="lastDateWorked"/>
-      <measureMapping columnObjectName="MV_Events" columnName="lastDateWorked"/>
-      <exceptionAggregationMetadata/>
-    </measure>
-  
-    <measure id="Age" order="49" aggregationType="sum" measureType="simple">
+    <measure id="Age" order="47" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="Age"/>
       <measureMapping columnObjectName="MV_Events" columnName="Age"/>
       <exceptionAggregationMetadata/>
     </measure></baseMeasures>
   <calculatedMeasures/>
   <restrictedMeasures>
-    <measure id="RS_HIRES" order="38" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="daily_counter" restrictionExpressionLanguage="SQL">
+    <measure id="RS_HIRES" order="36" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="daily_counter" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="Hires Num"/>
       <restriction logicalOperator="AND">
         <filter xsi:type="Privilege:AttributeFilter" attributeName="eventCode">
@@ -350,9 +518,12 @@
       
       
       
+      
+      
+      
       <exceptionAggregationMetadata/>
     </measure>
-    <measure id="RS_Term" order="39" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="daily_counter" restrictionExpressionLanguage="SQL">
+    <measure id="RS_Term" order="37" aggregationType="sum" datatype="BIGINT" length="19" scale="0" baseMeasure="daily_counter" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="Terminations"/>
       <restriction logicalOperator="AND">
         <filter xsi:type="Privilege:AttributeFilter" attributeName="eventCode">
@@ -360,6 +531,9 @@
         </filter>
         <attributeName>eventCode</attributeName>
       </restriction>
+      
+      
+      
       
       
       
@@ -375,14 +549,14 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="62" y="105"/>
+      <upperLeftCorner x="110" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
     
   
     <shape expanded="true" modelObjectName="MV_Events" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-40" y="248"/>
+      <upperLeftCorner x="72" y="233"/>
       <rectangleSize height="30" width="198"/>
     </shape>
   </shapes>

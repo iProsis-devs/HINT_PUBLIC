@@ -224,7 +224,19 @@
       <viewAttribute id="LOCATION"/>
       <viewAttribute id="paymentInLieuOfNotice"/>
     
-      <viewAttribute id="ReasonName"/></viewAttributes>
+      <viewAttribute id="ReasonName"/>
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.Data.EntityViews::ev_EmpJob"/>
     <filter>&quot;effectiveLatestChange&quot;='true' and &quot;startDate&quot;&lt;='$$IP_END$$'and &quot;endDate&quot;&gt;='$$IP_START$$' </filter>
@@ -252,6 +264,9 @@
       <viewAttribute id="Age"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.Data.EntityViews::ev_PerPersonal">
@@ -415,7 +430,9 @@
       <viewAttribute id="lastModifiedDateTime"/>
       <viewAttribute id="lastModifiedOn"/>
       <viewAttribute id="originalStartDate"/>
-      <viewAttribute id="regretTermination"/></viewAttributes>
+      <viewAttribute id="regretTermination"/>
+      <viewAttribute id="DetailedReason"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="iprosis.Data.EntityViews::ev_EmpEmployment"/>
   </calculationView>
@@ -632,6 +649,18 @@
       <viewAttribute id="calmon_desc"/>
     
       <viewAttribute id="mon_desc"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="Calendar">
@@ -768,7 +797,19 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION" source="LOCATION"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="paymentInLieuOfNotice" source="paymentInLieuOfNotice"/>
     
-      <mapping xsi:type="Calculation:AttributeMapping" target="ReasonName" source="ReasonName"/></input>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ReasonName" source="ReasonName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+    </input>
     <joinAttribute leftColumn="DATETIMESTAMP" rightColumn="startDate" operator="GE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:NonEquiJoinView" id="NonEquiJoin_2" cardinality="CN_1" joinType="leftOuter">
@@ -917,6 +958,20 @@
       <viewAttribute id="mon_desc"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_1">
@@ -1052,6 +1107,18 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="calmon_desc" source="calmon_desc"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
     </input>
     <input node="PerPersonal">
       <mapping xsi:type="Calculation:AttributeMapping" target="personIdExternal" source="personIdExternal"/>
@@ -1067,6 +1134,9 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Age" source="Age"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <joinAttribute leftColumn="DATETIMESTAMP" rightColumn="endDate" operator="LE"/>
     <joinAttribute leftColumn="DATETIMESTAMP" rightColumn="startDate" operator="GT"/>
@@ -1226,6 +1296,20 @@
       <viewAttribute id="mon_desc"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_2">
@@ -1373,6 +1457,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="JobCode">
       <mapping xsi:type="Calculation:AttributeMapping" target="supervisorLevel" source="supervisorLevel"/>
@@ -1534,7 +1632,7 @@
       <viewAttribute id="regularTemporary"/>
       <viewAttribute id="NAME"/>
       <viewAttribute id="ReasonName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="Age"/>
     
       <viewAttribute id="calmon_desc"/>
@@ -1542,6 +1640,20 @@
       <viewAttribute id="mon_desc"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_3">
@@ -1696,9 +1808,23 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="FOBV_Division">
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="name"/>
     </input>
     <joinAttribute leftColumn="DATETIMESTAMP" rightColumn="endDate" operator="LE"/>
     <joinAttribute leftColumn="DATETIMESTAMP" rightColumn="startDate" operator="GT"/>
@@ -1855,7 +1981,7 @@
       <viewAttribute id="CALQUARTER_2"/>
       <viewAttribute id="createdDateTime_2" aggregationType="min"/>
       <viewAttribute id="lastModifiedDateTime_2"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="Age"/>
     
       <viewAttribute id="calmon_desc"/>
@@ -1863,6 +1989,20 @@
       <viewAttribute id="mon_desc"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_4">
@@ -2013,7 +2153,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER_2" source="CALQUARTER"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="createdDateTime_2" source="createdDateTime"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="lastModifiedDateTime_2" source="lastModifiedDateTime"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Age" source="Age"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="calmon_desc" source="calmon_desc"/>
@@ -2021,6 +2161,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="Location">
       <mapping xsi:type="Calculation:AttributeMapping" target="LocationName" source="NAME"/>
@@ -2179,7 +2333,7 @@
       <viewAttribute id="LocationName"/>
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="Age"/>
     
       <viewAttribute id="calmon_desc"/>
@@ -2187,6 +2341,20 @@
       <viewAttribute id="mon_desc"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_5">
@@ -2336,7 +2504,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="ReasonName" source="ReasonName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LocationName" source="LocationName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="locationGroup"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Age" source="Age"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="calmon_desc" source="calmon_desc"/>
@@ -2344,6 +2512,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="LocationGroup-Region">
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="NAME"/>
@@ -2502,7 +2684,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="Age"/>
     
       <viewAttribute id="calmon_desc"/>
@@ -2510,6 +2692,20 @@
       <viewAttribute id="mon_desc"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_6">
@@ -2660,7 +2856,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="LocationName" source="LocationName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Age" source="Age"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="calmon_desc" source="calmon_desc"/>
@@ -2668,6 +2864,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="BusinessUnit">
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="NAME"/>
@@ -2826,7 +3036,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
     
       <viewAttribute id="HRBP_ID"/>
       <viewAttribute id="Age"/>
@@ -2836,6 +3046,20 @@
       <viewAttribute id="mon_desc"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_7">
@@ -2987,7 +3211,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Age" source="Age"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="calmon_desc" source="calmon_desc"/>
@@ -2995,6 +3219,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="TeamHRBP">
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="relUserId"/>
@@ -3153,7 +3391,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
       <viewAttribute id="Age"/>
@@ -3163,6 +3401,20 @@
       <viewAttribute id="mon_desc"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_8">
@@ -3314,7 +3566,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Age" source="Age"/>
     
@@ -3323,6 +3575,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="LocalHRBP">
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="relUserId"/>
@@ -3481,7 +3747,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="CompensationPlannerId"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
@@ -3492,6 +3758,20 @@
       <viewAttribute id="mon_desc"/>
     
       <viewAttribute id="Employee_Name"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_9">
@@ -3643,7 +3923,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="local_hrbp_id"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Age" source="Age"/>
@@ -3653,6 +3933,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="CompensationPlanner">
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="relUserId"/>
@@ -3811,7 +4105,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="CompensationPlannerId"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
@@ -3823,6 +4117,20 @@
       <viewAttribute id="startDate_Employment" aggregationType="min"/>
       <viewAttribute id="Termination_Date" aggregationType="min"/>
       <viewAttribute id="Employee_Name"/>
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="originalStartDate" aggregationType="min"/>
+      <viewAttribute id="DetailedReason"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -3975,7 +4283,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="CompensationPlannerId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="local_hrbp_id"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
@@ -3983,6 +4291,18 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="calmon_desc" source="calmon_desc"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="mon_desc" source="mon_desc"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
     </input>
     <input node="Employment">
@@ -3990,6 +4310,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="lastDateWorked" source="lastDateWorked"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="startDate_Employment" source="startDate"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Termination_Date" source="endDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="originalStartDate" source="originalStartDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
     </input>
     <joinAttribute name="JOIN$userId$userId"/>
@@ -4144,7 +4466,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="CompensationPlannerId"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
@@ -4159,6 +4481,22 @@
     
       <viewAttribute id="Employee_Name"/>
       <viewAttribute id="TerminationCode"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="originalStartDate" aggregationType="min"/>
+      <viewAttribute id="DetailedReason"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="Join_1">
@@ -4310,7 +4648,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="CompensationPlannerId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="local_hrbp_id"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
@@ -4322,7 +4660,23 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="startDate_Employment" source="startDate_Employment"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Termination_Date" source="Termination_Date"/>
     
-      <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/></input>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="originalStartDate" source="originalStartDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
+    </input>
     <input node="EmpHist">
       <mapping xsi:type="Calculation:AttributeMapping" target="EndDate_empHist" source="EndDate"/>
     
@@ -4481,7 +4835,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="CompensationPlannerId"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
@@ -4497,6 +4851,22 @@
     
       <viewAttribute id="Employee_Name"/>
       <viewAttribute id="TerminationCode"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="originalStartDate" aggregationType="min"/>
+      <viewAttribute id="DetailedReason"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_11">
@@ -4648,7 +5018,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="CompensationPlannerId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="local_hrbp_id"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
@@ -4663,6 +5033,22 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TerminationCode" source="TerminationCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="originalStartDate" source="originalStartDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="Department">
       <mapping xsi:type="Calculation:AttributeMapping" target="Department" source="name"/>
@@ -4820,7 +5206,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="CompensationPlannerId"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
@@ -4837,6 +5223,22 @@
     
       <viewAttribute id="Employee_Name"/>
       <viewAttribute id="TerminationCode"/>
+    
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+    
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="originalStartDate" aggregationType="min"/>
+      <viewAttribute id="DetailedReason"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="NonEquiJoin_12">
@@ -4988,7 +5390,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="CompensationPlannerId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="local_hrbp_id"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
@@ -5004,6 +5406,22 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TerminationCode" source="TerminationCode"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="originalStartDate" source="originalStartDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
     </input>
     <input node="Company">
       <mapping xsi:type="Calculation:AttributeMapping" target="Legal_Entity" source="name"/>
@@ -5162,7 +5580,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="CompensationPlannerId"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
@@ -5179,6 +5597,20 @@
       <viewAttribute id="hire_date" aggregationType="min"/>
       <viewAttribute id="Employee_Name"/>
       <viewAttribute id="TerminationCode"/>
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="originalStartDate" aggregationType="min"/>
+      <viewAttribute id="DetailedReason"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
       <viewAttribute hidden="true" id="JOIN$startDate$emp_startDate"/>
     </viewAttributes>
@@ -5332,7 +5764,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="CompensationPlannerId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="local_hrbp_id"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
@@ -5348,6 +5780,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Legal_Entity" source="Legal_Entity"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TerminationCode" source="TerminationCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="originalStartDate" source="originalStartDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$startDate$emp_startDate" source="startDate"/>
     </input>
@@ -5509,7 +5955,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="CompensationPlannerId"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
@@ -5527,6 +5973,20 @@
       <viewAttribute id="JOBCODE_DATE" aggregationType="min"/>
       <viewAttribute id="Employee_Name"/>
       <viewAttribute id="TerminationCode"/>
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="originalStartDate" aggregationType="min"/>
+      <viewAttribute id="DetailedReason"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
       <viewAttribute hidden="true" id="JOIN$startDate$startDate"/>
       <viewAttribute hidden="true" id="JOIN$jobCode$jobCode"/>
@@ -5682,7 +6142,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="CompensationPlannerId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="local_hrbp_id"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
@@ -5699,6 +6159,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="hire_date" source="hire_date"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TerminationCode" source="TerminationCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="originalStartDate" source="originalStartDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$startDate$startDate" source="startDate"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$jobCode$jobCode" source="jobCode"/>
@@ -5866,7 +6340,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="CompensationPlannerId"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
@@ -5885,6 +6359,20 @@
       <viewAttribute id="PREV_JOB_TITLE"/>
       <viewAttribute id="Employee_Name"/>
       <viewAttribute id="TerminationCode"/>
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="originalStartDate" aggregationType="min"/>
+      <viewAttribute id="DetailedReason"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
       <viewAttribute hidden="true" id="JOIN$seqNumber$seqNumber"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
       <viewAttribute hidden="true" id="JOIN$startDate$startDate"/>
@@ -6039,7 +6527,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="CompensationPlannerId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="local_hrbp_id"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
@@ -6057,6 +6545,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="JOBCODE_DATE" source="JOBCODE_DATE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TerminationCode" source="TerminationCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="originalStartDate" source="originalStartDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$seqNumber$seqNumber" source="seqNumber"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$startDate$startDate" source="startDate"/>
@@ -6221,7 +6723,7 @@
       <viewAttribute id="Regioncode"/>
       <viewAttribute id="Region"/>
       <viewAttribute id="BusinessUnitName"/>
-      <viewAttribute id="DepartmentGroupName"/>
+      <viewAttribute id="DivisionName"/>
       <viewAttribute id="CompensationPlannerId"/>
       <viewAttribute id="local_hrbp_id"/>
       <viewAttribute id="HRBP_ID"/>
@@ -6241,6 +6743,20 @@
       <viewAttribute id="Employee_Name"/>
       <viewAttribute id="TerminationCode"/>
       <viewAttribute id="TerminationCode_NoShow"/>
+      <viewAttribute id="MinCommitmentHrs"/>
+      <viewAttribute id="MinCommitment"/>
+      <viewAttribute id="ProbationPeriod"/>
+      <viewAttribute id="JobFamily"/>
+      <viewAttribute id="DeliverySite"/>
+      <viewAttribute id="AdminOffice"/>
+      <viewAttribute id="employeeTypeCode"/>
+      <viewAttribute id="employeeType"/>
+      <viewAttribute id="noticePeriod"/>
+      <viewAttribute id="noticePeriodCode"/>
+      <viewAttribute id="originalStartDate" aggregationType="min"/>
+      <viewAttribute id="DetailedReason"/>
+      <viewAttribute id="businessFirstName"/>
+      <viewAttribute id="secondNationality"/>
       <viewAttribute hidden="true" id="JOIN$userId$userId"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -6393,7 +6909,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Regioncode" source="Regioncode"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BusinessUnitName" source="BusinessUnitName"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DepartmentGroupName" source="DepartmentGroupName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DivisionName" source="DivisionName"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CompensationPlannerId" source="CompensationPlannerId"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="local_hrbp_id" source="local_hrbp_id"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="HRBP_ID" source="HRBP_ID"/>
@@ -6412,6 +6928,20 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PREV_JOB_TITLE" source="PREV_JOB_TITLE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Employee_Name" source="Employee_Name"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TerminationCode" source="TerminationCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitmentHrs" source="MinCommitmentHrs"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MinCommitment" source="MinCommitment"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProbationPeriod" source="ProbationPeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JobFamily" source="JobFamily"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DeliverySite" source="DeliverySite"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AdminOffice" source="AdminOffice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeTypeCode" source="employeeTypeCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="employeeType" source="employeeType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriod" source="noticePeriod"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="noticePeriodCode" source="noticePeriodCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="originalStartDate" source="originalStartDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DetailedReason" source="DetailedReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="businessFirstName" source="businessFirstName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="secondNationality" source="secondNationality"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$userId$userId" source="userId"/>
     </input>
     <input node="NoShow">
@@ -6489,7 +7019,7 @@
       <keyMapping columnObjectName="Join_5" columnName="occupationalLevels"/>
     </attribute>
     <attribute id="workscheduleCode" order="24" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="workscheduleCode"/>
+      <descriptions defaultDescription="Work Schedule"/>
       <keyMapping columnObjectName="Join_5" columnName="workscheduleCode"/>
     </attribute>
     <attribute id="effectiveLatestChange" order="25" displayAttribute="false" attributeHierarchyActive="false">
@@ -6505,7 +7035,7 @@
       <keyMapping columnObjectName="Join_5" columnName="createdDateTime"/>
     </attribute>
     <attribute id="jobCode" order="28" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="jobCode"/>
+      <descriptions defaultDescription="Job"/>
       <keyMapping columnObjectName="Join_5" columnName="jobCode"/>
     </attribute>
     <attribute id="validFrom" order="29" displayAttribute="false" attributeHierarchyActive="false">
@@ -6517,11 +7047,11 @@
       <keyMapping columnObjectName="Join_5" columnName="fgtsDate"/>
     </attribute>
     <attribute id="DIVISION" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DIVISION"/>
+      <descriptions defaultDescription="Unit Code"/>
       <keyMapping columnObjectName="Join_5" columnName="DIVISION"/>
     </attribute>
     <attribute id="timeTypeProfileCode" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="timeTypeProfileCode"/>
+      <descriptions defaultDescription="Time Profile"/>
       <keyMapping columnObjectName="Join_5" columnName="timeTypeProfileCode"/>
     </attribute>
     <attribute id="eeoClassCode" order="33" displayAttribute="false" attributeHierarchyActive="false">
@@ -6649,11 +7179,11 @@
       <keyMapping columnObjectName="Join_5" columnName="dismissalsNoticePeriodForEmployer"/>
     </attribute>
     <attribute id="FTE" order="64" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="FTE"/>
+      <descriptions defaultDescription="Potential Capacity (FTE)"/>
       <keyMapping columnObjectName="Join_5" columnName="FTE"/>
     </attribute>
     <attribute id="payGrade" order="65" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="payGrade"/>
+      <descriptions defaultDescription="Level"/>
       <keyMapping columnObjectName="Join_5" columnName="payGrade"/>
     </attribute>
     <attribute id="eventCode" order="67" displayAttribute="false" attributeHierarchyActive="false">
@@ -6685,7 +7215,7 @@
       <keyMapping columnObjectName="Join_5" columnName="ASSESSMENTSTATUS"/>
     </attribute>
     <attribute id="managerId" order="74" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="managerId"/>
+      <descriptions defaultDescription="Manager"/>
       <keyMapping columnObjectName="Join_5" columnName="managerId"/>
     </attribute>
     <attribute id="spclRuleNonManualWorker" order="75" displayAttribute="false" attributeHierarchyActive="false">
@@ -6725,7 +7255,7 @@
       <keyMapping columnObjectName="Join_5" columnName="harmfulAgentExposure"/>
     </attribute>
     <attribute id="jobTitle" order="84" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="jobTitle"/>
+      <descriptions defaultDescription="Title"/>
       <keyMapping columnObjectName="Join_5" columnName="jobTitle"/>
     </attribute>
     <attribute id="sickPaySupplement" order="86" displayAttribute="false" attributeHierarchyActive="false">
@@ -6765,7 +7295,7 @@
       <keyMapping columnObjectName="Join_5" columnName="currentWageLevel"/>
     </attribute>
     <attribute id="holidayCalendarCode" order="95" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="holidayCalendarCode"/>
+      <descriptions defaultDescription="Holiday Calendar"/>
       <keyMapping columnObjectName="Join_5" columnName="holidayCalendarCode"/>
     </attribute>
     <attribute id="empRelationshipCode" order="96" displayAttribute="false" attributeHierarchyActive="false">
@@ -6777,7 +7307,7 @@
       <keyMapping columnObjectName="Join_5" columnName="empRelationship"/>
     </attribute>
     <attribute id="standardHours" order="98" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="standardHours"/>
+      <descriptions defaultDescription="Potential Capacity (hrs per week, in average)"/>
       <keyMapping columnObjectName="Join_5" columnName="standardHours"/>
     </attribute>
     <attribute id="contractNumber" order="99" displayAttribute="false" attributeHierarchyActive="false">
@@ -6833,11 +7363,11 @@
       <keyMapping columnObjectName="Join_5" columnName="POSITION"/>
     </attribute>
     <attribute id="probationPeriodEndDate" order="112" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="probationPeriodEndDate"/>
+      <descriptions defaultDescription="Probation Period End Date"/>
       <keyMapping columnObjectName="Join_5" columnName="probationPeriodEndDate"/>
     </attribute>
     <attribute id="TIMEZONE" order="113" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="TIMEZONE"/>
+      <descriptions defaultDescription="Time Zone"/>
       <keyMapping columnObjectName="Join_5" columnName="TIMEZONE"/>
     </attribute>
     <attribute id="workLocation" order="114" displayAttribute="false" attributeHierarchyActive="false">
@@ -6877,7 +7407,7 @@
       <keyMapping columnObjectName="Join_5" columnName="employeeWorkgroupMembership"/>
     </attribute>
     <attribute id="positionEntryDate" order="123" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="positionEntryDate"/>
+      <descriptions defaultDescription="Position Entry Date"/>
       <keyMapping columnObjectName="Join_5" columnName="positionEntryDate"/>
     </attribute>
     <attribute id="sickPaySupplementPeriod" order="124" displayAttribute="false" attributeHierarchyActive="false">
@@ -6893,7 +7423,7 @@
       <keyMapping columnObjectName="Join_5" columnName="contractId"/>
     </attribute>
     <attribute id="LocationCode" order="127" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LocationCode"/>
+      <descriptions defaultDescription="Location (Office) Code"/>
       <keyMapping columnObjectName="Join_5" columnName="LocationCode"/>
     </attribute>
     <attribute id="paymentInLieuOfNotice" order="128" displayAttribute="false" attributeHierarchyActive="false">
@@ -6905,35 +7435,35 @@
       <keyMapping columnObjectName="Join_5" columnName="personIdExternal"/>
     </attribute>
     <attribute id="lastNameAlt1" order="130" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="lastNameAlt1"/>
+      <descriptions defaultDescription="Local last Name"/>
       <keyMapping columnObjectName="Join_5" columnName="lastNameAlt1"/>
     </attribute>
     <attribute id="firstName" order="131" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="firstName"/>
+      <descriptions defaultDescription="First Name"/>
       <keyMapping columnObjectName="Join_5" columnName="firstName"/>
     </attribute>
     <attribute id="NATIONALITY" order="132" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="NATIONALITY"/>
+      <descriptions defaultDescription="Nationality"/>
       <keyMapping columnObjectName="Join_5" columnName="NATIONALITY"/>
     </attribute>
     <attribute id="lastName" order="133" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="lastName"/>
+      <descriptions defaultDescription="Last Name"/>
       <keyMapping columnObjectName="Join_5" columnName="lastName"/>
     </attribute>
     <attribute id="GENDER" order="134" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="GENDER"/>
+      <descriptions defaultDescription="Gender"/>
       <keyMapping columnObjectName="Join_5" columnName="GENDER"/>
     </attribute>
     <attribute id="firstNameAlt1" order="135" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="firstNameAlt1"/>
+      <descriptions defaultDescription="Local First Name"/>
       <keyMapping columnObjectName="Join_5" columnName="firstNameAlt1"/>
     </attribute>
     <attribute id="middleNameAlt1" order="136" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="middleNameAlt1"/>
+      <descriptions defaultDescription="Local Middle Name"/>
       <keyMapping columnObjectName="Join_5" columnName="middleNameAlt1"/>
     </attribute>
     <attribute id="middleName" order="137" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="middleName"/>
+      <descriptions defaultDescription="Middle Name"/>
       <keyMapping columnObjectName="Join_5" columnName="middleName"/>
     </attribute>
     <attribute id="supervisorLevel" order="138" displayAttribute="false" attributeHierarchyActive="false">
@@ -6973,7 +7503,7 @@
       <keyMapping columnObjectName="Join_5" columnName="ReasonName"/>
     </attribute>
     <attribute id="LocationName" order="147" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LocationName"/>
+      <descriptions defaultDescription="Location (Office)"/>
       <keyMapping columnObjectName="Join_5" columnName="LocationName"/>
     </attribute>
     <attribute id="Regioncode" order="148" displayAttribute="false" attributeHierarchyActive="false">
@@ -6988,9 +7518,9 @@
       <descriptions defaultDescription="Practice"/>
       <keyMapping columnObjectName="Join_5" columnName="BusinessUnitName"/>
     </attribute>
-    <attribute id="DepartmentGroupName" order="151" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DepartmentGroupName"/>
-      <keyMapping columnObjectName="Join_5" columnName="DepartmentGroupName"/>
+    <attribute id="DivisionName" order="151" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit"/>
+      <keyMapping columnObjectName="Join_5" columnName="DivisionName"/>
     </attribute>
     <attribute id="CompensationPlannerId" order="152" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CompensationPlannerId"/>
@@ -7013,11 +7543,11 @@
       <keyMapping columnObjectName="Join_5" columnName="mon_desc"/>
     </attribute>
     <attribute id="regretTermination" order="158" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="regretTermination"/>
+      <descriptions defaultDescription="Regret Termination"/>
       <keyMapping columnObjectName="Join_5" columnName="regretTermination"/>
     </attribute>
     <attribute id="lastDateWorked" order="159" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="lastDateWorked"/>
+      <descriptions defaultDescription="Last Date Worked"/>
       <keyMapping columnObjectName="Join_5" columnName="lastDateWorked"/>
     </attribute>
     <attribute id="startDate_Employment" order="160" displayAttribute="false" attributeHierarchyActive="false">
@@ -7025,7 +7555,7 @@
       <keyMapping columnObjectName="Join_5" columnName="startDate_Employment"/>
     </attribute>
     <attribute id="Termination_Date" order="161" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Termination_Date"/>
+      <descriptions defaultDescription="Termination Date"/>
       <keyMapping columnObjectName="Join_5" columnName="Termination_Date"/>
     </attribute>
     <attribute id="EndDate_empHist" order="162" displayAttribute="false" attributeHierarchyActive="false">
@@ -7064,6 +7594,66 @@
       <descriptions defaultDescription="TerminationCode_NoShow"/>
       <keyMapping columnObjectName="Join_5" columnName="TerminationCode_NoShow"/>
     </attribute>
+  
+    <attribute id="MinCommitmentHrs" order="171" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Min. Commitment (hrs per week, in average)"/>
+  
+      <keyMapping columnObjectName="Join_5" columnName="MinCommitmentHrs"/>
+  
+    </attribute>
+    <attribute id="MinCommitment" order="172" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum Commitment"/>
+      <keyMapping columnObjectName="Join_5" columnName="MinCommitment"/>
+    </attribute>
+    <attribute id="ProbationPeriod" order="173" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Probation Period"/>
+      <keyMapping columnObjectName="Join_5" columnName="ProbationPeriod"/>
+    </attribute>
+    <attribute id="JobFamily" order="174" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Job Family"/>
+      <keyMapping columnObjectName="Join_5" columnName="JobFamily"/>
+    </attribute>
+    <attribute id="DeliverySite" order="175" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delivery Site"/>
+      <keyMapping columnObjectName="Join_5" columnName="DeliverySite"/>
+    </attribute>
+    <attribute id="AdminOffice" order="176" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Admin Office"/>
+      <keyMapping columnObjectName="Join_5" columnName="AdminOffice"/>
+    </attribute>
+    <attribute id="employeeTypeCode" order="177" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Engagement Type Code"/>
+      <keyMapping columnObjectName="Join_5" columnName="employeeTypeCode"/>
+    </attribute>
+    <attribute id="employeeType" order="178" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Engagement Type"/>
+      <keyMapping columnObjectName="Join_5" columnName="employeeType"/>
+    </attribute>
+  
+    <attribute id="noticePeriod" order="179" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Notice Period"/>
+      <keyMapping columnObjectName="Join_5" columnName="noticePeriod"/>
+    </attribute>
+    <attribute id="noticePeriodCode" order="180" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Notice Period Code"/>
+      <keyMapping columnObjectName="Join_5" columnName="noticePeriodCode"/>
+    </attribute>
+    <attribute id="originalStartDate" order="181" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Original Hire Date"/>
+      <keyMapping columnObjectName="Join_5" columnName="originalStartDate"/>
+    </attribute>
+    <attribute id="DetailedReason" order="182" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Detailed Reason"/>
+      <keyMapping columnObjectName="Join_5" columnName="DetailedReason"/>
+    </attribute>
+    <attribute id="businessFirstName" order="183" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Formal First Name"/>
+      <keyMapping columnObjectName="Join_5" columnName="businessFirstName"/>
+    </attribute>
+    <attribute id="secondNationality" order="184" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Additional Nationality"/>
+      <keyMapping columnObjectName="Join_5" columnName="secondNationality"/>
+    </attribute>
   </attributes>
   <calculatedAttributes>
     <calculatedAttribute id="NoShow" order="2" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
@@ -7073,7 +7663,7 @@
 	 ELSE 'No'
  END</formula>
       </keyCalculation>
-    </calculatedAttribute></calculatedAttributes>
+      </calculatedAttribute></calculatedAttributes>
   <baseMeasures>
     <measure id="YEAR_INT" order="8" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="YEAR_INT"/>
@@ -7123,6 +7713,8 @@
         <attribute attributeName="userId"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
+      
       
       
       
