@@ -1251,6 +1251,7 @@
       
       
       
+      
       </measure>
   </calculatedMeasures>
   <restrictedMeasures/></logicalModel>
@@ -1300,7 +1301,7 @@
       <rectangleSize width="250"/>
     </shape>
     <shape modelObjectName="FOBV_FOEventReason" modelObjectNameSpace="EmplEvnt" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="641" y="1695"/>
+      <upperLeftCorner x="578" y="1692"/>
       <rectangleSize width="196"/>
     </shape></shapes>
 </layout>

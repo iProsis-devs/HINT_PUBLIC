@@ -7578,7 +7578,7 @@
 	 ELSE 'No'
  END</formula>
       </keyCalculation>
-      </calculatedAttribute></calculatedAttributes>
+    </calculatedAttribute></calculatedAttributes>
   <baseMeasures>
     <measure id="YEAR_INT" order="8" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="YEAR_INT"/>
